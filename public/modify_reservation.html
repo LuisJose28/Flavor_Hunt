@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
+    <meta
+      name="description"
+      content="Página para modificar una reserva"
+    />
+    <title>Modificar reserva - Flavor Hunt</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Logo de la página -->
+      <div id="logo">
+        <figure>
+          <img
+            src="./assets/imgs/icon.png"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+            width="100"
+            height="100"
+          />
+        </figure>
+
+        <h1>Flavor Hunt</h1>
+      </div>
+
+      <!-- Menú principal -->
+      <nav aria-label="primary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <!-- Contenido principal -->
+    <main>
+      <h2>Modificar reserva</h2>
+
+      <form action="https://httpbin.org/post" method="post" class="reserva">
+        <h3>Nombre del restaurante</h3>
+
+        <p>
+          <label for="reservation-date">Fecha deseada:</label>
+          <input
+            type="date"
+            name="txtReservationDate"
+            id="reservation-date"
+            value="2023-10-08"
+            autofocus
+            required
+          />
+        </p>
+
+        <p>
+          <label for="reservation-hour">Hora deseada:</label>
+          <input
+            type="time"
+            name="txtReservationHour"
+            id="reservation-hour"
+            value="10:30"
+            step="900"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="reservation-peoples">Número de personas:</label>
+          <input
+            type="number"
+            name="txtReservationPeoples"
+            id="reservation-peoples"
+            value="10"
+            min="1"
+            max="10"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="reservation-children-chair">Silla para niños:</label>
+          <input
+            type="number"
+            name="txtReservationChildrenChair"
+            id="reservation-children-chair"
+            value="2"
+            min="0"
+            max="10"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="comments">Comentarios adicionales:</label>
+          <br />
+          <textarea
+            name="txtReservationComments"
+            id="comments"
+            cols="30"
+            rows="10"
+            required
+          >
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!</textarea
+          >
+        </p>
+
+        <button>Modificar</button>
+      </form>
+    </main>
+
+    <hr />
+
+    <!-- Pie de la página -->
+    <footer>
+      <h4>Páginas web de Flavor Hunt</h4>
+
+      <hr />
+
+      <nav aria-label="secondary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mensaje de copy right  -->
+      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
+
+      <!-- Enlace para cerrar sesión -->
+      <p><a href="./login.html">Cerrar sesión</a></p>
+    </footer>
+  </body>
+</html>

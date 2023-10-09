@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
+    <meta
+      name="description"
+      content="Página para consultar o eliminar una reserva"
+    />
+    <title>Informacion de las reservas - Flavor Hunt</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Logo de la página -->
+      <div id="logo">
+        <figure>
+          <img
+            src="./assets/imgs/icon.png"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+            width="100"
+            height="100"
+          />
+        </figure>
+
+        <h1>Flavor Hunt</h1>
+      </div>
+
+      <!-- Menú principal -->
+      <nav aria-label="primary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <!-- Contenido principal -->
+    <main>
+      <h2>Reservas registradas</h2>
+
+      <!-- Menú de navegación con tabs -->
+      <div id="reservations-container">
+        <div class="label-menu">
+          <label for="radio1">Próximamente</label>
+          <label for="radio2">Completado</label>
+        </div>
+
+        <div class="content">
+          <input type="radio" name="radio" id="radio1" />
+          <div class="tab1">
+            <!-- Reservas próximas -->
+            <form class="reserva">
+              <h3>Nombre del restaurante</h3>
+              <p>
+                <label for="soon-reservation-date1">Fecha deseada:</label>
+                <input
+                  type="date"
+                  name="txtSoonReservationDate1"
+                  id="soon-reservation-date1"
+                  value="2023-10-08"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-hour1">Hora deseada:</label>
+                <input
+                  type="time"
+                  name="txtSoonReservationHour1"
+                  id="soon-reservation-hour1"
+                  value="10:30"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-peoples1"
+                  >Número de personas:</label
+                >
+                <input
+                  type="number"
+                  name="txtSoonReservationPeoples1"
+                  id="soon-reservation-peoples1"
+                  value="10"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-children-chair1"
+                  >Silla para niños:</label
+                >
+                <input
+                  type="number"
+                  name="txtSoonReservationChildrenChair1"
+                  id="soon-reservation-children-chair1"
+                  value="2"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-comments1"
+                  >Comentarios adicionales:</label
+                >
+                <br />
+                <textarea
+                  name="txtSoonReservationComments1"
+                  id="soon-reservation-comments1"
+                  cols="30"
+                  rows="10"
+                  readonly
+                >
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!
+                </textarea>
+              </p>
+
+              <button formaction="https://httpbin.org/post" formmethod="post">
+                Modificar
+              </button>
+              <button>Eliminar</button>
+            </form>
+
+            <form class="reserva">
+              <h3>Nombre del restaurante</h3>
+              <p>
+                <label for="soon-reservation-date2">Fecha deseada:</label>
+                <input
+                  type="date"
+                  name="txtSoonReservationDate2"
+                  id="soon-reservation-date2"
+                  value="2023-10-08"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-hour2">Hora deseada:</label>
+                <input
+                  type="time"
+                  name="txtSoonReservationHour2"
+                  id="soon-reservation-hour2"
+                  value="10:30"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-peoples2"
+                  >Número de personas:</label
+                >
+                <input
+                  type="number"
+                  name="txtSoonReservationPeoples2"
+                  id="soon-reservation-peoples2"
+                  value="10"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-children-chair2"
+                  >Silla para niños:</label
+                >
+                <input
+                  type="number"
+                  name="txtSoonReservationChildrenChair2"
+                  id="soon-reservation-children-chair2"
+                  value="2"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="soon-reservation-comments2"
+                  >Comentarios adicionales:</label
+                >
+                <br />
+                <textarea
+                  name="txtSoonReservationComments2"
+                  id="soon-reservation-comments2"
+                  cols="30"
+                  rows="10"
+                  readonly
+                >
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!
+                </textarea>
+              </p>
+
+              <button formaction="https://httpbin.org/post" formmethod="post">
+                Modificar
+              </button>
+              <button>Eliminar</button>
+            </form>
+          </div>
+
+          <input type="radio" name="radio" id="radio2" />
+          <div class="tab2">
+            <!-- Reservas completadas -->
+            <form class="reserva">
+              <h3>Nombre del restaurante</h3>
+              <p>
+                <label for="completed-reservation-date1">Fecha deseada:</label>
+                <input
+                  type="date"
+                  name="txtCompletedReservationDate1"
+                  id="completed-reservation-date1"
+                  value="2023-10-08"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-hour1">Hora deseada:</label>
+                <input
+                  type="time"
+                  name="txtCompletedReservationHour1"
+                  id="completed-reservation-hour1"
+                  value="10:30"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-peoples1"
+                  >Número de personas:</label
+                >
+                <input
+                  type="number"
+                  name="txtCompletedReservationPeoples1"
+                  id="completed-reservation-peoples1"
+                  value="10"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-children-chair1"
+                  >Silla para niños:</label
+                >
+                <input
+                  type="number"
+                  name="txtCompletedReservationChildrenChair1"
+                  id="completed-reservation-children-chair1"
+                  value="2"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-comments1"
+                  >Comentarios adicionales:</label
+                >
+                <br />
+                <textarea
+                  name="txtCompletedReservationComment1"
+                  id="completed-reservation-comments1"
+                  cols="30"
+                  rows="10"
+                  readonly
+                >
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!
+                </textarea>
+              </p>
+            </form>
+
+            <form class="reserva">
+              <h3>Nombre del restaurante</h3>
+              <p>
+                <label for="completed-reservation-date2">Fecha deseada:</label>
+                <input
+                  type="date"
+                  name="txtCompletedReservationDate2"
+                  id="completed-reservation-date2"
+                  value="2023-10-08"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-hour2">Hora deseada:</label>
+                <input
+                  type="time"
+                  name="txtCompletedReservationHour2"
+                  id="completed-reservation-hour2"
+                  value="10:30"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-peoples2"
+                  >Número de personas:</label
+                >
+                <input
+                  type="number"
+                  name="txtCompletedReservationPeoples2"
+                  id="completed-reservation-peoples2"
+                  value="10"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-children-chair2"
+                  >Silla para niños:</label
+                >
+                <input
+                  type="number"
+                  name="txtCompletedReservationChildrenChair2"
+                  id="completed-reservation-children-chair2"
+                  value="2"
+                  readonly
+                />
+              </p>
+
+              <p>
+                <label for="completed-reservation-comments2"
+                  >Comentarios adicionales:</label
+                >
+                <br />
+                <textarea
+                  name="txtCompletedReservationComment2"
+                  id="completed-reservation-comments2"
+                  cols="30"
+                  rows="10"
+                  readonly
+                >
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!
+                </textarea>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <hr />
+
+    <!-- Pie de la página -->
+    <footer>
+      <h4>Páginas web de Flavor Hunt</h4>
+
+      <hr />
+
+      <nav aria-label="secondary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mensaje de copy right  -->
+      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
+
+      <!-- Enlace para cerrar sesión -->
+      <p><a href="./login.html">Cerrar sesión</a></p>
+    </footer>
+  </body>
+</html>

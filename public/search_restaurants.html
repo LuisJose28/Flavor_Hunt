@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
+    <meta name="description" content="Página para buscar restaurantes" />
+    <title>Restaurantes - Flavor Hunt</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Logo de la página -->
+      <div id="logo">
+        <figure>
+          <img
+            src="./assets/imgs/icon.png"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+            width="100"
+            height="100"
+          />
+        </figure>
+
+        <h1>Flavor Hunt</h1>
+      </div>
+
+      <!-- Menú principal -->
+      <nav aria-label="primary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <!-- Contenido principal -->
+    <main>
+      <h2>Buscar restaurantes</h2>
+
+      <!-- Filtros seleccionados por el usuario -->
+      <ul id="selected-restaurant-filters">
+        <li>Filtro 1</li>
+        <li>Filtro 2</li>
+        <li>Filtro 3</li>
+      </ul>
+
+      <!-- Seccion para filtrar los restaurantes -->
+      <form
+        action="https://httpbin.org/post"
+        method="post"
+        id="restaurant-filters"
+      >
+        <!-- Filtro de tipo de comida -->
+        <details id="food-type-filter">
+          <summary>Tipo de comida</summary>
+          <div>
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="italian"
+                value="Italiana"
+              />
+              <label for="italian">Italiana</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="mexican"
+                value="Mexicana"
+              />
+              <label for="mexican">Mexicana</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="american"
+                value="Americana"
+              />
+              <label for="american">Americana</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="panamenian"
+                value="Panameña"
+              />
+              <label for="panamenian">Panameña</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="chinese"
+                value="China"
+              />
+              <label for="chinese">China</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtFoodType"
+                id="japanese"
+                value="Japonesa"
+              />
+              <label for="japanese">Japonesa</label>
+            </p>
+          </div>
+        </details>
+
+        <!-- Filtro de provincia -->
+        <details id="province-filter">
+          <summary>Provincia</summary>
+          <div>
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province1"
+                value="Panamá"
+              />
+              <label for="province1">Panamá</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province2"
+                value="Panamá Oeste"
+              />
+              <label for="province2">Panamá Oeste</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province3"
+                value="Colón"
+              />
+              <label for="province3">Colón</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province4"
+                value="Los Santos"
+              />
+              <label for="province4">Los Santos</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province5"
+                value="Herrera"
+              />
+              <label for="province5">Herrera</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province6"
+                value="Veraguas"
+              />
+              <label for="province6">Veraguas</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province7"
+                value="Chiriquí"
+              />
+              <label for="province7">Chiriquí</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province8"
+                value="Bocas del Toro"
+              />
+              <label for="province8">Bocas del Toro</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province9"
+                value="Bocas del Toro"
+              />
+              <label for="province9">Coclé</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                name="txtProvince"
+                id="province10"
+                value="Darién"
+              />
+              <label for="province10">Darién</label>
+            </p>
+          </div>
+        </details>
+
+        <!-- Filtro de costo -->
+        <details id="cost-filter">
+          <summary>Costo</summary>
+          <div>
+            <p>
+              <input type="radio" name="txtCost" id="cheap" value="Barato" />
+              <label for="cheap">Barato</label>
+            </p>
+
+            <p>
+              <input type="radio" name="txtCost" id="regular" value="Regular" />
+              <label for="regular">Regular</label>
+            </p>
+
+            <p>
+              <input type="radio" name="txtCost" id="expensive" value="Caro" />
+              <label for="expensive">Caro</label>
+            </p>
+          </div>
+        </details>
+
+        <!-- Filtro de facilidades -->
+        <details id="facilities-filter">
+          <summary>Facilidades</summary>
+          <div>
+            <p>
+              <input
+                type="checkbox"
+                name="txtFacilities"
+                id="baby-chair"
+                value="Silla de bebé"
+              />
+              <label for="baby-chair">Silla de bebé</label>
+            </p>
+
+            <p>
+              <input
+                type="checkbox"
+                name="txtFacilities"
+                id="children-menu"
+                value="Menú de niños"
+              />
+              <label for="children-menu">Menú de niños</label>
+            </p>
+
+            <p>
+              <input
+                type="checkbox"
+                name="txtFacilities"
+                id="baby-changer"
+                value="Cambiador"
+              />
+              <label for="baby-changer">Cambiador</label>
+            </p>
+
+            <p>
+              <input
+                type="checkbox"
+                name="txtFacilities"
+                id="disabled-accessibility"
+                value="Accesibilidad para discapacitados"
+              />
+              <label for="disabled-accessibility"
+                >Accesibilidad para discapacitados</label
+              >
+            </p>
+
+            <p>
+              <input
+                type="checkbox"
+                name="txtFacilities"
+                id="parking"
+                value="Parking"
+              />
+              <label for="parking">Parking</label>
+            </p>
+          </div>
+        </details>
+
+        <button>Filtrar</button>
+      </form>
+
+      <!-- Restaurantes buscados -->
+      <div id="searched-restaurants">
+        <a href="./restaurant_info.html">
+          <figure>
+            <img src="./assets/imgs/prueba2.png" alt="Imagen de restaurante" />
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
+              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
+            </p>
+          </figure>
+        </a>
+
+        <a href="./restaurant_info.html">
+          <figure>
+            <img src="./assets/imgs/prueba2.png" alt="Imagen de restaurante" />
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
+              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
+            </p>
+          </figure>
+        </a>
+
+        <a href="./restaurant_info.html">
+          <figure>
+            <img src="./assets/imgs/prueba2.png" alt="Imagen de restaurante" />
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
+              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
+            </p>
+          </figure>
+        </a>
+      </div>
+    </main>
+
+    <hr />
+
+    <!-- Pie de la página -->
+    <footer>
+      <h4>Páginas web de Flavor Hunt</h4>
+
+      <hr />
+
+      <nav aria-label="secondary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mensaje de copy right  -->
+      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
+
+      <!-- Enlace para cerrar sesión -->
+      <p><a href="./login.html">Cerrar sesión</a></p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
+    <meta
+      name="description"
+      content="Página para consultar la información del restaurante y realizar una reserva"
+    />
+    <title>Informacion del restaurante - Flavor Hunt</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Logo de la página -->
+      <div id="logo">
+        <figure>
+          <img
+            src="./assets/imgs/icon.png"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+            width="100"
+            height="100"
+          />
+        </figure>
+
+        <h1>Flavor Hunt</h1>
+      </div>
+
+      <!-- Menú principal -->
+      <nav aria-label="primary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <!-- Contenido principal -->
+    <main>
+      <h2>Nombre del restaurante</h2>
+
+      <!-- Slider de imagenes del restaurante -->
+      <div id="slider">
+        <ul>
+          <li>
+            <img src="./assets/imgs/prueba.svg" alt="" />
+          </li>
+
+          <li>
+            <img src="./assets/imgs/prueba.svg" alt="" />
+          </li>
+
+          <li>
+            <img src="./assets/imgs/prueba.svg" alt="" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Menú de navegación con tabs que contiene la información del restaurante -->
+      <div id="restaurant-info">
+        <div class="label-menu">
+          <label for="radio1">Descripción</label>
+          <label for="radio2">Menú</label>
+          <label for="radio3">Reservar</label>
+        </div>
+
+        <div class="content">
+          <input type="radio" name="radio" id="radio1" />
+          <div class="tab1">
+            <fieldset>
+              <legend><h3>Información local</h3></legend>
+
+              <h4>Dirección:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+
+              <h4>Provincia:</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+                sit.
+              </p>
+
+              <h4>Teléfono:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+            </fieldset>
+
+            <fieldset>
+              <legend><h3>Información general</h3></legend>
+              <h4>Tipo de comida:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+
+              <h4>Horario:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+
+              <h4>Email:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+
+              <h4>Sitio web:</h4>
+              <a href="#"
+                ><p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Repellendus, tempora.
+                </p></a
+              >
+
+              <h4>Costo:</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus, tempora.
+              </p>
+            </fieldset>
+          </div>
+
+          <input type="radio" name="radio" id="radio2" />
+          <div class="tab2">
+            <ol>
+              <li>
+                https://httpbin.org/post
+                <h4>Nombre del plato</h4>
+
+                <figure>
+                  <img
+                    src="./assets/imgs/prueba2.png"
+                    alt="Imagen del plato 1"
+                  />
+                </figure>
+
+                <details>
+                  <summary>Descripción</summary>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Reiciendis, nesciunt.
+                  </p>
+                </details>
+
+                <details>
+                  <summary>Precio</summary>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Reiciendis, nesciunt.
+                  </p>
+                </details>
+              </li>
+
+              <li>
+                <h4>Nombre del plato</h4>
+
+                <figure>
+                  <img
+                    src="./assets/imgs/prueba2.png"
+                    alt="Imagen del plato 2"
+                  />
+                </figure>
+
+                <details>
+                  <summary>Descripción</summary>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Reiciendis, nesciunt.
+                  </p>
+                </details>
+
+                <details>
+                  <summary>Precio</summary>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Reiciendis, nesciunt.
+                  </p>
+                </details>
+              </li>
+            </ol>
+          </div>
+
+          <input type="radio" name="radio" id="radio3" />
+          <form action="https://httpbin.org/post" method="post" class="tab3">
+            <p>
+              <label for="reservation-date">Fecha deseada:</label>
+              <input
+                type="date"
+                name="txtReservationDate"
+                id="reservation-date"
+                autofocus
+                required
+              />
+            </p>
+
+            <p>
+              <label for="reservation-hour">Hora deseada:</label>
+              <input
+                type="time"
+                name="txtReservationHour"
+                id="reservation-hour"
+                step="900"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="reservation-peoples">Número de personas:</label>
+              <input
+                type="number"
+                name="txtReservationPeoples"
+                id="reservation-peoples"
+                min="1"
+                max="10"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="reservation-children-chair">Silla para niños:</label>
+              <input
+                type="number"
+                name="txtReservationChildrenChair"
+                id="reservation-children-chair"
+                min="0"
+                max="10"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="comments">Comentarios adicionales:</label>
+              <br />
+              <textarea
+                name="txtReservationComments"
+                id="comments"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </p>
+
+            <button>Reservar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <hr />
+
+    <!-- Pie de la página -->
+    <footer>
+      <h4>Páginas web de Flavor Hunt</h4>
+
+      <hr />
+
+      <nav aria-label="secondary-nav">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+
+          <li>
+            <a href="#">Buscar</a>
+            <ul>
+              <li>
+                <a href="./search_coffeeshops.html">Cafeterías</a>
+              </li>
+              <li>
+                <a href="./search_fondas.html">Fondas</a>
+              </li>
+              <li>
+                <a href="./search_restaurants.html">Restaurantes</a>
+              </li>
+              <li>
+                <a href="./search_bars.html">Bares</a>
+              </li>
+              <li>
+                <a href="./search_buffets.html">Buffets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./reservation_info.html">Consultar reservas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mensaje de copy right  -->
+      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
+
+      <!-- Enlace para cerrar sesión -->
+      <p><a href="./login.html">Cerrar sesión</a></p>
+    </footer>
+  </body>
+</html>

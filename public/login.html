@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
+    <meta name="description" content="Página para el inicio de sesión" />
+    <title>Inicio de sesión - Flavor Hunt</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Contenedor del inicio de sesión -->
+    <div id="login-container">
+      <!-- Encabezado del inicio de sesión -->
+      <header id="login-header">
+        <img src="./assets/imgs/prueba.svg" alt="Banner de Flavor Hunt" loading="lazy"/>
+      </header>
+
+      <!-- Formulario de inicio de sesión -->
+      <form id="login-form">
+        <!-- Campos para iniciar sesión -->
+        <fieldset>
+          <legend><h1>Iniciar sesión</h1></legend>
+
+          <p>
+            <label for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              name="txtEmail"
+              id="email"
+              autocomplete="off"
+              required
+              autofocus
+            />
+          </p>
+
+          <p>
+            <label for="password">Contraseña:</label>
+            <input
+              type="password"
+              name="txtPassword"
+              id="password"
+              autocomplete="off"
+              required
+            />
+          </p>
+        </fieldset>
+
+        <p><a href="./forgot_password.html">¿Olvidó su contraseña?</a></p>
+
+        <button onclick="window.location.href = 'signup.html';">
+          Crear una cuenta
+        </button>
+        <button onclick="window.location.href = 'home.html';">Acceder</button>
+      </form>
+    </div>
+  </body>
+</html>
