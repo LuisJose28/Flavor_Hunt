@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
-    <meta
-      name="description"
-      content="Página para consultar la información de una fonda"
+    <meta name="description" content="Página para buscar cafeterías" />
+    <title>Cafeterías - Flavor Hunt</title>
+    <link rel="stylesheet" href="../style/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
     />
-    <title>Informacion del restaurante - Flavor Hunt</title>
+
+    <script
+      src="https://kit.fontawesome.com/ff747d13fc.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       rel="shortcut icon"
       href="./assets/imgs/icon.png"
@@ -18,251 +29,369 @@
   </head>
   <body>
     <header>
-      <!-- Logo de la página -->
-      <div id="logo">
-        <figure>
-          <img
-            src="./assets/imgs/icon.png"
-            alt="Logo de Flavor Hunt"
-            loading="lazy"
-            width="100"
-            height="100"
-          />
-        </figure>
+      <nav>
+        <a href="home.html"><img src="../assets/imgs/logo-flavorhunt.webp"></a>  
 
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="search_coffeeshops.html">CAFETERÍAS</a></li>
+            <li><a href="search_fondas.html">FONDAS</a></li>
+            <li><a href="search_restaurants.html">RESTAURANTES</a></li>
+            <li><a href="search_bars.html">BARES</a></li>
+            <li><a href="search_buffets.html">BUFFETS</a></li>
+            <li><a href="reservation_info.html">CONSULTAR RESERVAS</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
         <h1>Flavor Hunt</h1>
+
+        <p>Explora los Sabores de Panamá: Los Restaurantes Más Emblemáticos <br> en un Solo Sitio
+        </p>
       </div>
 
-      <!-- Menú principal -->
-      <nav aria-label="primary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
+      <!-- JAVASCRIPT -->
+      <script>
+        var navLinks = document.getElementById("navLinks");
 
-          <li>
-            <a href="#">Buscar</a>
-            <ul>
-              <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
-              </li>
-              <li>
-                <a href="./search_fondas.html">Fondas</a>
-              </li>
-              <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
-              </li>
-            </ul>
-          </li>
+        function showMenu() {
+          navLinks.style.right = "0";
+        }
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+        }
+      </script>
     </header>
-
-    <hr />
 
     <!-- Contenido principal -->
     <main>
-      <h2>Nombre del restaurante</h2>
-
-      <!-- Slider de imagenes del restaurante -->
-      <div id="slider">
-        <ul>
-          <li>
-            <img src="./assets/imgs/prueba.svg" alt="" />
-          </li>
-
-          <li>
-            <img src="./assets/imgs/prueba.svg" alt="" />
-          </li>
-
-          <li>
-            <img src="./assets/imgs/prueba.svg" alt="" />
-          </li>
-        </ul>
+      <!-- Titulo de la página -->
+      <div class="titulo-página-restaurant-info">
+        <h2>Nombre del restaurante</h2>
       </div>
 
-      <!-- Menú de navegación con tabs que contiene la información del restaurante -->
-      <div id="restaurant-info">
-        <div class="label-menu">
-          <label for="radio1">Descripción</label>
-          <label for="radio2">Menú</label>
-        </div>
+      <section id="restaurant-info">
+        <article class="slider-restaurant-info">
+          <!-- Seccion para slider de la pagina -->
 
-        <div class="content">
-          <input type="radio" name="radio" id="radio1" />
-          <div class="tab1">
-            <fieldset>
-              <legend><h3>Información local</h3></legend>
-
-              <h4>Dirección:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-
-              <h4>Provincia:</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
-                sit.
-              </p>
-
-              <h4>Teléfono:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-            </fieldset>
-
-            <fieldset>
-              <legend><h3>Información general</h3></legend>
-              <h4>Tipo de comida:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-
-              <h4>Horario:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-
-              <h4>Email:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-
-              <h4>Sitio web:</h4>
-              <a href="#"
-                ><p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellendus, tempora.
-                </p></a
-              >
-
-              <h4>Costo:</h4>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, tempora.
-              </p>
-            </fieldset>
-          </div>
-
-          <input type="radio" name="radio" id="radio2" />
-          <div class="tab2">
-            <ol>
-              <li>
-                <h4>Nombre del plato</h4>
-
-                <figure>
-                  <img
-                    src="./assets/imgs/prueba2.png"
-                    alt="Imagen del plato 1"
-                  />
-                </figure>
-
-                <details>
-                  <summary>Descripción</summary>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis, nesciunt.
-                  </p>
-                </details>
-
-                <details>
-                  <summary>Precio</summary>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis, nesciunt.
-                  </p>
-                </details>
-              </li>
-
-              <li>
-                <h4>Nombre del plato</h4>
-
-                <figure>
-                  <img
-                    src="./assets/imgs/prueba2.png"
-                    alt="Imagen del plato 2"
-                  />
-                </figure>
-
-                <details>
-                  <summary>Descripción</summary>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis, nesciunt.
-                  </p>
-                </details>
-
-                <details>
-                  <summary>Precio</summary>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Reiciendis, nesciunt.
-                  </p>
-                </details>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <hr />
-
-    <!-- Pie de la página -->
-    <footer>
-      <h4>Páginas web de Flavor Hunt</h4>
-
-      <hr />
-
-      <nav aria-label="secondary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
-
-          <li>
-            <a href="#">Buscar</a>
+          <!-- Slider de imagenes del restaurante -->
+          <div id="slider">
             <ul>
               <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
+                <img
+                  src="../assets/imgs/restaurante1-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </li>
+
               <li>
-                <a href="./search_fondas.html">Fondas</a>
+                <img
+                  src="../assets/imgs/restaurante2-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </li>
+
               <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
+                <img
+                  src="../assets/imgs/restaurante3-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
               </li>
             </ul>
-          </li>
+          </div>
+        </article>
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        <article class="tabs-restaurant-info">
+          <!-- Menú de navegación con tabs que contiene la información del restaurante -->
 
-      <!-- Mensaje de copy right  -->
-      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
+          <div id="restaurant-tabs">
+            <div class="label-menu">
+              <label for="radio1">Descripción</label>
+              <label for="radio2">Menú</label>
+            </div>
 
-      <!-- Enlace para cerrar sesión -->
-      <p><a href="./login.html">Cerrar sesión</a></p>
+            <div class="content">
+              <input type="radio" name="radio" id="radio1" checked/>
+
+              <div class="tab1">
+                <fieldset>
+                  <legend><h3>Información local</h3></legend>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-map-location-dot"
+                    ></i>
+                    Dirección
+                  </h4>
+                  <p>Calle 50, Obarrio</p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-location-dot"
+                    ></i>
+                    Provincia
+                  </h4>
+                  <p>Panamá</p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-phone"
+                    ></i>
+                    Teléfono
+                  </h4>
+                  <p>+507 6800-2020</p>
+                </fieldset>
+
+                <fieldset>
+                  <legend><h3>Información general</h3></legend>
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-utensils"
+                    ></i>
+                    Tipo de comida
+                  </h4>
+                  <p>Buffet</p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-clock"
+                    ></i>
+                    Horario
+                  </h4>
+                  <p>Lunes a Domingo de 11:00 PM a 10:00 PM.</p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-envelope"
+                    ></i>
+                    Email
+                  </h4>
+                  <p>
+                    <a href="mailto:correo@ejemplo.com" target="_blank"
+                      >correo@ejemplo.com</a
+                    >
+                  </p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-laptop"
+                    ></i>
+                    Sitio web
+                  </h4>
+                  <p>
+                    <a href="https://www.ejemplo.com" target="_blank"
+                      >Visitar el sitio web</a
+                    >
+                  </p>
+
+                  <h4>
+                    <i
+                      class="fontawesome-restaurant-info fa-solid fa-dollar-sign"
+                    ></i>
+                    Costo
+                  </h4>
+                  <p>Caro</p>
+                </fieldset>
+              </div>
+
+              <input type="radio" name="radio" id="radio2" />
+              <div class="tab2">
+                <div class="row-restaurant-menu">
+                  <div class="restaurant-menu-col">
+                    <figure>
+                      <img
+                        src="../assets/imgs/restaurante1-home.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                      <figcaption>Nombre del plato</figcaption>
+                    </figure>
+
+                    <details>
+                      <summary>Descripción</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+
+                    <details>
+                      <summary>Precio</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+                  </div>
+
+                  <div class="restaurant-menu-col">
+                    <figure>
+                      <img
+                        src="../assets/imgs/restaurante1-home.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                      <figcaption>Nombre del plato</figcaption>
+                    </figure>
+
+                    <details>
+                      <summary>Descripción</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+
+                    <details>
+                      <summary>Precio</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+                  </div>
+
+                  <div class="restaurant-menu-col">
+                    <figure>
+                      <img
+                        src="../assets/imgs/restaurante1-home.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                      <figcaption>Nombre del plato</figcaption>
+                    </figure>
+
+                    <details>
+                      <summary>Descripción</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+
+                    <details>
+                      <summary>Precio</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+                  </div>
+
+                  <div class="restaurant-menu-col">
+                    <figure>
+                      <img
+                        src="../assets/imgs/restaurante1-home.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                      <figcaption>Nombre del plato</figcaption>
+                    </figure>
+
+                    <details>
+                      <summary>Descripción</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+
+                    <details>
+                      <summary>Precio</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+                  </div>
+
+                  <div class="restaurant-menu-col">
+                    <figure>
+                      <img
+                        src="../assets/imgs/restaurante1-home.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                      <figcaption>Nombre del plato</figcaption>
+                    </figure>
+
+                    <details>
+                      <summary>Descripción</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+
+                    <details>
+                      <summary>Precio</summary>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Reiciendis, nesciunt.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Pie de la página -->
+    <footer class="footer-restaurant-info">
+      <!-- Menu secundario -->
+      <div class="menu-secundario">
+        <h3>Páginas web de Flavor Hunt</h3>
+        <hr />
+
+        <nav aria-label="secondary-nav" class="nav-secundario">
+          <ul>
+            <li><a href="./home.html">Inicio</a></li>
+
+            <li>
+              Tipos de Restaurantes:
+              <ul class="menu-secundario-vertical">
+                <li>
+                  <a href="./search_restaurants.html">Restaurantes</a>
+                </li>
+                <li>
+                  <a href="./search_coffeeshops.html">Cafeterías</a>
+                </li>
+                <li>
+                  <a href="./search_fondas.html">Fondas</a>
+                </li>
+                <li>
+                  <a href="./search_bars.html">Bares</a>
+                </li>
+                <li>
+                  <a href="./search_buffets.html">Buffets</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="./reservation_info.html">Consultar reservas</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mensaje de copy right  -->
+        <h4>Flavor Hunt &COPY; 2023 | Privacy policy</h4>
+
+        <!-- Enlace para cerrar sesión -->
+        <p id="boton-cerrarsesicon"><a href="./login.html">Cerrar sesión</a></p>
+      </div>
     </footer>
   </body>
 </html>

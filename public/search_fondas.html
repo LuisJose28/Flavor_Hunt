@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
-    <meta name="description" content="Página para buscar fondas" />
-    <title>Fondas - Flavor Hunt</title>
+    <meta name="description" content="Página para buscar cafeterías" />
+    <title>Cafeterías - Flavor Hunt</title>
+    <link rel="stylesheet" href="../style/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/ff747d13fc.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       rel="shortcut icon"
       href="./assets/imgs/icon.png"
@@ -15,408 +29,495 @@
   </head>
   <body>
     <header>
-      <!-- Logo de la página -->
-      <div id="logo">
-        <figure>
-          <img
-            src="./assets/imgs/icon.png"
-            alt="Logo de Flavor Hunt"
-            loading="lazy"
-            width="100"
-            height="100"
-          />
-        </figure>
+      <nav>
+        <a href="home.html"><img src="../assets/imgs/logo-flavorhunt.webp"></a>  
 
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="search_coffeeshops.html">CAFETERÍAS</a></li>
+            <li><a href="search_fondas.html">FONDAS</a></li>
+            <li><a href="search_restaurants.html">RESTAURANTES</a></li>
+            <li><a href="search_bars.html">BARES</a></li>
+            <li><a href="search_buffets.html">BUFFETS</a></li>
+            <li><a href="reservation_info.html">CONSULTAR RESERVAS</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
         <h1>Flavor Hunt</h1>
+
+        <p>Explora los Sabores de Panamá: Los Restaurantes Más Emblemáticos <br> en un Solo Sitio
+        </p>
       </div>
 
-      <!-- Menú principal -->
-      <nav aria-label="primary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
+      <!-- JAVASCRIPT -->
+      <script>
+        var navLinks = document.getElementById("navLinks");
 
-          <li>
-            <a href="#">Buscar</a>
-            <ul>
-              <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
-              </li>
-              <li>
-                <a href="./search_fondas.html">Fondas</a>
-              </li>
-              <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
-              </li>
-            </ul>
-          </li>
+        function showMenu() {
+          navLinks.style.right = "0";
+        }
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+        }
+      </script>
     </header>
 
-    <hr />
-
-    <!-- Contenido principal -->
+    
+    
     <main>
-      <h2>Buscar fondas</h2>
+      <!-- Contenido principal -->
 
-      <!-- Filtros seleccionados por el usuario -->
-      <ul id="selected-fonda-filters">
-        <li>Filtro 1</li>
-        <li>Filtro 2</li>
-        <li>Filtro 3</li>
-      </ul>
-
-      <!-- Seccion para filtrar las fondas -->
-      <form
-        action="https://httpbin.org/post"
-        method="post"
-        id="fonda-filters"
-      >
-        <!-- Filtro de tipo de comida -->
-        <details id="food-type-filter">
-          <summary>Tipo de comida</summary>
-          <div>
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="italian"
-                value="Italiana"
-              />
-              <label for="italian">Italiana</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="mexican"
-                value="Mexicana"
-              />
-              <label for="mexican">Mexicana</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="american"
-                value="Americana"
-              />
-              <label for="american">Americana</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="panamenian"
-                value="Panameña"
-              />
-              <label for="panamenian">Panameña</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="chinese"
-                value="China"
-              />
-              <label for="chinese">China</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtFoodType"
-                id="japanese"
-                value="Japonesa"
-              />
-              <label for="japanese">Japonesa</label>
-            </p>
-          </div>
-        </details>
-
-        <!-- Filtro de provincia -->
-        <details id="province-filter">
-          <summary>Provincia</summary>
-          <div>
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province1"
-                value="Panamá"
-              />
-              <label for="province1">Panamá</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province2"
-                value="Panamá Oeste"
-              />
-              <label for="province2">Panamá Oeste</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province3"
-                value="Colón"
-              />
-              <label for="province3">Colón</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province4"
-                value="Los Santos"
-              />
-              <label for="province4">Los Santos</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province5"
-                value="Herrera"
-              />
-              <label for="province5">Herrera</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province6"
-                value="Veraguas"
-              />
-              <label for="province6">Veraguas</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province7"
-                value="Chiriquí"
-              />
-              <label for="province7">Chiriquí</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province8"
-                value="Bocas del Toro"
-              />
-              <label for="province8">Bocas del Toro</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province9"
-                value="Bocas del Toro"
-              />
-              <label for="province9">Coclé</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                name="txtProvince"
-                id="province10"
-                value="Darién"
-              />
-              <label for="province10">Darién</label>
-            </p>
-          </div>
-        </details>
-
-        <!-- Filtro de costo -->
-        <details id="cost-filter">
-          <summary>Costo</summary>
-          <div>
-            <p>
-              <input type="radio" name="txtCost" id="cheap" value="Barato" />
-              <label for="cheap">Barato</label>
-            </p>
-
-            <p>
-              <input type="radio" name="txtCost" id="regular" value="Regular" />
-              <label for="regular">Regular</label>
-            </p>
-
-            <p>
-              <input type="radio" name="txtCost" id="expensive" value="Caro" />
-              <label for="expensive">Caro</label>
-            </p>
-          </div>
-        </details>
-
-        <!-- Filtro de facilidades -->
-        <details id="facilities-filter">
-          <summary>Facilidades</summary>
-          <div>
-            <p>
-              <input
-                type="checkbox"
-                name="txtFacilities"
-                id="baby-chair"
-                value="Silla de bebé"
-              />
-              <label for="baby-chair">Silla de bebé</label>
-            </p>
-
-            <p>
-              <input
-                type="checkbox"
-                name="txtFacilities"
-                id="children-menu"
-                value="Menú de niños"
-              />
-              <label for="children-menu">Menú de niños</label>
-            </p>
-
-            <p>
-              <input
-                type="checkbox"
-                name="txtFacilities"
-                id="baby-changer"
-                value="Cambiador"
-              />
-              <label for="baby-changer">Cambiador</label>
-            </p>
-
-            <p>
-              <input
-                type="checkbox"
-                name="txtFacilities"
-                id="disabled-accessibility"
-                value="Accesibilidad para discapacitados"
-              />
-              <label for="disabled-accessibility"
-                >Accesibilidad para discapacitados</label
-              >
-            </p>
-
-            <p>
-              <input
-                type="checkbox"
-                name="txtFacilities"
-                id="parking"
-                value="Parking"
-              />
-              <label for="parking">Parking</label>
-            </p>
-          </div>
-        </details>
-
-        <button>Filtrar</button>
-      </form>
-
-      <!-- Fondas buscadas -->
-      <div id="searched-fondas">
-        <a href="./fonda_info.html">
-          <figure>
-            <img src="./assets/imgs/prueba2.png" alt="Imagen de fonda" />
-            <h3>Nombre</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
-              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
-            </p>
-          </figure>
-        </a>
-        
-        <a href="./fonda_info.html">
-          <figure>
-            <img src="./assets/imgs/prueba2.png" alt="Imagen de fonda" />
-            <h3>Nombre</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
-              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
-            </p>
-          </figure>
-        </a>
-
-        <a href="./fonda_info.html">
-          <figure>
-            <img src="./assets/imgs/prueba2.png" alt="Imagen de fonda" />
-            <h3>Nombre</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas at id
-              eius, ab voluptatem facere commodi aliquam itaque quae pariatur?
-            </p>
-          </figure>
-        </a>
+      <!-- Titulo de la página -->
+      <div class="titulo-página-search">
+        <h2>Buscar fondas</h2>
       </div>
-    </main>
 
-    <hr />
+      <section id="search-restaurants">
+        
+        <article class="filtro-buscador">
+          
+          <!-- Seccion para filtrar las cafeterías -->
+          <form
+            action="https://httpbin.org/post" method="post"
+            id="restaurants-filters">
+
+            <!-- Filtro de tipo de comida -->
+            <details id="food-type-filter">
+              <summary>TIPO DE COMIDA</summary>
+              <div class="seccion-acordeon">
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="italian"
+                    value="Italiana"
+                  />
+                  <label for="italian">Italiana</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="mexican"
+                    value="Mexicana"
+                  />
+                  <label for="mexican">Mexicana</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="american"
+                    value="Americana"
+                  />
+                  <label for="american">Americana</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="panamenian"
+                    value="Panameña"
+                  />
+                  <label for="panamenian">Panameña</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="chinese"
+                    value="China"
+                  />
+                  <label for="chinese">China</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtFoodType"
+                    id="japanese"
+                    value="Japonesa"
+                  />
+                  <label for="japanese">Japonesa</label>
+                </div>
+              </div>
+            </details>
+
+            <!-- Filtro de provincia -->
+            <details id="province-filter">
+              <summary>PROVINCIA</summary>
+              <div class="seccion-acordeon">
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province1"
+                    value="Panamá"
+                  />
+                  <label for="province1">Panamá</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province2"
+                    value="Panamá Oeste"
+                  />
+                  <label for="province2">Panamá Oeste</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province3"
+                    value="Colón"
+                  />
+                  <label for="province3">Colón</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province4"
+                    value="Los Santos"
+                  />
+                  <label for="province4">Los Santos</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province5"
+                    value="Herrera"
+                  />
+                  <label for="province5">Herrera</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province6"
+                    value="Veraguas"
+                  />
+                  <label for="province6">Veraguas</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province7"
+                    value="Chiriquí"
+                  />
+                  <label for="province7">Chiriquí</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province8"
+                    value="Bocas del Toro"
+                  />
+                  <label for="province8">Bocas del Toro</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province9"
+                    value="Bocas del Toro"
+                  />
+                  <label for="province9">Coclé</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtProvince"
+                    id="province10"
+                    value="Darién"
+                  />
+                  <label for="province10">Darién</label>
+                </div>
+              </div>
+            </details>
+
+            <!-- Filtro de costo -->
+            <details id="cost-filter">
+              <summary>COSTO</summary>
+              <div class="seccion-acordeon">
+                <div>
+                  <input
+                    type="radio"
+                    name="txtCost"
+                    id="cheap"
+                    value="Barato"
+                  />
+                  <label for="cheap">Barato</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtCost"
+                    id="regular"
+                    value="Regular"
+                  />
+                  <label for="regular">Regular</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="txtCost"
+                    id="expensive"
+                    value="Caro"
+                  />
+                  <label for="expensive">Caro</label>
+                </div>
+              </div>
+            </details>
+
+            <!-- Filtro de facilidades -->
+            <details id="facilities-filter">
+              <summary>FACILIDADES</summary>
+              <div class="seccion-acordeon">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="txtFacilities"
+                    id="baby-chair"
+                    value="Silla de bebé"
+                  />
+                  <label for="baby-chair">Silla de bebé</label>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="txtFacilities"
+                    id="children-menu"
+                    value="Menú de niños"
+                  />
+                  <label for="children-menu">Menú de niños</label>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="txtFacilities"
+                    id="baby-changer"
+                    value="Cambiador"
+                  />
+                  <label for="baby-changer">Cambiador</label>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="txtFacilities"
+                    id="disabled-accessibility"
+                    value="Accesibilidad para discapacitados"
+                  />
+                  <label for="disabled-accessibility"
+                    >Accesibilidad para discapacitados</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="txtFacilities"
+                    id="parking"
+                    value="Parking"
+                  />
+                  <label for="parking">Parking</label>
+                </div>
+              </div>
+            </details>
+
+            <button href>FILTRAR</button>
+          </form>
+        </article>
+
+        
+        <article class="restaurantes-buscados">
+
+          <!-- Filtros seleccionados por el usuario -->
+          <ul id="selected-restaurants-filters">
+            <li>FILTRO 1</li>
+            <li>FILTRO 2</li>
+            <li>FILTRO 3</li>
+          </ul>
+          
+        <!-- Cafeterías buscadas -->
+          <div class="row-search">
+            <a href="fonda_info.html" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante1-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 1</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 50</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+  
+            <a href="fonda_info.html" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante2-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 2</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> El Cangrejo</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+  
+            <a href="fonda_info.html" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante3-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 3</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+
+            <a href="#" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante3-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 3</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+
+            <a href="fonda_info.html" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante3-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 3</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+            
+            <a href="fonda_info.html" class="restaurantes-search-col">
+              <figure>
+                <img
+                  src="../assets/imgs/restaurante3-home.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Restaurante 3</figcaption>
+                <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
+
+                <div>
+                  <p><i class="fa-regular fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+              </figure>
+            </a>
+            
+          </div>
+
+        </article>
+
+      </section>
+    </main>
 
     <!-- Pie de la página -->
     <footer>
-      <h4>Páginas web de Flavor Hunt</h4>
+      <!-- Menu secundario -->
+      <div class="menu-secundario">
+        <h3>Páginas web de Flavor Hunt</h3>
+        <hr />
 
-      <hr />
+        <nav aria-label="secondary-nav" class="nav-secundario">
+          <ul>
+            <li><a href="./home.html">Inicio</a></li>
 
-      <nav aria-label="secondary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
+            <li>
+              Tipos de Restaurantes:
+              <ul class="menu-secundario-vertical">
+                <li>
+                  <a href="./search_restaurants.html">Restaurantes</a>
+                </li>
+                <li>
+                  <a href="./search_coffeeshops.html">Cafeterías</a>
+                </li>
+                <li>
+                  <a href="./search_fondas.html">Fondas</a>
+                </li>
+                <li>
+                  <a href="./search_bars.html">Bares</a>
+                </li>
+                <li>
+                  <a href="./search_buffets.html">Buffets</a>
+                </li>
+              </ul>
+            </li>
 
-          <li>
-            <a href="#">Buscar</a>
-            <ul>
-              <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
-              </li>
-              <li>
-                <a href="./search_fondas.html">Fondas</a>
-              </li>
-              <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
-              </li>
-            </ul>
-          </li>
+            <li>
+              <a href="./reservation_info.html">Consultar reservas</a>
+            </li>
+          </ul>
+        </nav>
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        <!-- Mensaje de copy right  -->
+        <h4>Flavor Hunt &COPY; 2023 | Privacy policy</h4>
 
-      <!-- Mensaje de copy right  -->
-      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
-
-      <!-- Enlace para cerrar sesión -->
-      <p><a href="./login.html">Cerrar sesión</a></p>
+        <!-- Enlace para cerrar sesión -->
+        <p id="boton-cerrarsesicon"><a href="./login.html">Cerrar sesión</a></p>
+      </div>
     </footer>
   </body>
 </html>

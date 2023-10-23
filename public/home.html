@@ -7,344 +7,284 @@
     <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
     <meta name="description" content="Página de inicio de la aplicación" />
     <title>Inicio - Flavor Hunt</title>
+    <link rel="stylesheet" href="../style/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/ff747d13fc.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       rel="shortcut icon"
-      href="./assets/imgs/icon.png"
+      href="../assets/imgs/icon.png"
       type="image/x-icon"
     />
   </head>
+
   <body>
     <header>
-      <!-- Logo de la página -->
-      <div id="logo">
-        <figure>
-          <img
-            src="./assets/imgs/icon.png"
-            alt="Logo de Flavor Hunt"
-            loading="lazy"
-            width="100"
-            height="100"
-          />
-        </figure>
+      <nav>
+        <a href="home.html"><img src="../assets/imgs/logo-flavorhunt.webp"></a>  
 
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="search_coffeeshops.html">CAFETERÍAS</a></li>
+            <li><a href="search_fondas.html">FONDAS</a></li>
+            <li><a href="search_restaurants.html">RESTAURANTES</a></li>
+            <li><a href="search_bars.html">BARES</a></li>
+            <li><a href="search_buffets.html">BUFFETS</a></li>
+            <li><a href="reservation_info.html">CONSULTAR RESERVAS</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
         <h1>Flavor Hunt</h1>
+
+        <p>Explora los Sabores de Panamá: Los Restaurantes Más Emblemáticos <br> en un Solo Sitio
+        </p>
       </div>
 
-      <!-- Menú principal -->
-      <nav aria-label="primary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
+      <!-- JAVASCRIPT -->
+      <script>
+        var navLinks = document.getElementById("navLinks");
 
-          <li>
-            <a href="#">Buscar</a>
-            <ul>
-              <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
-              </li>
-              <li>
-                <a href="./search_fondas.html">Fondas</a>
-              </li>
-              <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
-              </li>
-            </ul>
-          </li>
+        function showMenu() {
+          navLinks.style.right = "0";
+        }
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+        }
+      </script>
     </header>
-
-    <hr />
 
     <!-- Contenido principal -->
     <main>
-      <!-- Banner -->
-      <div id="home-banner">
-        <img
-          src="./assets/imgs/prueba.svg"
-          alt="Banner de Flavor Hunt"
-          loading="lazy"
-        />
-      </div>
-
-      <hr />
-
-      <!-- Seccion de noticias -->
-      <div id="home-news">
-        <!-- Noticias internacionales -->
-        <section id="international-news">
-          <h2>Noticias Internacionales</h2>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-        </section>
-
-        <hr />
-
-        <!-- Noticias nacionales -->
-        <section id="national-news">
-          <h2>Noticias Nacionales</h2>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-
-          <article>
-            <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-            </figure>
-            <h3>Titulo</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              voluptatem neque, exercitationem vitae officia quos in labore est
-              voluptates molestias!
-            </p>
-          </article>
-        </section>
-      </div>
-
-      <hr />
-
       <!-- Seccion de mejores restaurantes -->
-      <div id="top-restaurants">
-        <!-- Mejores restaurantes -->
-        <section id="restaurants">
-          <h2>Mejores restaurantes del 2023</h2>
+      <section id="restaurantes-home">
+        <h2>Mejores restaurantes del 2023</h2>
 
-          <a href="#">
+        <div class="row">
+          <a href="#" class="restaurantes-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
+              <img
+                src="../assets/imgs/restaurante1-home.webp"
+                alt=""
+                loading="lazy"
+              />
               <figcaption>Restaurante 1</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> Calle 50</p>
             </figure>
           </a>
 
-          <a href="#">
+          <a href="#" class="restaurantes-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
+              <img
+                src="../assets/imgs/restaurante2-home.webp"
+                alt=""
+                loading="lazy"
+              />
               <figcaption>Restaurante 2</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> El Cangrejo</p>
             </figure>
           </a>
 
-          <a href="#">
+          <a href="#" class="restaurantes-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
+              <img
+                src="../assets/imgs/restaurante3-home.webp"
+                alt=""
+                loading="lazy"
+              />
               <figcaption>Restaurante 3</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
             </figure>
           </a>
-        </section>
+        </div>
+      </section>
 
-        <hr />
+      <!-- Seccion de mejores bares -->
+      <section id="bares-home">
+        <h2>Mejores bares del 2023</h2>
 
-        <!-- Mejores bares -->
-        <section id="bars">
-          <h2>Mejores bares del 2023</h2>
-
-          <a href="#">
+        <div class="row">
+          <a href="#" class="bares-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Bar 1</figcaption>
+              <img src="../assets/imgs/bar1-home.webp" alt="" loading="lazy" />
             </figure>
+
+            <div class="layer">
+              <h3>CASA CASCO</h3>
+            </div>
           </a>
 
-          <a href="#">
+          <a href="#" class="bares-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Bar 2</figcaption>
+              <img src="../assets/imgs/bar2-home.webp" alt="" loading="lazy" />
             </figure>
+
+            <div class="layer">
+              <h3>TÁNTALO</h3>
+            </div>
           </a>
 
-          <a href="#">
+          <a href="#" class="bares-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Bar 3</figcaption>
+              <img src="../assets/imgs/bar3-home.webp" alt="" loading="lazy" />
             </figure>
+
+            <div class="layer">
+              <h3>LA FÁBRICA</h3>
+            </div>
           </a>
-        </section>
+        </div>
+      </section>
 
-        <hr />
+      <!-- Banner -->
+      <section class="banner-home">
+        <div class="imagenes-banner">
+          <img
+            src="../assets/imgs/banner1-home.webp"
+            alt="Restaurante de Flavor Hunt"
+            loading="lazy"
+          />
+        </div>
 
-        <!-- Mejores buffets -->
-        <section id="buffets">
-          <h2>Mejores buffets del 2023</h2>
+        <div class="imagenes-banner">
+          <img
+            src="../assets/imgs/banner2-home.webp"
+            alt="Restaurante de Flavor Hunt"
+            loading="lazy"
+          />
+          <div class="imagenes-banner-texto">
+            <p>¡Los Mejores Buffets de Panamá!</p>
+            <button onclick="window.location.href = 'search_buffets.html';">
+              Ver todos<i class="chevron-banner fa-solid fa-chevron-right" ></i>
+            </button>
+          </div>
+        </div>
 
-          <a href="#">
+        <div class="imagenes-banner">
+          <img
+            src="../assets/imgs/banner3-home.webp"
+            alt="Restaurante de Flavor Hunt"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <!-- Seccion de mejores cafeterias -->
+      <section id="cafeterias-home">
+        <h2>Mejores cafeterías del 2023</h2>
+
+        <div class="row">
+          <a href="#" class="cafeterias-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Buffet 1</figcaption>
+              <img
+                src="../assets/imgs/restaurante1-home.webp"
+                alt=""
+                loading="lazy"
+              />
+              <figcaption>Restaurante 1</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> Calle 50</p>
             </figure>
           </a>
 
-          <a href="#">
+          <a href="#" class="cafeterias-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Buffet 2</figcaption>
+              <img
+                src="../assets/imgs/restaurante2-home.webp"
+                alt=""
+                loading="lazy"
+              />
+              <figcaption>Restaurante 2</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> El Cangrejo</p>
             </figure>
           </a>
 
-          <a href="#">
+          <a href="#" class="cafeterias-home-col">
             <figure>
-              <img src="./assets/imgs/prueba2.png" alt="" />
-              <figcaption>Buffet 3</figcaption>
+              <img
+                src="../assets/imgs/restaurante3-home.webp"
+                alt=""
+                loading="lazy"
+              />
+              <figcaption>Restaurante 3</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> Casco Viejo</p>
             </figure>
           </a>
-        </section>
-      </div>
+
+          <a href="#" class="cafeterias-home-col">
+            <figure>
+              <img
+                src="../assets/imgs/restaurante1-home.webp"
+                alt=""
+                loading="lazy"
+              />
+              <figcaption>Restaurante 1</figcaption>
+              <p><i class="fa-solid fa-location-dot"></i> Calle 50</p>
+            </figure>
+          </a>
+        </div>
+      </section>
     </main>
-
-    <hr />
 
     <!-- Pie de la página -->
     <footer>
-      <h4>Páginas web de Flavor Hunt</h4>
+      <!-- Menu secundario -->
+      <div class="menu-secundario">
+        <h3>Páginas web de Flavor Hunt</h3>
+        <hr />
 
-      <hr />
+        <nav aria-label="secondary-nav" class="nav-secundario">
+          <ul>
+            <li><a href="./home.html">Inicio</a></li>
 
-      <nav aria-label="secondary-nav">
-        <ul>
-          <li><a href="./home.html">Inicio</a></li>
+            <li>
+              Tipos de Restaurantes:
+              <ul class="menu-secundario-vertical">
+                <li>
+                  <a href="./search_restaurants.html">Restaurantes</a>
+                </li>
+                <li>
+                  <a href="./search_coffeeshops.html">Cafeterías</a>
+                </li>
+                <li>
+                  <a href="./search_fondas.html">Fondas</a>
+                </li>
+                <li>
+                  <a href="./search_bars.html">Bares</a>
+                </li>
+                <li>
+                  <a href="./search_buffets.html">Buffets</a>
+                </li>
+              </ul>
+            </li>
 
-          <li>
-            <a href="#">Buscar</a>
-            <ul>
-              <li>
-                <a href="./search_coffeeshops.html">Cafeterías</a>
-              </li>
-              <li>
-                <a href="./search_fondas.html">Fondas</a>
-              </li>
-              <li>
-                <a href="./search_restaurants.html">Restaurantes</a>
-              </li>
-              <li>
-                <a href="./search_bars.html">Bares</a>
-              </li>
-              <li>
-                <a href="./search_buffets.html">Buffets</a>
-              </li>
-            </ul>
-          </li>
+            <li>
+              <a href="./reservation_info.html">Consultar reservas</a>
+            </li>
+          </ul>
+        </nav>
 
-          <li>
-            <a href="./reservation_info.html">Consultar reservas</a>
-          </li>
-        </ul>
-      </nav>
+        <!-- Mensaje de copy right  -->
+        <h4>Flavor Hunt &COPY; 2023 | Privacy policy</h4>
 
-      <!-- Mensaje de copy right  -->
-      <h5>Flavor Hunt &COPY; 2023 | Privacy policy</h5>
-
-      <!-- Enlace para cerrar sesión -->
-      <p><a href="./login.html">Cerrar sesión</a></p>
+        <!-- Enlace para cerrar sesión -->
+        <p id="boton-cerrarsesicon"><a href="./login.html">Cerrar sesión</a></p>
+      </div>
     </footer>
   </body>
 </html>
