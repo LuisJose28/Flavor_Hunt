@@ -399,10 +399,12 @@ body{
 
 
 
-
+/* real */
+/* real */
+/* real */
 /* Seccion HEADER pagina home */
 header{
-    min-height: 80vh; 
+    min-height: 80vh; /* Altura del header */
     width: 100%;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/restaurante1-home.webp);
     background-position: center; /* posicion de la imagen */
@@ -484,11 +486,15 @@ nav .fa-solid{
 
 @media(max-width: 800px){
     .text-box h1{
-        font-size: 25px; /* Letra mas pequeña en pantallas pequeñas  */
+        font-size: 32px; /* Letra mas pequeña en pantallas pequeñas  */
     }
 
     .text-box p{
-        font-size: 18px; /* Letra mas pequeña en pantallas pequeñas  */
+        font-size: 20px; /* Letra mas pequeña en pantallas pequeñas  */
+    }
+
+    nav{
+        padding: 5% 6%;/* Distancia arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
     }
 
     .nav-links ul li{
@@ -919,6 +925,16 @@ footer li{
 
 
 /* paginas  SEARCH (todas)*/
+.sub-header{
+    /* El sub-header es un header distinto para todas las paginas diferentes al home. Tendran atributos similares, lo unico que cambia es la altura, y que no tendran texto. Solo el logo y el nav  */
+    min-height: 15vh; /* Altura del header */
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/bar3-home.webp);
+    background-position: center; /* posicion de la imagen */
+    background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
+    position: relative;
+}
+
 .titulo-página-search{
     width: 95%;
     margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
@@ -1087,6 +1103,10 @@ footer li{
 }
 
 @media(max-width: 800px){
+
+    .sub-header nav{
+        padding: 7% 6%; /* Distancia del sub-header arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
+    }
      
     #search-restaurants{
         display: flex;
@@ -1104,6 +1124,7 @@ footer li{
         width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
         
     }
+
 }
 
 @media(max-width: 400px){
