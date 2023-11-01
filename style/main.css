@@ -106,7 +106,7 @@ body{
 }
 
 #boton-signup button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -262,7 +262,7 @@ body{
 }
 
 #boton-login button:hover {
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
     color: white;
 }
@@ -374,7 +374,7 @@ body{
 
 
 #boton-forgot-password button:hover {
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
     color: white;
 }
@@ -445,7 +445,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: #A52A2A;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -497,7 +497,7 @@ nav .fa-solid{
 
     .nav-links {
         position: fixed;
-        background: #f44336;/* Color de fondo para animacion de java Script */
+        background: #A52A2A;/* Color de fondo para animacion de java Script */
         height: 100vh; /* Tamaño de animacion */
         width: 200px;
         top: 0;
@@ -737,9 +737,10 @@ nav .fa-solid{
     border-radius: 2px;
 }
 .imagenes-banner-texto button:hover, .chevron-banner:hover {
-    background-color: #757575;
+    background-color: #A52A2A;
     color: white;
     transition: 0.2s ease-in; 
+    cursor: pointer;/* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
 }
 
 
@@ -824,7 +825,7 @@ footer a{
 }
 
 footer a:hover{
-    color: #f44336;
+    color: #A52A2A;
     transition: 0.2s ease;
 }
 
@@ -894,7 +895,7 @@ footer li{
 }
 
 #boton-cerrarsesicon a:hover {
-    color: #f44336;
+    color: #A52A2A;
 }
 
 @media(max-width: 800px){
@@ -983,12 +984,12 @@ footer li{
 
 .filtro-buscador input[type="radio"], input[type="checkbox"] {
     /* Cambiar el color de los radio button cuando estan presionados*/
-    accent-color: #35363A; 
+    accent-color: #A52A2A; 
 }
 
 .filtro-buscador input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
     /* Cambiar el color del texto al seleccionar un radio button*/
-    color: #036AD8;  
+    color: #000000;  
 }
 
 .filtro-buscador input[type="radio"], .filtro-buscador input[type="checkbox"] {
@@ -1013,7 +1014,7 @@ footer li{
 }
 
 .filtro-buscador button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -1197,7 +1198,7 @@ footer li{
 }
 
 .label-menu label:hover{
-    background-color:#757575; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
 }
 
 .content{
@@ -1285,7 +1286,7 @@ footer li{
 .content .tab1 p:hover{
     text-decoration: underline;
     transition: 0.2s ease;
-    color: #007AFE;
+    color: #A52A2A;
 }
 
 .content .tab1 a{
@@ -1294,7 +1295,7 @@ footer li{
 }
 
 .content .tab1 a:hover{
-    color:#007AFE;
+    color:#A52A2A;
     transition: 0.2s ease;
 }
 
@@ -1414,7 +1415,7 @@ footer li{
 }
 
 #reservar-form button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -1502,7 +1503,7 @@ footer li{
 }
 
 .label-menu-reservation label:hover{
-    background-color:#757575; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
 }
 
 .content-reservation{
@@ -1628,7 +1629,7 @@ footer li{
 }
 
 #reservation-info-form button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
