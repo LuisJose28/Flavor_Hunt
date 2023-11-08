@@ -1808,6 +1808,6 @@ footer li{
 
 /* MODIFY RESERVATION pagina */
 #titulo-modify-reservation{
-    padding-bottom: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+    padding-bottom: 30px; /* Espaciado inferior del titulo de la pagina "modify-reservation", para que no este pegado a los formularios de abajo */
 
 }

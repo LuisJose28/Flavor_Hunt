@@ -73,8 +73,7 @@
         <form
           action="https://httpbin.org/post"
           method="post"
-          id="reservation-info-form"
-        >
+          id="reservation-info-form">
           <h3 class="block-grid-reservation">Nombre del restaurante</h3>
 
           <p>
@@ -136,6 +135,80 @@
               cols="10"
               rows="3"
               required>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi!</textarea>
+          </p>
+
+          <p class="block-grid-reservation">
+            <button formaction="https://httpbin.org/post" formmethod="post">
+              Modificar
+            </button>
+          </p>
+        </form>
+
+        <form
+          action="https://httpbin.org/post"
+          method="post"
+          id="reservation-info-form">
+          <h3 class="block-grid-reservation">Nombre del restaurante</h3>
+
+          <p>
+            <label for="reservation-date">Fecha deseada:</label>
+            <input
+              type="date"
+              name="txtReservationDate"
+              id="reservation-date"
+              value="2023-10-20"
+              autofocus
+              required
+            />
+          </p>
+
+          <p>
+            <label for="reservation-hour">Hora deseada:</label>
+            <input
+              type="time"
+              name="txtReservationHour"
+              id="reservation-hour"
+              value="11:00"
+              step="900"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="reservation-peoples">Número de personas:</label>
+            <input
+              type="number"
+              name="txtReservationPeoples"
+              id="reservation-peoples"
+              value="5"
+              min="1"
+              max="10"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="reservation-children-chair">Silla para niños:</label>
+            <input
+              type="number"
+              name="txtReservationChildrenChair"
+              id="reservation-children-chair"
+              value="1"
+              min="0"
+              max="10"
+              required
+            />
+          </p>
+
+          
+          <p class="block-grid-reservation">
+            <label for="comments">Comentarios adicionales:</label>
+            <textarea
+              name="txtReservationComments"
+              id="comments"
+              cols="10"
+              rows="3"
+              required>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci praesentium iure sit soluta nobis perspiciatis aperiam quae iste, repellat repellendus tenetur esse corporis, similique vel illo magnam inventore cupiditate ratione?</textarea>
           </p>
 
           <p class="block-grid-reservation">
