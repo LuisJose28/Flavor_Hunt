@@ -809,7 +809,7 @@ nav .fa-solid{
 footer {
     width: 100%;
     margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    margin-top: 50px; /* Espaciado superior para que no quede pegado a la seccion anterior */
+    margin-top: 100px; /* Espaciado superior para que no quede pegado a la seccion anterior */
     padding: 30px 0; /* Para que los elementos interiores del footer no esten pegados con el borde superior e inferior */
     background-color: #050813;
     color: #C7DAE1;
@@ -1195,88 +1195,56 @@ footer li{
 
 .tabs-restaurant-info{ /* Seccion de la derecha - Tabs e informacion de los restaurantes  */
     width: 50%; /* Solo ocupe 50%, o sea la mitad de la página */
-}
+    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
 
+}
 
 #restaurant-tabs{
     width: 100%;
 }
 
 .label-menu{
-    background-color: #000; /* Color de fondo de los titulos de los tabs */
+    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+    background-color: #000; /* Color de fondo de los titulos de los tabs */    
+    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu label{
+.label-menu li a{
+    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
     font-size: 16px;
     font-weight:400;
-    display: inline-block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
     color: white;
+    text-align: center;
+
+    display: block;
+    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+
     cursor: pointer;
     transition: all 400ms ease;
 }
 
-.label-menu label:hover{
+.active{
+    background:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
+}
+
+.label-menu :hover{
     background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
 }
 
-.content{
-    position: relative; /* Para despues poner que el contenido sea absoluto y siempre la info quede dentro del contendedor padre*/
-}
-
-.content .tab1, .content .tab2, .content .tab3{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    position: absolute; /* Permite que el contenido interior de los tabs se superponga*/
+.content article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
     width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
-    /* line-height: 1.8; */
     transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    opacity: 0;
-    visibility: hidden; /* Esconder el contenido por defecto de los tabs */
-    transform: scale(0.90);
     background-color: white;
     padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
     border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes 1% arriba -  0 derecha - 0 abajo - 1% izquierda*/
-
+    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
-
-#radio1, #radio2, #radio3{
-    display: none; /* Ocultar los circulos por defecto del radio button */
-}
-
-#radio1:checked ~ .tab1, #radio2:checked ~ .tab2, #radio3:checked ~ .tab3{ 
-    /* Esto sirve para que cuando demos clic en algun tab, aparezca toda la informacion interna */
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.content .tab1::after, .content .tab2::after, .content .tab3::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    position: absolute;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid white;
-    bottom: 100%;
-    left: 56px;
-}
-
-.content .tab2::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 172px;
-}
-
-.content .tab3::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 273px;
-}
-
 
 /* TAB DESCRIPCION pagina restaurant_info  */
 .content .tab1 {
     padding-left: 3%;/* Le agregaremos un poco mas de espaciado izquierdo, pero solo al tab 1, para que la descripcion del restaurante no este tan pegada al borde izquierdo */
-
 }
 
 .content .tab1 fieldset{
@@ -1284,12 +1252,11 @@ footer li{
 }
 
 .content .tab1 h3{
-   font-size: 20px;
-   font-weight: 700;
-   margin-bottom: 10%;/* Espaciado inferior para que tenga separacion y no este pegado */
-   text-decoration: underline;/* H3 subrayados */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10%;/* Espaciado inferior para que tenga separacion y no este pegado */
+    text-decoration: underline;/* H3 subrayados */
 }
-
 
 .content .tab1 h4{
     font-size: 17px;
@@ -1324,7 +1291,6 @@ footer li{
     font-weight: 900;
     line-height: 18px;
 }
-
 
 
 /* TAB MENU pagina restaurant_info  */
@@ -1463,10 +1429,7 @@ footer li{
     transition: 0.2s ease;
 }
 
-.footer-restaurant-info{
-    margin-top: 72%;/* Al momento de abrir los tabs, el de descripcion al ser position absolute, se sobrepone, por ello se coloca encima del footer. Para ello agregamos este espaciado superior para el footer y no se coloquen los elementos uno arriba sobre el otro  */
-    
-}
+
 
 @keyframes slide {
     0% {margin-left: 0;}
@@ -1479,6 +1442,14 @@ footer li{
     100% {margin-left: -200%;}
 }
 
+@media(max-width: 855px){
+    /* TAB RESERVAR pagina restaurant_info  */
+    #reservar-form{
+        /* Estos atributos se aplicaran al formulario reservar restaurante */
+        display: flex;
+        flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
+    }
+}
 
 @media(max-width: 800px){
      
@@ -1518,13 +1489,10 @@ footer li{
     /* TAB MENU pagina restaurant_info  */
     .row-restaurant-menu{
         margin-top: 6%; /* Espaciado superior para que no quede pegado al titutlo */
-        display: flex; 
-        flex-direction: column; /* Permite que el menu se coloque uno debajo del otro en pantallas pequeñas */
-        align-items: center;
     }
 
     .restaurant-menu-col{
-        margin-bottom: 9%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
+        margin-bottom: 8%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
     }
 
     #boton-descargar-menu{
@@ -1532,83 +1500,167 @@ footer li{
 
     }
 
-
-
     /* TAB RESERVAR pagina restaurant_info  */
     #reservar-form{
         /* Estos atributos se aplicaran al formulario reservar restaurante */
         display: flex;
         flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
-        
     }
 
 }
 
+@media(max-width: 590px){
+    /* TAB MENU pagina restaurant_info  */
+    .row-restaurant-menu{
+        display: flex; 
+        flex-direction: column; /* Permite que el menu se coloque uno debajo del otro en pantallas pequeñas */
+    }
+
+    #restaurant-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+        flex-basis: 0;
+        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
+    }
+}
 
 @media(max-width: 470px){
-     
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+}
+
+@media(max-width: 395px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 15px;
+        padding: 15px 12px; /* Espaciado interno a los titulos de los tabs */
+    }
+   
+}
+
+@media(max-width: 320px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 14px;
+        padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
+    }
+   
+}
+
+@media(max-width: 295px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 14px;
+        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
+    }
+
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+}
+
+@media(max-width: 286px){
+    /* En pantallas muy pequeñas, que el boton "Descargar Menu" no se ponga en 2 lineas (se deforme), para ello lo solucionamos poniendole una letra mas pequeña, y reduciendo su paddin en izquierda y derecha*/
+    #boton-descargar-menu a {        
+        font-size: 16px;
+        padding: 10px 16px; /* Relleno interior del botón */
+        text-align: center;
+    }
+   
+}
+
+@media(max-width: 275px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 13px;
+        padding: 15px 6px; /* Espaciado interno a los titulos de los tabs */
+    }
     #restaurant-tabs .tab1 p{
         margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
     }
 }
 
 
-@media(max-width: 395px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu label{
-        font-size: 15px;
-        padding: 15px 12px; /* Espaciado interno a los titulos de los tabs */
-    }
-   
-   .content .tab1::after, .content .tab2::after, .content .tab3::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 45px;
-    }
-
-    .content .tab2::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 139px;
-    }
-
-    .content .tab3::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 220px;
-    }
-}
 
 
-@media(max-width: 325px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu label{
-        font-size: 14px;
-        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
-    }
-    
-    .content .tab1::after, .content .tab2::after, .content .tab3::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 38px;
-    }
-
-    .content .tab2::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 116px;
-    }
-
-    .content .tab3::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 185px;
-    }
-
-}
 
 
-@media(max-width: 286px){
-    /* En pantallas muy pequeñas, que el boton "Descargar Menu" no se ponga en 2 lineas (se deforme), para ello lo solucionamos poniendole una letra mas pequeña, y reduciendo su paddin en izquierda y derecha*/
-    #boton-descargar-menu a {
-        padding: 10px 18px; /* Relleno interior del botón */
-        font-size: 16px;  
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

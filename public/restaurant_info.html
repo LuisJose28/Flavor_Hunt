@@ -9,6 +9,9 @@
     <title>Cafeterías - Flavor Hunt</title>
     <link rel="stylesheet" href="../style/main.css" />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/scripts.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +34,12 @@
     <!-- El sub-header es un header distinto para todas las paginas diferentes al home -->
     <header class="sub-header">
       <nav>
-        <a href="home.html"><img src="../assets/imgs/logo-flavorhunt.webp" alt="Logo de Flavor Hunt" loading="lazy"></a>  
+        <a href="home.html"
+          ><img
+            src="../assets/imgs/logo-flavorhunt.webp"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+        /></a>
 
         <div class="nav-links" id="navLinks">
           <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
@@ -64,7 +72,7 @@
     </header>
 
     <!-- Contenido principal -->
-    <main class="clearfix">
+    <main>
       <!-- Titulo de la página -->
       <div class="titulo-página-restaurant-info">
         <h2>Nombre del restaurante</h2>
@@ -108,16 +116,21 @@
           <!-- Menú de navegación con tabs que contiene la información del restaurante -->
 
           <div id="restaurant-tabs">
-            <div class="label-menu">
-              <label for="radio1">Descripción</label>
-              <label for="radio2">Menú</label>
-              <label for="radio3">Reservar</label>
-            </div>
+            <ul class="label-menu">
+              <li>
+                <a href=".tab1"><span>Descripción</span></a>
+              </li>
+              <li>
+                <a href=".tab2"><span>Menú</span></a>
+              </li>
+              <li>
+                <a href=".tab3"><span>Reservar</span></a>
+              </li>
+            </ul>
 
             <div class="content">
               
-              <input type="radio" name="radio" id="radio1" checked/>
-              <div class="tab1">
+              <article class="tab1">
                 <fieldset>
                   <legend><h3>Información local</h3></legend>
 
@@ -139,15 +152,21 @@
 
                   <h4>
                     <i
+                      class="fontawesome-restaurant-info fa-solid fa-clock"
+                    ></i>
+                    Horario
+                  </h4>
+                  <p>Lunes a Domingo de 11:00 PM a 10:00 PM.</p>
+
+                  <h4>
+                    <i
                       class="fontawesome-restaurant-info fa-solid fa-phone"
                     ></i>
                     Teléfono
                   </h4>
                   <p>
-                    <a href="tel:+50768002020">+507 6800-2020</a
-                    >
+                    <a href="tel:+50768002020">+507 6800-2020</a>
                   </p>
-
                 </fieldset>
 
                 <fieldset>
@@ -160,14 +179,6 @@
                     Tipo de comida
                   </h4>
                   <p>Buffet</p>
-
-                  <h4>
-                    <i
-                      class="fontawesome-restaurant-info fa-solid fa-clock"
-                    ></i>
-                    Horario
-                  </h4>
-                  <p>Lunes a Domingo de 11:00 PM a 10:00 PM.</p>
 
                   <h4>
                     <i
@@ -198,12 +209,10 @@
                     Costo
                   </h4>
                   <p>Caro</p>
-
                 </fieldset>
-              </div>
+              </article>
 
-              <input type="radio" name="radio" id="radio2"/>
-              <div class="tab2">
+              <article class="tab2">
                 <div class="row-restaurant-menu">
                   <div class="restaurant-menu-col">
                     <figure>
@@ -341,17 +350,24 @@
                   </div>
                 </div>
 
-                <p id="boton-descargar-menu"><a href="../assets/pdfs/menu.pdf" download><i class="fontawesome-restaurant-info fa-solid fa-download"></i> Descargar Menú</a></p>
+                <p id="boton-descargar-menu">
+                  <a href="../assets/pdfs/menu.pdf" download
+                    ><i
+                      class="fontawesome-restaurant-info fa-solid fa-download"
+                    ></i>
+                    Descargar Menú</a
+                  >
+                </p>
+              </article>
 
-              </div>
-
-              <input type="radio" name="radio" id="radio3" />
-              <div class="tab3">
+              <article class="tab3">
                 <div id="reservar-container">
                   <!-- Formulario reservar restaurante -->
                   <form
                     action="https://httpbin.org/post"
-                    method="post" id="reservar-form">
+                    method="post"
+                    id="reservar-form"
+                  >
                     <p>
                       <label for="reservation-date">Fecha deseada:</label>
                       <input
@@ -404,7 +420,7 @@
 
                     <p class="block-grid">
                       <label for="comments">Comentarios adicionales:</label>
-                      <br>
+                      <br />
                       <textarea
                         name="txtReservationComments"
                         id="comments"
@@ -419,18 +435,15 @@
                     </p>
                   </form>
                 </div>
-
-              </div>
+              </article>
             </div>
           </div>
-
-
         </article>
       </section>
     </main>
 
     <!-- Pie de la página -->
-    <footer class="footer-restaurant-info">
+    <footer>
       <!-- Menu secundario -->
       <div class="menu-secundario">
         <h3>Páginas web de Flavor Hunt</h3>
