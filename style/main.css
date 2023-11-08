@@ -1231,6 +1231,7 @@ footer li{
 
 .label-menu :hover{
     background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
 }
 
 .content article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
@@ -1585,90 +1586,6 @@ footer li{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CONSULTAR RESERVAS - pagina reservation_info */
 #reservation-info{
     width: 80%;
@@ -1685,73 +1602,46 @@ footer li{
 /* TAB RESERVAS PROXIMAMENTE pagina reservation_info  */
 
 #reservation-tabs{
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
     width: 100%;
+    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
+    padding-top: 50px; /* Espaciado superior para que no quede pegado al titulo "Reservas registradas" */
+
 }
 
 .label-menu-reservation{
-    background-color: #000; /* Color de fondo de los titulos de los tabs */
+    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+    background-color: #000; /* Color de fondo de los titulos de los tabs */    
+    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu-reservation label{
+.label-menu-reservation li a{
+    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
     font-size: 16px;
     font-weight:400;
-    display: inline-block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
     color: white;
+    text-align: center;
+
+    display: block;
+    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+
     cursor: pointer;
     transition: all 400ms ease;
-    
 }
 
-.label-menu-reservation label:hover{
+.label-menu-reservation :hover{
     background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
+
 }
 
-.content-reservation{
-    position: relative; /* Para despues poner que el contenido sea absoluto y siempre la info quede dentro del contendedor padre*/
-}
-
-.content-reservation .tab1-reservation, .content-reservation .tab2-reservation{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    position: absolute; /* Permite que el contenido interior de los tabs se superponga*/
+.content-reservation article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
     width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
     transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    opacity: 0;
-    visibility: hidden; /* Esconder el contenido por defecto de los tabs */
-    transform: scale(0.90);
     background-color: white;
     padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
     border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion de los tabs no este pegado a los bordes 1% arriba -  0 derecha - 0 abajo - 1% izquierda*/
-
-}
-
-#radio1-reservation, #radio2-reservation{
-    display: none; /* Ocultar los circulos por defecto del radio button */
-}
-
-#radio1-reservation:checked ~ .tab1-reservation, #radio2-reservation:checked ~ .tab2-reservation{ 
-    /* Esto sirve para que cuando demos clic en algun tab, aparezca toda la informacion interna */
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.content-reservation .tab1-reservation::after, .content-reservation .tab2-reservation::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    position: absolute;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid white;
-    bottom: 100%;
-    left: 69px;
-}
-
-.content-reservation .tab2-reservation::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 225px;
+    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
 
 
@@ -1765,13 +1655,12 @@ footer li{
     background: #fafafa; /* Color de fondo para el form */
     padding: 6px; /* Espaciado interno para toda la informacion que este dentro de los tabs para que no se vea pegado a los bordes */
     margin-top: 2%; /* Espaciado superior para que los formularios tengan espaciado supeior */
-    margin-bottom: 3%; /* Espaciado superior para que los formularios tengan espaciado inferior */
+    margin-bottom: 5%; /* Espaciado superior para que los formularios tengan espaciado inferior */
 }
 
 #reservation-info-form:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
     transition: 0.1s ease;
-
 }
 
 #reservation-info-form h3{
@@ -1841,7 +1730,7 @@ footer li{
     #reservation-info{
         display: flex;
         flex-direction: column;/* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
-        width: 80%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
+        width: 85%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
         margin: auto;/* Que este centrado */
     }
 
@@ -1861,59 +1750,44 @@ footer li{
         margin: auto; /* Que  ajuste al centro */
         border: 1.5px solid #DDDDDD;
         margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
-        margin-bottom: 12%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+    }
+
+    #reservation-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+        flex-basis: 0;
+        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
     }
 
 }
 
-@media(max-width: 378px){
+@media(max-width: 355px){
     /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation label{
+    .label-menu-reservation li a{
         font-size: 15px;
         padding: 15px 13px; /* Espaciado interno a los titulos de los tabs */
   
     }
-
-    .content-reservation .tab1-reservation::after, .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 56px;
-    }
-    
-    .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 190px;
-    }
-    
 }
 
-@media(max-width: 326px){
+@media(max-width: 305px){
     #reservation-info-form{
         width: 93%;/* Que el tab interno de las reservas proximamente solo ocupe un 93% del 100% posible */
         margin: auto; /* Que  ajuste al centro */
         margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
-        margin-bottom: 12%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
     }
 
     /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation label{
+    .label-menu-reservation li a{
         font-size: 14px;
         padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
   
     }
 
-    .content-reservation .tab1-reservation::after, .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 50px;
-    }
-    
-    .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 172px;
-    }
-    
 }
 
-@media(max-width: 293px){
+@media(max-width: 275px){
     #reservation-info-form{
         width: 95%;/* Que el tab interno de las reservas proximamente solo ocupe un 95% del 100% posible */
         margin: auto; /* Que  ajuste al centro */
@@ -1922,22 +1796,11 @@ footer li{
     }
 
     /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation label{
+    .label-menu-reservation li a{
         font-size: 13px;
-        padding: 15px 8px; /* Espaciado interno a los titulos de los tabs */
+        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
   
     }
-
-    .content-reservation .tab1-reservation::after, .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 45px;
-    }
-    
-    .content-reservation .tab2-reservation::after{
-        /* Mover el  diseño en forma de triangulo que permitira identificar cual tab tienes presionado. Necesitamos volver a moverlo para ubicarlo de manera correcta en pantallas pequeñas */
-        left: 155px;
-    }
-    
 }
 
 
