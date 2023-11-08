@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="authors" content="Ricardo Isaza, Luis Espinosa y Jairo López" />
     <meta name="description" content="Página para buscar cafeterías" />
-    <title>Cafeterías - Flavor Hunt</title>
+    <title>Información de reservas - Flavor Hunt</title>
     <link rel="stylesheet" href="../style/main.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/scripts.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,9 +31,15 @@
     />
   </head>
   <body>
-    <header>
+    <!-- El sub-header es un header distinto para todas las paginas diferentes al home -->
+    <header class="sub-header">
       <nav>
-        <a href="home.html"><img src="../assets/imgs/logo-flavorhunt.webp"></a>  
+        <a href="home.html"
+          ><img
+            src="../assets/imgs/logo-flavorhunt.webp"
+            alt="Logo de Flavor Hunt"
+            loading="lazy"
+        /></a>
 
         <div class="nav-links" id="navLinks">
           <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
@@ -48,13 +57,6 @@
         <i class="fa-solid fa-bars" onclick="showMenu()"></i>
       </nav>
 
-      <div class="text-box">
-        <h1>Flavor Hunt</h1>
-
-        <p>Explora los Sabores de Panamá: Los Restaurantes Más Emblemáticos <br> en un Solo Sitio
-        </p>
-      </div>
-
       <!-- JAVASCRIPT -->
       <script>
         var navLinks = document.getElementById("navLinks");
@@ -70,27 +72,30 @@
     </header>
 
     <!-- Contenido principal -->
-    <main class="clearfix">
+    <main>
       <!-- Seccion reservation_info -->
       <section id="reservation-info">
         <h2>Reservas registradas</h2>
 
         <!-- Menú de navegación con tabs -->
         <div id="reservation-tabs">
-          <div class="label-menu-reservation">
-            <label for="radio1-reservation">Próximamente</label>
-            <label for="radio2-reservation">Completado</label>
-          </div>
+          <ul class="label-menu-reservation">
+            <li>
+              <a href=".tab1-reservation-info"><span>Próximamente</span></a>
+            </li>
+            <li>
+              <a href=".tab2-reservation-info"><span>Completado</span></a>
+            </li>
+          </ul>
 
           <div class="content-reservation">
-            <input type="radio" name="radio" id="radio1-reservation" checked/>
-            <div class="tab1-reservation">
+            <article class="tab1-reservation-info">
               <!-- Formulario reservar restaurante -->
               <form
                 action="https://httpbin.org/post"
                 method="post"
                 id="reservation-info-form">
-                
+
                 <h3 class="block-grid-reservation">Nombre del restaurante</h3>
 
                 <p>
@@ -170,7 +175,6 @@
                 action="https://httpbin.org/post"
                 method="post"
                 id="reservation-info-form">
-
                 <h3 class="block-grid-reservation">Nombre del restaurante</h3>
 
                 <p>
@@ -227,7 +231,8 @@
                     id="soon-reservation-comments2"
                     cols="10"
                     rows="3"
-                    readonly>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi laudantium, et temporibus odio, nisi.
+                    readonly
+                  >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, quasi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi laudantium, et temporibus odio, nisi.
                   </textarea>
                 </p>
 
@@ -243,11 +248,11 @@
                   <button>Eliminar</button>
                 </p>
               </form>
+            </article>
 
-            </div>
+            
 
-            <input type="radio" name="radio" id="radio2-reservation"/>
-            <div class="tab2-reservation">
+            <article class="tab2-reservation-info">
               <!-- Formulario reservar restaurante -->
               <form
                 action="https://httpbin.org/post"
@@ -280,8 +285,7 @@
 
                 <p>
                   <label for="completed-reservation-peoples1"
-                    >Número de personas:</label
-                  >
+                    >Número de personas:</label>
                   <input
                     type="number"
                     name="txtCompletedReservationPeoples1"
@@ -293,8 +297,7 @@
 
                 <p>
                   <label for="completed-reservation-children-chair1"
-                    >Silla para niños:</label
-                  >
+                    >Silla para niños:</label>
                   <input
                     type="number"
                     name="txtCompletedReservationChildrenChair1"
@@ -384,14 +387,15 @@
                 </p>
 
               </form>
-            </div>
+              
+            </article>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Pie de la página -->
-    <footer class="footer-restaurant-info">
+    <footer>
       <!-- Menu secundario -->
       <div class="menu-secundario">
         <h3>Páginas web de Flavor Hunt</h3>

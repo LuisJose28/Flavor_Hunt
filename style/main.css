@@ -106,7 +106,7 @@ body{
 }
 
 #boton-signup button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -262,7 +262,7 @@ body{
 }
 
 #boton-login button:hover {
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
     color: white;
 }
@@ -374,7 +374,7 @@ body{
 
 
 #boton-forgot-password button:hover {
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
     color: white;
 }
@@ -402,7 +402,7 @@ body{
 
 /* Seccion HEADER pagina home */
 header{
-    min-height: 80vh; 
+    min-height: 80vh; /* Altura del header */
     width: 100%;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/restaurante1-home.webp);
     background-position: center; /* posicion de la imagen */
@@ -445,7 +445,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: #A52A2A;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -484,11 +484,15 @@ nav .fa-solid{
 
 @media(max-width: 800px){
     .text-box h1{
-        font-size: 25px; /* Letra mas pequeña en pantallas pequeñas  */
+        font-size: 32px; /* Letra mas pequeña en pantallas pequeñas  */
     }
 
     .text-box p{
-        font-size: 18px; /* Letra mas pequeña en pantallas pequeñas  */
+        font-size: 20px; /* Letra mas pequeña en pantallas pequeñas  */
+    }
+
+    nav{
+        padding: 5% 6%;/* Distancia arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
     }
 
     .nav-links ul li{
@@ -497,7 +501,7 @@ nav .fa-solid{
 
     .nav-links {
         position: fixed;
-        background: #f44336;/* Color de fondo para animacion de java Script */
+        background: #A52A2A;/* Color de fondo para animacion de java Script */
         height: 100vh; /* Tamaño de animacion */
         width: 200px;
         top: 0;
@@ -737,9 +741,10 @@ nav .fa-solid{
     border-radius: 2px;
 }
 .imagenes-banner-texto button:hover, .chevron-banner:hover {
-    background-color: #757575;
+    background-color: #A52A2A;
     color: white;
     transition: 0.2s ease-in; 
+    cursor: pointer;/* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
 }
 
 
@@ -804,7 +809,7 @@ nav .fa-solid{
 footer {
     width: 100%;
     margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    margin-top: 50px; /* Espaciado superior para que no quede pegado a la seccion anterior */
+    margin-top: 100px; /* Espaciado superior para que no quede pegado a la seccion anterior */
     padding: 30px 0; /* Para que los elementos interiores del footer no esten pegados con el borde superior e inferior */
     background-color: #050813;
     color: #C7DAE1;
@@ -824,7 +829,7 @@ footer a{
 }
 
 footer a:hover{
-    color: #f44336;
+    color: #A52A2A;
     transition: 0.2s ease;
 }
 
@@ -894,7 +899,7 @@ footer li{
 }
 
 #boton-cerrarsesicon a:hover {
-    color: #f44336;
+    color: #A52A2A;
 }
 
 @media(max-width: 800px){
@@ -918,6 +923,16 @@ footer li{
 
 
 /* paginas  SEARCH (todas)*/
+.sub-header{
+    /* El sub-header es un header distinto para todas las paginas diferentes al home. Tendran atributos similares, lo unico que cambia es la altura, y que no tendran texto. Solo el logo y el nav  */
+    min-height: 15vh; /* Altura del header */
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/bar3-home.webp);
+    background-position: center; /* posicion de la imagen */
+    background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
+    position: relative;
+}
+
 .titulo-página-search{
     width: 95%;
     margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
@@ -983,12 +998,12 @@ footer li{
 
 .filtro-buscador input[type="radio"], input[type="checkbox"] {
     /* Cambiar el color de los radio button cuando estan presionados*/
-    accent-color: #35363A; 
+    accent-color: #A52A2A; 
 }
 
 .filtro-buscador input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
     /* Cambiar el color del texto al seleccionar un radio button*/
-    color: #036AD8;  
+    color: #000000;  
 }
 
 .filtro-buscador input[type="radio"], .filtro-buscador input[type="checkbox"] {
@@ -1013,7 +1028,7 @@ footer li{
 }
 
 .filtro-buscador button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -1086,6 +1101,10 @@ footer li{
 }
 
 @media(max-width: 800px){
+
+    .sub-header nav{
+        padding: 7% 6%; /* Distancia del sub-header arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
+    }
      
     #search-restaurants{
         display: flex;
@@ -1103,6 +1122,7 @@ footer li{
         width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
         
     }
+
 }
 
 @media(max-width: 400px){
@@ -1174,89 +1194,58 @@ footer li{
 
 
 .tabs-restaurant-info{ /* Seccion de la derecha - Tabs e informacion de los restaurantes  */
-    width: 50%;
-}
+    width: 50%; /* Solo ocupe 50%, o sea la mitad de la página */
+    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
 
+}
 
 #restaurant-tabs{
     width: 100%;
 }
 
 .label-menu{
-    background-color: #000; /* Color de fondo de los titulos de los tabs */
+    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+    background-color: #000; /* Color de fondo de los titulos de los tabs */    
+    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu label{
+.label-menu li a{
+    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
     font-size: 16px;
     font-weight:400;
-    display: inline-block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
     color: white;
+    text-align: center;
+
+    display: block;
+    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+
     cursor: pointer;
     transition: all 400ms ease;
 }
 
-.label-menu label:hover{
-    background-color:#757575; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+.active{
+    background:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
 }
 
-.content{
-    position: relative; /* Para despues poner que el contenido sea absoluto y siempre la info quede dentro del contendedor padre*/
+.label-menu :hover{
+    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
 }
 
-.content .tab1, .content .tab2, .content .tab3{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    position: absolute; /* Permite que el contenido interior de los tabs se superponga*/
+.content article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
     width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
-    /* line-height: 1.8; */
     transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    opacity: 0;
-    visibility: hidden; /* Esconder el contenido por defecto de los tabs */
-    transform: scale(0.90);
     background-color: white;
     padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
     border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion de los tabs no este pegado a los bordes 1% arriba -  0 derecha - 0 abajo - 1% izquierda*/
-
+    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
-
-#radio1, #radio2, #radio3{
-    display: none; /* Ocultar los circulos por defecto del radio button */
-}
-
-#radio1:checked ~ .tab1, #radio2:checked ~ .tab2, #radio3:checked ~ .tab3{ 
-    /* Esto sirve para que cuando demos clic en algun tab, aparezca toda la informacion interna */
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.content .tab1::after, .content .tab2::after, .content .tab3::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    position: absolute;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid white;
-    bottom: 100%;
-    left: 56px;
-}
-
-.content .tab2::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 172px;
-}
-
-.content .tab3::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 273px;
-}
-
 
 /* TAB DESCRIPCION pagina restaurant_info  */
 .content .tab1 {
-    padding-left: 2%;/* Le agregaremos un poco mas de espaciado izquierdo, pero solo al tab 1, para que la descripcion del restaurante no este tan pegada al borde izquierdo */
-
+    padding-left: 3%;/* Le agregaremos un poco mas de espaciado izquierdo, pero solo al tab 1, para que la descripcion del restaurante no este tan pegada al borde izquierdo */
 }
 
 .content .tab1 fieldset{
@@ -1264,12 +1253,11 @@ footer li{
 }
 
 .content .tab1 h3{
-   font-size: 20px;
-   font-weight: 700;
-   margin-bottom: 10%;/* Espaciado inferior para que tenga separacion y no este pegado */
-   text-decoration: underline;/* H3 subrayados */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10%;/* Espaciado inferior para que tenga separacion y no este pegado */
+    text-decoration: underline;/* H3 subrayados */
 }
-
 
 .content .tab1 h4{
     font-size: 17px;
@@ -1279,13 +1267,13 @@ footer li{
 .content .tab1 p{
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 3%;/* Que todos los parrafos tengan espaciado inferior para que no esten pegados con los de abajo */
+    margin-bottom: 3%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
 }
 
 .content .tab1 p:hover{
     text-decoration: underline;
     transition: 0.2s ease;
-    color: #007AFE;
+    color: #A52A2A;
 }
 
 .content .tab1 a{
@@ -1294,18 +1282,16 @@ footer li{
 }
 
 .content .tab1 a:hover{
-    color:#007AFE;
+    color:#A52A2A;
     transition: 0.2s ease;
 }
 
 .fontawesome-restaurant-info{
     /* Estilos para los fontawesome de los tabs */
-    color: black;
     font-size: 18px;
     font-weight: 900;
     line-height: 18px;
 }
-
 
 
 /* TAB MENU pagina restaurant_info  */
@@ -1321,7 +1307,7 @@ footer li{
     flex-basis: 49%;
     background: #F5F5F5; /* Color de fondo de las cartas */
     border-radius: 3px;/* Borde redondeado de las cartas */
-    margin-bottom: 4%; /* Espaciado inferior para separar las cartas */
+    margin-bottom: 4%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
     padding: 10px 10px; /* Espaciado interno para las cartas */
     transition: 1s;
     color: black;
@@ -1358,6 +1344,33 @@ footer li{
     transition: 0.1s ease;
 }
 
+#boton-descargar-menu{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 5.2%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
+}
+
+#boton-descargar-menu a {
+    display: inline-block; /* Convertimos el enlace en un elemento en línea con un bloque de contenido */
+    background-color: #A52A2A;
+    color: #fafafa;
+    font-size: 18px;
+    padding: 10px 20px; /* Relleno interior del botón */
+    border-radius: 8px;
+    font-weight: bold; /* Negrita */
+    text-decoration: none;
+}
+
+#boton-descargar-menu a:hover {
+    background-color: #fafafa;
+    color: #A52A2A;
+    transition: 0.2s ease-in; 
+    border: 2px solid #DDDDDD; /* Borde el boton sobre cuando te paras sobre el */
+    cursor: pointer;/* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
+}
+
+
 
 /* TAB RESERVAR pagina restaurant_info  */
 
@@ -1375,7 +1388,6 @@ footer li{
     /* Todos los elmentos que tengan la clase 'block-grid' que son textarea y el boton lo agruparemos solo en 1 fraccion. */
     grid-column: 1/3;
 }
-
 
 #reservar-form label{
     font-size: 16px;
@@ -1414,14 +1426,11 @@ footer li{
 }
 
 #reservar-form button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
-.footer-restaurant-info{
-    margin-top: 72%;/* Al momento de abrir los tabs, el de descripcion al ser position absolute, se sobrepone, por ello se coloca encima del footer. Para ello agregamos este espaciado superior para el footer y no se coloquen los elementos uno arriba sobre el otro  */
-    
-}
+
 
 @keyframes slide {
     0% {margin-left: 0;}
@@ -1433,33 +1442,144 @@ footer li{
     70% {margin-left: -200%;}
     100% {margin-left: -200%;}
 }
+
+@media(max-width: 855px){
+    /* TAB RESERVAR pagina restaurant_info  */
+    #reservar-form{
+        /* Estos atributos se aplicaran al formulario reservar restaurante */
+        display: flex;
+        flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
+    }
+}
+
 @media(max-width: 800px){
      
     #restaurant-info{
         display: flex;
-        flex-direction: column;/* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
+        flex-direction: column;/* Que los article dentro de la pagina se agrupen una abajo de la otra. Las imagenes arriba y los tabs abajo */
         width: 85%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
         margin: auto;/* Que este centrado */
     }
 
     .slider-restaurant-info{
-        width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
-        margin-bottom: 15%; /* Espaciado abajo para que no este pegado con los filtros  */
+        /* Estos atributos se aplicaran al carrusel de imagenes  */
+        width: 100%;/* Que la seccion carrusel de imagenes ocupe un 100% de ancho disponible */
+        margin-bottom: 15%; /* Espaciado inferior, para que no este pegado a la seccion de tabs  */
     }
-
-    #restaurant-tabs{
-        width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
-    }
-
     
     #slider img{
         width: 100%;
         height: 50vh;
     }
+
+    .tabs-restaurant-info{
+        /* Este atributo se aplicara a los tabs */
+        width: 100%;/* Que la seccion de tabs ocupe un 100% de ancho disponible */
+    }
+
+    #restaurant-tabs .tab1 fieldset{
+        margin-left: 1.5%; /* Esto sirve para que toda la informacion del TAB DESCRIPCION tengan seperacion en la izquierda, y no esten pegados al borde izquierdo */
+    }
+
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 4%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+
+
+
+    /* TAB MENU pagina restaurant_info  */
+    .row-restaurant-menu{
+        margin-top: 6%; /* Espaciado superior para que no quede pegado al titutlo */
+    }
+
+    .restaurant-menu-col{
+        margin-bottom: 8%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
+    }
+
+    #boton-descargar-menu{
+        margin-bottom: 8%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
+
+    }
+
+    /* TAB RESERVAR pagina restaurant_info  */
+    #reservar-form{
+        /* Estos atributos se aplicaran al formulario reservar restaurante */
+        display: flex;
+        flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
+    }
+
 }
 
+@media(max-width: 590px){
+    /* TAB MENU pagina restaurant_info  */
+    .row-restaurant-menu{
+        display: flex; 
+        flex-direction: column; /* Permite que el menu se coloque uno debajo del otro en pantallas pequeñas */
+    }
 
+    #restaurant-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+        flex-basis: 0;
+        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
+    }
+}
 
+@media(max-width: 470px){
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+}
+
+@media(max-width: 395px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 15px;
+        padding: 15px 12px; /* Espaciado interno a los titulos de los tabs */
+    }
+   
+}
+
+@media(max-width: 320px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 14px;
+        padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
+    }
+   
+}
+
+@media(max-width: 295px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 14px;
+        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
+    }
+
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+}
+
+@media(max-width: 286px){
+    /* En pantallas muy pequeñas, que el boton "Descargar Menu" no se ponga en 2 lineas (se deforme), para ello lo solucionamos poniendole una letra mas pequeña, y reduciendo su paddin en izquierda y derecha*/
+    #boton-descargar-menu a {        
+        font-size: 16px;
+        padding: 10px 16px; /* Relleno interior del botón */
+        text-align: center;
+    }
+   
+}
+
+@media(max-width: 275px){
+    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu li a{
+        font-size: 13px;
+        padding: 15px 6px; /* Espaciado interno a los titulos de los tabs */
+    }
+    #restaurant-tabs .tab1 p{
+        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+    }
+}
 
 
 
@@ -1482,73 +1602,46 @@ footer li{
 /* TAB RESERVAS PROXIMAMENTE pagina reservation_info  */
 
 #reservation-tabs{
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
     width: 100%;
+    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
+    padding-top: 50px; /* Espaciado superior para que no quede pegado al titulo "Reservas registradas" */
+
 }
 
 .label-menu-reservation{
-    background-color: #000; /* Color de fondo de los titulos de los tabs */
+    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+    background-color: #000; /* Color de fondo de los titulos de los tabs */    
+    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu-reservation label{
+.label-menu-reservation li a{
+    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
     font-size: 16px;
     font-weight:400;
-    display: inline-block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
     color: white;
+    text-align: center;
+
+    display: block;
+    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+
     cursor: pointer;
     transition: all 400ms ease;
-    
 }
 
-.label-menu-reservation label:hover{
-    background-color:#757575; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+.label-menu-reservation :hover{
+    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+    transition: 0.2s ease;
+
 }
 
-.content-reservation{
-    position: relative; /* Para despues poner que el contenido sea absoluto y siempre la info quede dentro del contendedor padre*/
-}
-
-.content-reservation .tab1-reservation, .content-reservation .tab2-reservation{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    position: absolute; /* Permite que el contenido interior de los tabs se superponga*/
+.content-reservation article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
     width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
     transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    opacity: 0;
-    visibility: hidden; /* Esconder el contenido por defecto de los tabs */
-    transform: scale(0.90);
     background-color: white;
     padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
     border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion de los tabs no este pegado a los bordes 1% arriba -  0 derecha - 0 abajo - 1% izquierda*/
-
-}
-
-#radio1-reservation, #radio2-reservation{
-    display: none; /* Ocultar los circulos por defecto del radio button */
-}
-
-#radio1-reservation:checked ~ .tab1-reservation, #radio2-reservation:checked ~ .tab2-reservation{ 
-    /* Esto sirve para que cuando demos clic en algun tab, aparezca toda la informacion interna */
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.content-reservation .tab1-reservation::after, .content-reservation .tab2-reservation::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    position: absolute;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid white;
-    bottom: 100%;
-    left: 69px;
-}
-
-.content-reservation .tab2-reservation::after{
-    /* Creacion de diseño en forma de triangulo que permitira identificar cual tab tienes presionado */
-    left: 225px;
+    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
 
 
@@ -1560,14 +1653,14 @@ footer li{
     margin: auto; /* Que se ajuste al centro */
     border: 0.3px solid black; /* Borde exteior para los tabs */
     background: #fafafa; /* Color de fondo para el form */
-    padding: 6px; /* Espaciado interno para que no se vea pegado a los bordes */
-    margin-bottom: 3%;
+    padding: 6px; /* Espaciado interno para toda la informacion que este dentro de los tabs para que no se vea pegado a los bordes */
+    margin-top: 2%; /* Espaciado superior para que los formularios tengan espaciado supeior */
+    margin-bottom: 5%; /* Espaciado superior para que los formularios tengan espaciado inferior */
 }
 
 #reservation-info-form:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
     transition: 0.1s ease;
-
 }
 
 #reservation-info-form h3{
@@ -1628,7 +1721,7 @@ footer li{
 }
 
 #reservation-info-form button:hover{
-    background-color: #757575; /* Cambiar de boton cuando se colocan sobre el boton */
+    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
     transition: 0.2s ease;
 }
 
@@ -1642,22 +1735,79 @@ footer li{
     }
 
     #reservation-info-form{
-        display: flex;
-        flex-direction: column;
+        display: flex; /* Hacer el formulario flexible */
+        flex-direction: column; /* Esta configuracion  */
         margin-bottom: 10%;
+        width: 85%;/* Que el tab interno de las reservas proximamente solo ocupe un 85% del 100% posible */
+
+    }
+}
+
+
+@media(max-width: 500px){
+    #reservation-info-form{
+        width: 90%;/* Que el tab interno de las reservas proximamente solo ocupe un 90% del 100% posible */
+        margin: auto; /* Que  ajuste al centro */
+        border: 1.5px solid #DDDDDD;
+        margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+    }
+
+    #reservation-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+        flex-basis: 0;
+        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
+    }
+
+}
+
+@media(max-width: 355px){
+    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu-reservation li a{
+        font-size: 15px;
+        padding: 15px 13px; /* Espaciado interno a los titulos de los tabs */
+  
+    }
+}
+
+@media(max-width: 305px){
+    #reservation-info-form{
+        width: 93%;/* Que el tab interno de las reservas proximamente solo ocupe un 93% del 100% posible */
+        margin: auto; /* Que  ajuste al centro */
+        margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+    }
+
+    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu-reservation li a{
+        font-size: 14px;
+        padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
+  
+    }
+
+}
+
+@media(max-width: 275px){
+    #reservation-info-form{
+        width: 95%;/* Que el tab interno de las reservas proximamente solo ocupe un 95% del 100% posible */
+        margin: auto; /* Que  ajuste al centro */
+        margin-top: 10%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+    }
+
+    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+    .label-menu-reservation li a{
+        font-size: 13px;
+        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
+  
     }
 }
 
 
 
 
-
 /* MODIFY RESERVATION pagina */
 #titulo-modify-reservation{
-    padding-bottom: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+    padding-bottom: 30px; /* Espaciado inferior del titulo de la pagina "modify-reservation", para que no este pegado a los formularios de abajo */
 
-}
-
-.clearfix{
-    overflow:visible;
 }
