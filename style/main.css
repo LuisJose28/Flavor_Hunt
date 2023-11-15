@@ -1,1813 +1,1751 @@
 /* CONFIGURACIÓN PRINCIPAL */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;/* Estilo de letra para toda la pagina */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Estilo de letra para toda la pagina */
 }
 
-body{
-    background-color: #FFFFFF;
+body {
+  background-color: #ffffff;
 }
-
-
 
 /* PÁGINA CREAR CUENTA */
 
-#signup-container{
-    width: 65%; /* Que solo ocupe el 65% del 100% de la pagina */
-    margin: auto;/* Sirve para que se centre automaticamente */
-    margin-top: 80px;/* Separacion superior al inicio de la pagina */
+#signup-container {
+  width: 65%; /* Que solo ocupe el 65% del 100% de la pagina */
+  margin: auto; /* Sirve para que se centre automaticamente */
+  margin-top: 80px; /* Separacion superior al inicio de la pagina */
 }
 
-#signup-container h1{
-    text-align: center;
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 40px;
+#signup-container h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 40px;
 }
 
-#signup-container h2{
-    text-align: center;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 31px;
+#signup-container h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 31px;
 }
 
-#signup-form fieldset{
-    border: none;    /* Quitarle el borde predeterminado al fieldset */
+#signup-form fieldset {
+  border: none; /* Quitarle el borde predeterminado al fieldset */
 }
 
-#signup-form input, #signup-form select{
-    width: 100%;
+#signup-form input,
+#signup-form select {
+  width: 100%;
 }
 
-#account-details, #account-credentials{
-    /* Permite colocar que los elementos se coloquen uno al lado del otro */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
+#account-details,
+#account-credentials {
+  /* Permite colocar que los elementos se coloquen uno al lado del otro */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
 }
 
-#signup-form label{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+#signup-form label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-#signup-form input, #signup-form select{
-    background-color: #F5F5F5;
-    outline: none;
-    border: 1.4px solid black;
-    padding: 7px;/* Espaciado interior de los input */
-    font-size: 16px;/* Tamaño del texto dentro de los input */
-    font-weight: 500;
+#signup-form input,
+#signup-form select {
+  background-color: #f5f5f5;
+  outline: none;
+  border: 1.4px solid black;
+  padding: 7px; /* Espaciado interior de los input */
+  font-size: 16px; /* Tamaño del texto dentro de los input */
+  font-weight: 500;
 }
 
-#signup-form input:hover,  #signup-form select:hover{
-    background-color: #FFFFFF; /* Cuando nos paramos sobre los input que cambien el fondo del color */
-    transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
+#signup-form input:hover,
+#signup-form select:hover {
+  background-color: #ffffff; /* Cuando nos paramos sobre los input que cambien el fondo del color */
+  transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
 }
 
-#signup-form input:-webkit-autofill, #signup-form input:-webkit-autofill:focus {
-    /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
-    -webkit-text-fill-color: #000; /* Cambia el color del texto */
-    -webkit-box-shadow: 0 0 0px 1000px #F5F5F5 inset; /* Cambia el fondo del campo de entrada */
+#signup-form input:-webkit-autofill,
+#signup-form input:-webkit-autofill:focus {
+  /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
+  -webkit-text-fill-color: #000; /* Cambia el color del texto */
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset; /* Cambia el fondo del campo de entrada */
 }
 
-
-#account-details{
-    margin-top: 50px;  /* Darle espaciado superior con el titulo H1 */ 
+#account-details {
+  margin-top: 50px; /* Darle espaciado superior con el titulo H1 */
 }
-#account-details h2{
-    margin-bottom: 11px;  /* Darle espaciado inferior con los input */ 
-}
-
-
-#account-credentials{
-    margin-top: 50px; /* Darle espaciado superior */ 
-}
-#account-credentials h2{
-    margin-bottom: 11px;  /* Darle espaciado inferior con los input */
+#account-details h2 {
+  margin-bottom: 11px; /* Darle espaciado inferior con los input */
 }
 
-#boton-signup{
-    display: flex;
-    justify-content: end;
-    margin-top: 50px; /* Darle espaciado superior al boton */
-    margin-bottom: 50px; /* Darle espaciado superior al boton */
+#account-credentials {
+  margin-top: 50px; /* Darle espaciado superior */
+}
+#account-credentials h2 {
+  margin-bottom: 11px; /* Darle espaciado inferior con los input */
 }
 
-#boton-signup button{
-    color: white;
-    background-color:black;
-    font-weight: 600;
-    padding: 14px; /* Espaciado interno al boton */
-    border: none;
+#boton-signup {
+  display: flex;
+  justify-content: end;
+  margin-top: 50px; /* Darle espaciado superior al boton */
+  margin-bottom: 50px; /* Darle espaciado superior al boton */
 }
 
-#boton-signup button:hover{
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
+#boton-signup button {
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 14px; /* Espaciado interno al boton */
+  border: none;
+}
+
+#boton-signup button:hover {
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
 }
 
 @media (max-width: 600px) {
-    #signup-container h1{
-        font-size: 30px; /* Tamaño del titulo en pantallas mas pequeñas */
-    }
+  #signup-container h1 {
+    font-size: 30px; /* Tamaño del titulo en pantallas mas pequeñas */
+  }
 
-    #signup-container {
-        width: 85%; /* Aumentar ancho del contenedor en pantallas mas pequeñas */
-    }
+  #signup-container {
+    width: 85%; /* Aumentar ancho del contenedor en pantallas mas pequeñas */
+  }
 
-    #account-details, #account-credentials{
-        display: flex;
-        flex-direction: column; /* En pantallas mas pequeñas, que los input esten uno abajo del otro */
-    }
+  #account-details,
+  #account-credentials {
+    display: flex;
+    flex-direction: column; /* En pantallas mas pequeñas, que los input esten uno abajo del otro */
+  }
 
-    #account-details p, #account-credentials p{
-        margin-bottom: 15px; /* Que cada elemento p(Label e input) tengan separacion para que no esten pegados unos con otros */
-    }
+  #account-details p,
+  #account-credentials p {
+    margin-bottom: 15px; /* Que cada elemento p(Label e input) tengan separacion para que no esten pegados unos con otros */
+  }
 
-    #account-details h2, #account-credentials h2{
-        display: none;
-    }
-    
-    #account-details{
-        margin-top: 30px;  /* Darle un poco de espaciado superior con el titulo H1 */ 
-    }
+  #account-details h2,
+  #account-credentials h2 {
+    display: none;
+  }
 
-    #account-credentials{
-        margin-top: 2px; /* Darle espaciado superior */ 
-    }
+  #account-details {
+    margin-top: 30px; /* Darle un poco de espaciado superior con el titulo H1 */
+  }
 
-    #boton-signup{
-        display: grid;
-        grid-template-columns: 1fr; /* Permite que el boton ocupe todo el ancho en pantallas pequeñas */
-        margin-top: 30px; /* Darle espaciado superior al boton */
+  #account-credentials {
+    margin-top: 2px; /* Darle espaciado superior */
+  }
 
-    }
-
-    
+  #boton-signup {
+    display: grid;
+    grid-template-columns: 1fr; /* Permite que el boton ocupe todo el ancho en pantallas pequeñas */
+    margin-top: 30px; /* Darle espaciado superior al boton */
+  }
 }
-
-
-
-
 
 /* PÁGINA LOGIN */
 
 #login-container {
-    max-width: 430px;
-    margin: 0 auto; /* Centrar horizontalmente en pantalla grande */
-    text-align: center;
-    margin-top: 80px;/* Separacion superior al inicio de la pagina */
-
+  max-width: 430px;
+  margin: 0 auto; /* Centrar horizontalmente en pantalla grande */
+  text-align: center;
+  margin-top: 80px; /* Separacion superior al inicio de la pagina */
 }
 
-
 #login-container h1 {
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 40px;
-    margin-bottom: 25px;/* Espaciado entre el titutlo 'Iniciar Sesion' y el label 'correo electronico' */
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 40px;
+  margin-bottom: 25px; /* Espaciado entre el titutlo 'Iniciar Sesion' y el label 'correo electronico' */
 }
 
 #login-form fieldset {
-    border: none;
+  border: none;
 }
 
 #login-form p {
-    display: flex;
-    flex-direction: column; /* Esto sirve para que el label y el input esten uno abajo del otro. Tanto para 'Detalles de la cuenta', como para 'Credenciales de la cuenta' */
-    align-items: center;
-    margin: 10px 0;
+  display: flex;
+  flex-direction: column; /* Esto sirve para que el label y el input esten uno abajo del otro. Tanto para 'Detalles de la cuenta', como para 'Credenciales de la cuenta' */
+  align-items: center;
+  margin: 10px 0;
 }
 
-
 #login-form label {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left; /* Que los label esten a la izquierda */
-    width: 100%; /* Label ocupen el 100% del ancho disponible */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left; /* Que los label esten a la izquierda */
+  width: 100%; /* Label ocupen el 100% del ancho disponible */
 }
 
 #login-form input {
-    background-color: #F5F5F5;
-    outline: none;
-    border: 1.4px solid black;
-    padding: 7px;/* Espaciado interior de los input */
-    width: 100%;/* Darle ancho a los input */
-    font-size: 16px;/* Tamaño del texto dentro de los input */
-    font-weight: 500;
+  background-color: #f5f5f5;
+  outline: none;
+  border: 1.4px solid black;
+  padding: 7px; /* Espaciado interior de los input */
+  width: 100%; /* Darle ancho a los input */
+  font-size: 16px; /* Tamaño del texto dentro de los input */
+  font-weight: 500;
 }
 
 #login-form input:hover {
-    background-color: #FFFFFF; /* Cuando nos paramos sobre los input que cambien el fondo del color */
-    transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
+  background-color: #ffffff; /* Cuando nos paramos sobre los input que cambien el fondo del color */
+  transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
 }
 
 #login-form input:-webkit-autofill,
 #login-form input:-webkit-autofill:focus {
-    /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
-    -webkit-text-fill-color: #000; /* Cambia el color del texto */
-    -webkit-box-shadow: 0 0 0px 1000px #F5F5F5 inset; /* Cambia el fondo del campo de entrada */
+  /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
+  -webkit-text-fill-color: #000; /* Cambia el color del texto */
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset; /* Cambia el fondo del campo de entrada */
 }
 
 #login-form a {
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 500;
-    color: #036AD8;
-    text-decoration:underline ; /* Subrayado del enlace del login */
-    text-align: left;
-    width: 100%; /* Que los enlacen ocupen un 100% de ancho */
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #036ad8;
+  text-decoration: underline; /* Subrayado del enlace del login */
+  text-align: left;
+  width: 100%; /* Que los enlacen ocupen un 100% de ancho */
 }
 
 #login-form a:hover {
-    color: #35363A;
-    transition: 0.2s ease;
+  color: #35363a;
+  transition: 0.2s ease;
 }
 
 #login-form p {
-    margin: 12px 0; /* Separacion de los elementos 'correo', 'contraseña' y 'olvido su contraseña' */
+  margin: 12px 0; /* Separacion de los elementos 'correo', 'contraseña' y 'olvido su contraseña' */
 }
 
 #boton-login {
-    margin-top: 50px; /* Darle espaciado superior al boton */
-    display: flex;
-    justify-content: space-between; /* Que los botones ocupen el mismo tamaño del ancho */
-    width: 100%;
+  margin-top: 50px; /* Darle espaciado superior al boton */
+  display: flex;
+  justify-content: space-between; /* Que los botones ocupen el mismo tamaño del ancho */
+  width: 100%;
 }
 
 #boton-login button {
-    color: white;
-    background-color: black;
-    font-weight: 600;
-    padding: 14px; /* Espaciado interno al boton */
-    width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
-    border: 1.4px solid black;
-    cursor: pointer;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 14px; /* Espaciado interno al boton */
+  width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
+  border: 1.4px solid black;
+  cursor: pointer;
 }
 
 #boton-login button:first-child {
-    background-color: #FFFFFF;
-    color: black;
+  background-color: #ffffff;
+  color: black;
 }
 
 #boton-login button:nth-child(2) {
-    color: white;
-    background-color: black;
+  color: white;
+  background-color: black;
 }
 
 #boton-login button:hover {
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
-    color: white;
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
+  color: white;
 }
 
 /* Ajuste para dispositivos más pequeños */
 @media (max-width: 600px) {
-    #login-container {
-        margin-top: 80px;/* Separacion superior al inicio de la pagina */
-        width: 90%;
-    }
+  #login-container {
+    margin-top: 80px; /* Separacion superior al inicio de la pagina */
+    width: 90%;
+  }
 
-    #login-container h1{
-        font-size: 30px;
+  #login-container h1 {
+    font-size: 30px;
+  }
 
-    }
-
-    #boton-login button {
-        width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */        
-        margin-top: 10px;
-    }
+  #boton-login button {
+    width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
+    margin-top: 10px;
+  }
 }
-
-
-
-
-
 
 /* PAGINA 'OLVIDO SU CONTRASEÑA' */
 #forgot-password-container {
-    max-width: 430px;
-    margin: 0 auto; /* Centrar horizontalmente en pantalla grande */
-    text-align: center;
-    margin-top: 80px;/* Separacion superior al inicio de la pagina */
-
+  max-width: 430px;
+  margin: 0 auto; /* Centrar horizontalmente en pantalla grande */
+  text-align: center;
+  margin-top: 80px; /* Separacion superior al inicio de la pagina */
 }
 
-
 #forgot-password-container h1 {
-    font-size: 35px;
-    font-weight: 900;
-    line-height: 40px;
-    margin-bottom: 25px;/* Espaciado entre el titutlo 'Iniciar Sesion' y el label 'correo electronico' */
-    text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 40px;
+  margin-bottom: 25px; /* Espaciado entre el titutlo 'Iniciar Sesion' y el label 'correo electronico' */
+  text-align: center;
 }
 
 #forgot-password-form fieldset {
-    border: none;
+  border: none;
 }
 
 #forgot-password-form p {
-    display: flex;
-    flex-direction: column; /* Esto sirve para que el label y el input esten uno abajo del otro. Tanto para 'Detalles de la cuenta', como para 'Credenciales de la cuenta' */
-    align-items: center;
-    margin: 10px 0;
+  display: flex;
+  flex-direction: column; /* Esto sirve para que el label y el input esten uno abajo del otro. Tanto para 'Detalles de la cuenta', como para 'Credenciales de la cuenta' */
+  align-items: center;
+  margin: 10px 0;
 }
 
-
 #forgot-password-form label {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left; /* Que los label esten a la izquierda */
-    width: 100%; /* Label ocupen el 100% del ancho disponible */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left; /* Que los label esten a la izquierda */
+  width: 100%; /* Label ocupen el 100% del ancho disponible */
 }
 
 #forgot-password-form input {
-    background-color: #F5F5F5;
-    outline: none;
-    border: 1.4px solid black;
-    padding: 7px;/* Espaciado interior de los input */
-    width: 100%;/* Darle ancho a los input */
-    font-size: 16px;/* Tamaño del texto dentro de los input */
-    font-weight: 500;
+  background-color: #f5f5f5;
+  outline: none;
+  border: 1.4px solid black;
+  padding: 7px; /* Espaciado interior de los input */
+  width: 100%; /* Darle ancho a los input */
+  font-size: 16px; /* Tamaño del texto dentro de los input */
+  font-weight: 500;
 }
 
 #forgot-password-form input:hover {
-    background-color: #FFFFFF; /* Cuando nos paramos sobre los input que cambien el fondo del color */
-    transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
+  background-color: #ffffff; /* Cuando nos paramos sobre los input que cambien el fondo del color */
+  transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
 }
 
 #forgot-password-form input:-webkit-autofill,
 #forgot-password-form input:-webkit-autofill:focus {
-    /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
-    -webkit-text-fill-color: #000; /* Cambia el color del texto */
-    -webkit-box-shadow: 0 0 0px 1000px #F5F5F5 inset; /* Cambia el fondo del campo de entrada */
+  /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
+  -webkit-text-fill-color: #000; /* Cambia el color del texto */
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset; /* Cambia el fondo del campo de entrada */
 }
 
-
 #forgot-password-form p {
-    margin: 12px 0; /* Separacion de los elementos 'correo', 'contraseña' y 'olvido su contraseña' */
+  margin: 12px 0; /* Separacion de los elementos 'correo', 'contraseña' y 'olvido su contraseña' */
 }
 
 #boton-forgot-password {
-    margin-top: 50px; /* Darle espaciado superior al boton */
-    display: flex;
-    justify-content: end; /* Que los botones ocupen el mismo tamaño del ancho */
-    width: 100%;
+  margin-top: 50px; /* Darle espaciado superior al boton */
+  display: flex;
+  justify-content: end; /* Que los botones ocupen el mismo tamaño del ancho */
+  width: 100%;
 }
 
 #boton-forgot-password button {
-    color: white;
-    background-color: black;
-    font-weight: 600;
-    padding: 14px; /* Espaciado interno al boton */
-    width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
-    border: 1.4px solid black;
-    cursor: pointer;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 14px; /* Espaciado interno al boton */
+  width: 48%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
+  border: 1.4px solid black;
+  cursor: pointer;
 }
 
-
 #boton-forgot-password button:hover {
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
-    color: white;
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
+  color: white;
 }
 
 /* Ajuste para dispositivos más pequeños */
 @media (max-width: 600px) {
-    #forgot-password-container {
-        margin-top: 80px;/* Separacion superior al inicio de la pagina */
-        width: 90%;
-    }
+  #forgot-password-container {
+    margin-top: 80px; /* Separacion superior al inicio de la pagina */
+    width: 90%;
+  }
 
-    #forgot-password-container h1{
-        font-size: 30px;
+  #forgot-password-container h1 {
+    font-size: 30px;
+  }
 
-    }
-
-    #boton-forgot-password button {
-        width: 100%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */        
-        margin-top: 10px;
-    }
+  #boton-forgot-password button {
+    width: 100%; /* Que cada uno ocupe 48% para dejar espacio entre los botones */
+    margin-top: 10px;
+  }
 }
-
-
-
 
 /* Seccion HEADER pagina home */
-header{
-    min-height: 80vh; /* Altura del header */
-    width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/restaurante1-home.webp);
-    background-position: center; /* posicion de la imagen */
-    background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
-    position: relative;
+header {
+  min-height: 80vh; /* Altura del header */
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../assets/imgs/restaurantes/buffet-del-sabor-home.webp);
+  background-position: center; /* posicion de la imagen */
+  background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
+  position: relative;
 }
 
-
-nav{
-    display: flex;
-    padding: 2% 6%;/* Distancia arriba y abajo */
-    justify-content: space-between; /* Que tengan separacion cada uno en ambos lados */
-    align-items: center;
+nav {
+  display: flex;
+  padding: 2% 6%; /* Distancia arriba y abajo */
+  justify-content: space-between; /* Que tengan separacion cada uno en ambos lados */
+  align-items: center;
 }
 
-nav img{
-    width: 150px ; /* Tamaño del logo */
+nav img {
+  width: 150px; /* Tamaño del logo */
 }
 
-.nav-links{
-    flex: 1;
-    text-align: right;
+.nav-links {
+  flex: 1;
+  text-align: right;
 }
 
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;/* Cada link uno al lado del otro */
-    padding: 8px 12px; /* Espacio interno de cada link */
-    position: relative; /* Permitir que se superpongan los links */
+.nav-links ul li {
+  list-style: none;
+  display: inline-block; /* Cada link uno al lado del otro */
+  padding: 8px 12px; /* Espacio interno de cada link */
+  position: relative; /* Permitir que se superpongan los links */
 }
 
-.nav-links ul li a{ 
-    color: white;
-    text-decoration: none;
-    font-size: 14px;/* Tamaño de los links */
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px; /* Tamaño de los links */
 }
 
-.nav-links ul li::after{
-    /* Estilos cuando te paras sobre los links */
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #A52A2A;
+.nav-links ul li::after {
+  /* Estilos cuando te paras sobre los links */
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #a52a2a;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%; /* Que el estilo ocupe el 100% de los links al momomento de hacer hover */
+}
+
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%; /* Centrar la informacion */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Que la informacion siempre se agrupe en el medio */
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px; /* Tamaño del h1 */
+}
+
+.text-box p {
+  margin: 10px 0 40px; /* 10px arriba - 0px izquierda y derecha - 40px abajo */
+  font-size: 25px;
+  color: white;
+}
+
+nav .fa-solid {
+  display: none; /* Ocultar el fontaweome de Javascript en pantallas grandes */
+}
+
+@media (max-width: 800px) {
+  .text-box h1 {
+    font-size: 32px; /* Letra mas pequeña en pantallas pequeñas  */
+  }
+
+  .text-box p {
+    font-size: 20px; /* Letra mas pequeña en pantallas pequeñas  */
+  }
+
+  nav {
+    padding: 5% 6%; /* Distancia arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
+  }
+
+  .nav-links ul li {
+    display: block; /* Estilo mas los links del nav */
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #a52a2a; /* Color de fondo para animacion de java Script */
+    height: 100vh; /* Tamaño de animacion */
+    width: 200px;
+    top: 0;
+    right: -200px; /* Que aparezca a la derecha */
+    text-align: left;
+    z-index: 2; /* Que se superponga la animacion sobre el texto */
+    transition: 1s; /* Transicion al aparecer la animacion */
+  }
+
+  nav .fa-solid {
+    /* Fontawesome que nos permitira que sque la animacion */
     display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-links ul li:hover::after{
-    width: 100%; /* Que el estilo ocupe el 100% de los links al momomento de hacer hover */
-}
-
-.text-box{
-    width: 90%;
     color: #fff;
-    position: absolute;
-    top: 50%; /* Centrar la informacion */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Que la informacion siempre se agrupe en el medio */
-    text-align: center;
+    margin: 10px;
+    font-size: 22px; /* Tamaño del texto de la animacion de javascript */
+    cursor: pointer;
+  }
 
+  .nav-links ul {
+    padding: 30px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden; /* debe agregar "html, cuerpo {overflow-x: hidden;}" en la consulta de medios para evitar que el usuario pueda desplazarse a la barra de enlaces de navegación cuando tiene un valor correcto negativo.*/
+  }
 }
-
-.text-box h1{
-    font-size: 62px;/* Tamaño del h1 */
-}
-
-.text-box p{
-    margin: 10px 0 40px; /* 10px arriba - 0px izquierda y derecha - 40px abajo */
-    font-size: 25px;
-    color: white;
-}
-
-
-nav .fa-solid{
-    display: none; /* Ocultar el fontaweome de Javascript en pantallas grandes */
-}
-
-
-@media(max-width: 800px){
-    .text-box h1{
-        font-size: 32px; /* Letra mas pequeña en pantallas pequeñas  */
-    }
-
-    .text-box p{
-        font-size: 20px; /* Letra mas pequeña en pantallas pequeñas  */
-    }
-
-    nav{
-        padding: 5% 6%;/* Distancia arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
-    }
-
-    .nav-links ul li{
-        display: block; /* Estilo mas los links del nav */
-    }
-
-    .nav-links {
-        position: fixed;
-        background: #A52A2A;/* Color de fondo para animacion de java Script */
-        height: 100vh; /* Tamaño de animacion */
-        width: 200px;
-        top: 0;
-        right: -200px;/* Que aparezca a la derecha */
-        text-align: left;
-        z-index: 2;/* Que se superponga la animacion sobre el texto */
-        transition: 1s;/* Transicion al aparecer la animacion */
-    }
-
-    nav .fa-solid{
-        /* Fontawesome que nos permitira que sque la animacion */
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;/* Tamaño del texto de la animacion de javascript */
-        cursor: pointer;
-    }
-
-    .nav-links ul{
-        padding: 30px;
-    }
-
-    html, body {
-        overflow-x: hidden; /* debe agregar "html, cuerpo {overflow-x: hidden;}" en la consulta de medios para evitar que el usuario pueda desplazarse a la barra de enlaces de navegación cuando tiene un valor correcto negativo.*/
-    }
-
-}
-
-
 
 /* Seccion MEJORES RESTAURANTES DEL 2023 - pagina home */
-#restaurantes-home{
-    width: 80%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
+#restaurantes-home {
+  width: 80%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-#restaurantes-home h2{
-    font-size: 36px;
-    font-weight: 600;
+#restaurantes-home h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-.row{
-    margin-top: 5%; /* Espaciado superior para que no quede pegado al titutlo */
+.row {
+  margin-top: 5%; /* Espaciado superior para que no quede pegado al titutlo */
+  display: flex;
+  justify-content: space-between; /* Las cartas ocupen todo el espacio horizontalmente */
+}
+
+.restaurantes-home-col {
+  flex-basis: 31%;
+  background: #fafafa; /* Color de fondo de las cartas */
+  border-radius: 10px; /* Borde redondeado de las cartas */
+  margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
+  padding: 20px 15px; /* Espaciado interno para las cartas */
+  transition: 1s;
+  text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
+  color: black;
+}
+
+.restaurantes-home-col img {
+  width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
+  border-radius: 10px; /* Borde redondeado de las imagenes */
+  height: 35vh;
+}
+
+.restaurantes-home-col figcaption {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+  font-weight: bold;
+}
+
+.restaurantes-home-col p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.restaurantes-home-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease;
+}
+
+@media (max-width: 800px) {
+  .row {
     display: flex;
-    justify-content: space-between;/* Las cartas ocupen todo el espacio horizontalmente */
-}
+    flex-direction: column;
+  }
 
-.restaurantes-home-col{
-    flex-basis: 31%;
-    background: #fafafa; /* Color de fondo de las cartas */
-    border-radius: 10px;/* Borde redondeado de las cartas */
-    margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
-    padding: 20px 15px; /* Espaciado interno para las cartas */
-    transition: 1s;
-    text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
-    color: black;
-}
-
-.restaurantes-home-col img{ 
-    width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
-    border-radius: 10px;/* Borde redondeado de las imagenes */
-    height: 35vh;
-}
-
-.restaurantes-home-col figcaption{ 
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
-    font-weight: bold;
-}
-
-.restaurantes-home-col p{ 
-    font-size: 16px;
-    font-weight: 300;
-
-
-}
-
-.restaurantes-home-col:hover{ 
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
-    transition: 0.1s ease;
-}
-
-@media(max-width: 800px){
-    .row{
-        display: flex;
-        flex-direction: column;
-    }
-
-   #restaurantes-home h2, #cafeterias-home h2{
+  #restaurantes-home h2,
+  #cafeterias-home h2 {
     font-size: 26px;
-   }
+  }
 
-   #bares-home h2{
+  #bares-home h2 {
     font-size: 26px;
-   }
+  }
 
-   .imagenes-banner{
+  .imagenes-banner {
     display: none;
-   }
-
+  }
 }
-
-
-
 
 /* Seccion MEJORES BARES DEL 2023 - pagina home */
-#bares-home{
-    width: 80%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+#bares-home {
+  width: 80%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-#bares-home h2{
-    font-size: 36px;
-    font-weight: 600;
+#bares-home h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-.bares-home-col{
-    flex-basis: 32%; /* es una medida relativa */
-    border-radius: 10px; /* Borde redondeado de las cartas */
-    margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
-    transition: 1s;
-    text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
-    position: relative; /* Establece una posición relativa para el posicionamiento de capas internas */
-    overflow: hidden; /* Oculta el contenido que desborda las cartas */
+.bares-home-col {
+  flex-basis: 32%; /* es una medida relativa */
+  border-radius: 10px; /* Borde redondeado de las cartas */
+  margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
+  transition: 1s;
+  text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
+  position: relative; /* Establece una posición relativa para el posicionamiento de capas internas */
+  overflow: hidden; /* Oculta el contenido que desborda las cartas */
 }
 
-.bares-home-col img{
-    width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
-    border-radius: 10px;/* Borde redondeado de las imagenes */
-    display: block; /* Establece la imagen como bloque para evitar espacios no deseados */
-    height: 60vh;
+.bares-home-col img {
+  width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
+  border-radius: 10px; /* Borde redondeado de las imagenes */
+  display: block; /* Establece la imagen como bloque para evitar espacios no deseados */
+  height: 60vh;
 }
 
-
-.layer{
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    position: absolute; /* Posición absoluta para superponer el texto */
-    top: 0; /* Alinea el texto en la parte superior de las cartas */
-    left: 0; /* Alinea el texto en la parte izquierda de las cartas */
-    transition: 1s; /* Efecto de transición de 1 segundo al hacer hover */
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute; /* Posición absoluta para superponer el texto */
+  top: 0; /* Alinea el texto en la parte superior de las cartas */
+  left: 0; /* Alinea el texto en la parte izquierda de las cartas */
+  transition: 1s; /* Efecto de transición de 1 segundo al hacer hover */
 }
 
-.layer:hover{
-    background: rgba(226, 0, 0, 0.7); /* Fondo rojo con transparencia al hacer hover */
+.layer:hover {
+  background: rgba(
+    226,
+    0,
+    0,
+    0.7
+  ); /* Fondo rojo con transparencia al hacer hover */
 }
 
-.layer h3{
-    font-size: 26px;
-    font-weight: 500;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
-    width: 100%;
-    color: #FFFFFF;
-    bottom: 0; /* Alinea el encabezado en la parte inferior de la carta */
-    left: 50%; /* Alinea el encabezado en la mitad del ancho de la carta */
-    transform: translateX(-50%); /* Centra horizontalmente el encabezado */
-    position: absolute; /* Posición absoluta para superponer el encabezado */
-    opacity: 0; /* Opacidad inicial del encabezado (invisible) */
-    transition: 0.5s; /* Efecto de transición de 0.5 segundos al hacer hover */
-    text-align: center;
+.layer h3 {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+  width: 100%;
+  color: #ffffff;
+  bottom: 0; /* Alinea el encabezado en la parte inferior de la carta */
+  left: 50%; /* Alinea el encabezado en la mitad del ancho de la carta */
+  transform: translateX(-50%); /* Centra horizontalmente el encabezado */
+  position: absolute; /* Posición absoluta para superponer el encabezado */
+  opacity: 0; /* Opacidad inicial del encabezado (invisible) */
+  transition: 0.5s; /* Efecto de transición de 0.5 segundos al hacer hover */
+  text-align: center;
 }
 
-.layer:hover h3{
-    bottom: 50%; /* Centra verticalmente el encabezado en la carta al hacer hover */
-    opacity: 1; /* Hace visible el encabezado al hacer hover */
-    text-align: center;
+.layer:hover h3 {
+  bottom: 50%; /* Centra verticalmente el encabezado en la carta al hacer hover */
+  opacity: 1; /* Hace visible el encabezado al hacer hover */
+  text-align: center;
 }
-
-
-
-
-
 
 /* Seccion BANNER pagina home */
-.banner-home{
-    width: 100%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
-    display: flex;
+.banner-home {
+  width: 100%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+  display: flex;
 }
 
 .imagenes-banner {
-    flex: 1;
-    position: relative;/* Eliminamos el margen entre las imágenes */
-    margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
-
+  flex: 1;
+  position: relative; /* Eliminamos el margen entre las imágenes */
+  margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
 }
 
-.imagenes-banner img{
-    width: 100%;    
-    height: 65vh;/* Tamaño de las imaganes del banner home */
+.imagenes-banner img {
+  width: 100%;
+  height: 65vh; /* Tamaño de las imaganes del banner home */
 }
 
 .imagenes-banner-texto {
-    position: absolute; /* Posición absoluta para superponer contenido */
-    top: 0; /* Se coloca el texto en la parte superior del contenedor */
-    left: 0; /* Se coloca el texto en la parte izquierda del contenedor */
-    width: 100%; /* El texto ocupa todo el ancho del contenedor */
-    height: 100%; /* El texto ocupa todo el alto del contenedor */
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; /* Centra verticalmente el contenido */
-    align-items: center; /* Centra horizontalmente el contenido */
-    text-align: center; 
-    opacity: 1; /* El estará siempre presente */
+  position: absolute; /* Posición absoluta para superponer contenido */
+  top: 0; /* Se coloca el texto en la parte superior del contenedor */
+  left: 0; /* Se coloca el texto en la parte izquierda del contenedor */
+  width: 100%; /* El texto ocupa todo el ancho del contenedor */
+  height: 100%; /* El texto ocupa todo el alto del contenedor */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  text-align: center;
+  opacity: 1; /* El estará siempre presente */
 }
-  
-.imagenes-banner-texto button, p {
-    margin: 10px; /* Espacio entre el botón y el párrafo */
+
+.imagenes-banner-texto button,
+p {
+  margin: 10px; /* Espacio entre el botón y el párrafo */
 }
 
 .imagenes-banner-texto p {
-    color: white;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 45px;/* Interlineado */
-    background: rgba(0, 0, 0, 0.3);
-    
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 45px; /* Interlineado */
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .imagenes-banner-texto .chevron-banner {
-    margin-left: 10px;/* Separar el fontawesome */
+  margin-left: 10px; /* Separar el fontawesome */
 }
 
 .imagenes-banner-texto button {
-    background-color: #FFFFFF;
-    color: black;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 8px 20px 8px 20px; /* Espaciado interior del boton */
-    border: none;
-    outline: none;
-    border-radius: 2px;
+  background-color: #ffffff;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 8px 20px 8px 20px; /* Espaciado interior del boton */
+  border: none;
+  outline: none;
+  border-radius: 2px;
 }
-.imagenes-banner-texto button:hover, .chevron-banner:hover {
-    background-color: #A52A2A;
-    color: white;
-    transition: 0.2s ease-in; 
-    cursor: pointer;/* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
+.imagenes-banner-texto button:hover,
+.chevron-banner:hover {
+  background-color: #a52a2a;
+  color: white;
+  transition: 0.2s ease-in;
+  cursor: pointer; /* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
 }
-
-
 
 /* Seccion MEJORES CAFETERÍAS DEL 2023 - pagina home */
-#cafeterias-home{
-    width: 80%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+#cafeterias-home {
+  width: 80%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-#cafeterias-home h2{
-    font-size: 36px;
-    font-weight: 600;
+#cafeterias-home h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-.row{
-    margin-top: 5%; /* Espaciado superior para que no quede pegado al titutlo */
-    display: flex;
-    justify-content: space-between;/* Las cartas ocupen todo el espacio horizontalmente */
+.row {
+  margin-top: 5%; /* Espaciado superior para que no quede pegado al titutlo */
+  display: flex;
+  justify-content: space-between; /* Las cartas ocupen todo el espacio horizontalmente */
 }
 
-.cafeterias-home-col{
-    flex-basis: 24%;
-    background: #fafafa; /* Color de fondo de las cartas */
-    border-radius: 10px;/* Borde redondeado de las cartas */
-    margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
-    padding: 20px 15px; /* Espaciado interno para las cartas */
-    transition: 1s;
-    text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
-    color: black;
+.cafeterias-home-col {
+  flex-basis: 24%;
+  background: #fafafa; /* Color de fondo de las cartas */
+  border-radius: 10px; /* Borde redondeado de las cartas */
+  margin-bottom: 5%; /* Espaciado inferior para separarlo del titulo */
+  padding: 20px 15px; /* Espaciado interno para las cartas */
+  transition: 1s;
+  text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
+  color: black;
 }
 
-.cafeterias-home-col img{ 
-    width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
-    border-radius: 10px;/* Borde redondeado de las imagenes */
-    height: 35vh;
+.cafeterias-home-col img {
+  width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
+  border-radius: 10px; /* Borde redondeado de las imagenes */
+  height: 35vh;
 }
 
-.cafeterias-home-col figcaption{ 
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
-    font-weight: bold;
+.cafeterias-home-col figcaption {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+  font-weight: bold;
 }
 
-.cafeterias-home-col p{ 
-    font-size: 16px;
-    font-weight: 300;
+.cafeterias-home-col p {
+  font-size: 16px;
+  font-weight: 300;
 }
 
-.cafeterias-home-col:hover{ 
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
-    transition: 0.1s ease;
+.cafeterias-home-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease;
 }
-
-
-
-
 
 /* FOOTER */
 footer {
-    width: 100%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    margin-top: 100px; /* Espaciado superior para que no quede pegado a la seccion anterior */
-    padding: 30px 0; /* Para que los elementos interiores del footer no esten pegados con el borde superior e inferior */
-    background-color: #050813;
-    color: #C7DAE1;
+  width: 100%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  margin-top: 100px; /* Espaciado superior para que no quede pegado a la seccion anterior */
+  padding: 30px 0; /* Para que los elementos interiores del footer no esten pegados con el borde superior e inferior */
+  background-color: #050813;
+  color: #c7dae1;
 }
 
-footer h3{
-    font-size: 24px;
-    text-align: center;
-    font-weight: 500;
+footer h3 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
 }
 
-footer a{
-    color: #C7DAE1;
-    text-decoration: none;
-    padding: 10px; /* Que todos los links del footer tengan un relleno de 10px */
-    font-weight: bold;
+footer a {
+  color: #c7dae1;
+  text-decoration: none;
+  padding: 10px; /* Que todos los links del footer tengan un relleno de 10px */
+  font-weight: bold;
 }
 
-footer a:hover{
-    color: #A52A2A;
-    transition: 0.2s ease;
+footer a:hover {
+  color: #a52a2a;
+  transition: 0.2s ease;
 }
 
-footer li{
-    list-style: none;
+footer li {
+  list-style: none;
 }
 
-.menu-secundario{
-    width: 80%; /* Que del 100% del footer. Solo se utilice un 80%*/
-    margin: auto;
-    
+.menu-secundario {
+  width: 80%; /* Que del 100% del footer. Solo se utilice un 80%*/
+  margin: auto;
 }
 
-.menu-secundario hr{
-    border: none; /* Elimina el borde por defecto del elemento hr */
-    height: 1px; /* Ajusta la altura de la línea horizontal */
-    background-color: white; /* Establece el color de fondo de la línea horizontal */
-    margin: 10px 0; /* Ajusta el margen superior e inferior de la línea horizontal */
+.menu-secundario hr {
+  border: none; /* Elimina el borde por defecto del elemento hr */
+  height: 1px; /* Ajusta la altura de la línea horizontal */
+  background-color: white; /* Establece el color de fondo de la línea horizontal */
+  margin: 10px 0; /* Ajusta el margen superior e inferior de la línea horizontal */
 }
 
-.nav-secundario ul{
-    display: flex;
-    justify-content: space-between; /* Espaciado horizontal entre los elementos de la lista */
-    width: 100%;
-    margin: auto;    
+.nav-secundario ul {
+  display: flex;
+  justify-content: space-between; /* Espaciado horizontal entre los elementos de la lista */
+  width: 100%;
+  margin: auto;
 }
 
-.menu-secundario-vertical{ 
-    display: flex;/* Para que los indices de "Registrase en cursos esten uno abajo del otro" */
-    flex-direction: column; /* Para que se ordenen en manera columna. Uno arriba del otro */
-    align-items: center; /* Centrar los elementos de manera vertical */
-    
+.menu-secundario-vertical {
+  display: flex; /* Para que los indices de "Registrase en cursos esten uno abajo del otro" */
+  flex-direction: column; /* Para que se ordenen en manera columna. Uno arriba del otro */
+  align-items: center; /* Centrar los elementos de manera vertical */
 }
 
-.menu-secundario-vertical li{ 
-    margin-top: 15px; /* Darle espaciado superior a los subindices de Registrase en cursos */
+.menu-secundario-vertical li {
+  margin-top: 15px; /* Darle espaciado superior a los subindices de Registrase en cursos */
 }
 
-.menu-secundario h4{
-    font-size: 20px;
-    text-align: center;
-    font-weight: 300;
-    margin: 30px 0;
-    
+.menu-secundario h4 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+  margin: 30px 0;
 }
 
-.menu-secundario p{
-    text-align: center;
-    font-size: 18px;
-    font-weight: 300;
+.menu-secundario p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
 }
 
-#boton-cerrarsesicon{
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+#boton-cerrarsesicon {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
 }
 
 #boton-cerrarsesicon a {
-    display: inline-block; /* Convertimos el enlace en un elemento en línea con un bloque de contenido */
-    background-color: #23283c;
-    padding: 10px 20px; /* Relleno interior del botón */
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #C7DAE1;
+  display: inline-block; /* Convertimos el enlace en un elemento en línea con un bloque de contenido */
+  background-color: #23283c;
+  padding: 10px 20px; /* Relleno interior del botón */
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #c7dae1;
 }
 
 #boton-cerrarsesicon a:hover {
-    color: #A52A2A;
+  color: #a52a2a;
 }
 
-@media(max-width: 800px){
-    .nav-secundario ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin: auto;    
-    }
-
-    .nav-secundario li{
-        margin-bottom: 15px;   
-    }
-
-}
-
-
-
-
-
-
-/* paginas  SEARCH (todas)*/
-.sub-header{
-    /* El sub-header es un header distinto para todas las paginas diferentes al home. Tendran atributos similares, lo unico que cambia es la altura, y que no tendran texto. Solo el logo y el nav  */
-    min-height: 15vh; /* Altura del header */
-    width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../assets/imgs/bar3-home.webp);
-    background-position: center; /* posicion de la imagen */
-    background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
-    position: relative;
-}
-
-.titulo-página-search{
-    width: 95%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
-}
-
-.titulo-página-search h2{
-    font-size: 36px;
-    font-weight: 600;
-}
-
-#search-restaurants{ /* Seccion completa de pagina search */
-    width: 95%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
-    display: flex; /* Permite ajustar la seccion completa. Permite que el filtro y los restaurantes buscados esten uno al lado del otro */
-    flex-direction: row; /* Hace que los articles esen uno al lado del otro */
-    justify-content: space-around;
-}
-
-
-.filtro-buscador{ /* Seccion de la izquierda - Filtros */
-    width: 20%; 
-    cursor: pointer;
-    margin-right: 20px;/* Darle espaciado a la derecha a la seccion de restaurantes buscados */
-}
-
-.filtro-buscador form{
+@media (max-width: 800px) {
+  .nav-secundario ul {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  .nav-secundario li {
+    margin-bottom: 15px;
+  }
 }
 
-.filtro-buscador details{
-    border: 0.1px solid black;/* Color de borde de los filtros */
+/* paginas  SEARCH (todas)*/
+.sub-header {
+  /* El sub-header es un header distinto para todas las paginas diferentes al home. Tendran atributos similares, lo unico que cambia es la altura, y que no tendran texto. Solo el logo y el nav  */
+  min-height: 15vh; /* Altura del header */
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../assets/imgs/restaurantes/el-bar-del-ocaso-home.webp);
+  background-position: center; /* posicion de la imagen */
+  background-size: cover; /* Hace que el tamaño de la imagen cubra toda la pagina */
+  position: relative;
 }
 
-
-.filtro-buscador summary{
-    font-size: 15px; /* Letras del titulo del acordeon */
-    font-weight: 600;
-    line-height: 17px;
-    padding: 13px 0px 13px 20px;/* Espaciado interno del titulo del acordeon*/
-    list-style: none; /* Eliminar viñetas por defecto */
-    background-color: #E4E4E4; /* Color de fondo del titutlo del acordeon */
+.titulo-página-search {
+  width: 95%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-.filtro-buscador summary:hover{
-    background-color: #F5F5F5; /* Color de fondo del titutlo del acordeon */
-    transition: 0.2s ease;
+.titulo-página-search h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-
-.filtro-buscador .seccion-acordeon div{
-    background-color: #FFFFFF;
-    padding: 9px 0px 9px 20px;/* Espaciado interno del texto de las opciones del Summary*/
+#search-restaurants {
+  /* Seccion completa de pagina search */
+  width: 95%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+  display: flex; /* Permite ajustar la seccion completa. Permite que el filtro y los restaurantes buscados esten uno al lado del otro */
+  flex-direction: row; /* Hace que los articles esen uno al lado del otro */
+  justify-content: space-around;
 }
 
-.filtro-buscador .seccion-acordeon div:hover{
-    background-color: #F5F5F5;
-    transition: 0.2s ease;
+.filtro-buscador {
+  /* Seccion de la izquierda - Filtros */
+  width: 20%;
+  cursor: pointer;
+  margin-right: 20px; /* Darle espaciado a la derecha a la seccion de restaurantes buscados */
 }
 
-
-.filtro-buscador input[type="radio"], input[type="checkbox"] {
-    /* Cambiar el color de los radio button cuando estan presionados*/
-    accent-color: #A52A2A; 
+.filtro-buscador form {
+  display: flex;
+  flex-direction: column;
 }
 
-.filtro-buscador input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
-    /* Cambiar el color del texto al seleccionar un radio button*/
-    color: #000000;  
+.filtro-buscador details {
+  border: 0.1px solid black; /* Color de borde de los filtros */
 }
 
-.filtro-buscador input[type="radio"], .filtro-buscador input[type="checkbox"] {
+.filtro-buscador summary {
+  font-size: 15px; /* Letras del titulo del acordeon */
+  font-weight: 600;
+  line-height: 17px;
+  padding: 13px 0px 13px 20px; /* Espaciado interno del titulo del acordeon*/
+  list-style: none; /* Eliminar viñetas por defecto */
+  background-color: #e4e4e4; /* Color de fondo del titutlo del acordeon */
+}
+
+.filtro-buscador summary:hover {
+  background-color: #f5f5f5; /* Color de fondo del titutlo del acordeon */
+  transition: 0.2s ease;
+}
+
+.filtro-buscador .seccion-acordeon div {
+  background-color: #ffffff;
+  padding: 9px 0px 9px 20px; /* Espaciado interno del texto de las opciones del Summary*/
+}
+
+.filtro-buscador .seccion-acordeon div:hover {
+  background-color: #f5f5f5;
+  transition: 0.2s ease;
+}
+
+.filtro-buscador input[type="radio"],
+input[type="checkbox"] {
+  /* Cambiar el color de los radio button cuando estan presionados*/
+  accent-color: #a52a2a;
+}
+
+.filtro-buscador input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  /* Cambiar el color del texto al seleccionar un radio button*/
+  color: #000000;
+}
+
+.filtro-buscador input[type="radio"],
+.filtro-buscador input[type="checkbox"] {
   margin-right: 5px; /* Espaciado entre los input y sus etiquetas */
 }
 
 #restaurants-filters label {
-    font-size: 16px;
-    font-weight: 400px;
+  font-size: 16px;
+  font-weight: 400px;
 }
 
-
-.filtro-buscador button{
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 17px;
-    color: white;
-    background-color:black;
-    padding: 14px; /* Espaciado interno al boton */
-    border: none;
-
+.filtro-buscador button {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17px;
+  color: white;
+  background-color: black;
+  padding: 14px; /* Espaciado interno al boton */
+  border: none;
 }
 
-.filtro-buscador button:hover{
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
+.filtro-buscador button:hover {
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
 }
 
-
-
-.restaurantes-buscados{ /* Seccion de la derecha - resultado de los filtros - restaurantes  */
-    width: 80%;
+.restaurantes-buscados {
+  /* Seccion de la derecha - resultado de los filtros - restaurantes  */
+  width: 80%;
 }
 
-#selected-restaurants-filters { 
+#selected-restaurants-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap; /* Permite que los filtros se coloquen en otra fila si sobrepasan el ancho propuesto */
+}
+
+#selected-restaurants-filters li {
+  list-style: none; /* Quitar viñetas de los filtros  */
+  border: 0.5px solid black; /* Color de borde de los filtros */
+  margin-right: 10px;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 1%;
+}
+
+.row-search {
+  margin-top: 2%; /* Espaciado superior para que no quede pegado al titutlo */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se coloquen en otra fila */
+  justify-content: space-between; /* Las cartas ocupen todo el espacio horizontalmente */
+}
+
+.restaurantes-search-col {
+  flex-basis: 32%;
+  background: #f5f5f5; /* Color de fondo de las cartas */
+  border-radius: 3px; /* Borde redondeado de las cartas */
+  margin-bottom: 4%; /* Espaciado inferior para separar las cartas */
+  padding: 10px 10px; /* Espaciado interno para las cartas */
+  transition: 1s;
+  text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
+  color: black;
+  border: 1px solid #dddddd;
+}
+
+.restaurantes-search-col img {
+  width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
+  border-radius: 3px; /* Borde redondeado de las imagenes */
+  height: 35vh;
+}
+
+.restaurantes-search-col figcaption {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+  font-weight: bold;
+}
+
+.restaurantes-search-col p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.restaurantes-search-col:hover {
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #000000;
+  transition: 0.1s ease;
+}
+
+@media (max-width: 800px) {
+  .sub-header nav {
+    padding: 7% 6%; /* Distancia del sub-header arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
+  }
+
+  #search-restaurants {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    flex-wrap: wrap;/* Permite que los filtros se coloquen en otra fila si sobrepasan el ancho propuesto */
+    flex-direction: column; /* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
+    width: 85%; /* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
+    margin: auto; /* Que este centrado */
+  }
+
+  .filtro-buscador {
+    width: 100%; /* Que la seccion de filtros ocupe un 100% de ancho disponible */
+    margin-bottom: 15%; /* Espaciado abajo para que no este pegado con los filtros  */
+  }
+
+  .restaurantes-buscados {
+    width: 100%; /* Que la seccion de filtros ocupe un 100% de ancho disponible */
+  }
 }
 
-#selected-restaurants-filters li{ 
-    list-style: none; /* Quitar viñetas de los filtros  */
-    border: 0.5px solid black;/* Color de borde de los filtros */
-    margin-right: 10px;
-    padding: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 1%;
-
-}
-
-
-.row-search{
-    margin-top: 3%; /* Espaciado superior para que no quede pegado al titutlo */
+@media (max-width: 400px) {
+  .row-search {
     display: flex;
-    flex-wrap: wrap; /* Permite que las cartas se coloquen en otra fila */
-    justify-content: space-between;/* Las cartas ocupen todo el espacio horizontalmente */
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
-.restaurantes-search-col{
-    flex-basis: 32%;
-    background: #F5F5F5; /* Color de fondo de las cartas */
-    border-radius: 3px;/* Borde redondeado de las cartas */
-    margin-bottom: 4%; /* Espaciado inferior para separar las cartas */
-    padding: 10px 10px; /* Espaciado interno para las cartas */
-    transition: 1s;
-    text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
-    color: black;
-    border: 1px solid #DDDDDD;
-}
-
-.restaurantes-search-col img{ 
-    width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
-    border-radius: 3px;/* Borde redondeado de las imagenes */
-    height: 35vh;
-}
-
-.restaurantes-search-col figcaption{ 
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
-    font-weight: bold;
-}
-
-.restaurantes-search-col p{ 
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.restaurantes-search-col:hover{ 
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #000000;
-    transition: 0.1s ease;
-}
-
-@media(max-width: 800px){
-
-    .sub-header nav{
-        padding: 7% 6%; /* Distancia del sub-header arriba y abajo del nav para dispositivos mas pequeños. Servira para que el nav no este pegado a los bordes */
-    }
-     
-    #search-restaurants{
-        display: flex;
-        flex-direction: column;/* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
-        width: 85%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
-        margin: auto;/* Que este centrado */
-    }
-
-    .filtro-buscador{
-        width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
-        margin-bottom: 15%; /* Espaciado abajo para que no este pegado con los filtros  */
-    }
-
-    .restaurantes-buscados{
-        width: 100%;/* Que la seccion de filtros ocupe un 100% de ancho disponible */
-        
-    }
-
-}
-
-@media(max-width: 400px){
-     
-    .row-search{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-
-
-
 
 /* pagina RESTAURANTE INFO */
 
-.titulo-página-restaurant-info{
-    width: 95%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
+.titulo-página-restaurant-info {
+  width: 95%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-.titulo-página-restaurant-info h2{
-    font-size: 36px;
-    font-weight: 600;
+.titulo-página-restaurant-info h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-#restaurant-info{ /* Seccion completa de pagina RESTAURANT INFO */
-    width: 95%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
-    display: flex; /* Permite ajustar la seccion completa. Permite que el filtro y los restaurantes buscados esten uno al lado del otro */
-    flex-direction: row; /* Hace que los articles esen uno al lado del otro */
-    justify-content: space-around;
+#restaurant-info {
+  /* Seccion completa de pagina RESTAURANT INFO */
+  width: 95%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al la seccion superior */
+  display: flex; /* Permite ajustar la seccion completa. Permite que el filtro y los restaurantes buscados esten uno al lado del otro */
+  flex-direction: row; /* Hace que los articles esen uno al lado del otro */
+  justify-content: space-around;
 }
 
-.slider-restaurant-info{ /* Seccion de la izquierda - Carrusel de imagenes (Slide) */
-    width: 50%; 
-    cursor: pointer;
-    margin-right: 20px;/* Darle espaciado a la derecha a la seccion de restaurantes buscados */
+.slider-restaurant-info {
+  /* Seccion de la izquierda - Carrusel de imagenes (Slide) */
+  width: 50%;
+  cursor: pointer;
+  margin-right: 20px; /* Darle espaciado a la derecha a la seccion de restaurantes buscados */
 }
 
-#slider{
-    width: 100%;
-    overflow: hidden;
-    height: auto;
+#slider {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
 }
 
-#slider ul{
-    display: flex;
-    padding: 0;
-    width: 300%;
-    animation: slide 15s infinite alternate ease-in-out;
+#slider ul {
+  display: flex;
+  padding: 0;
+  width: 300%;
+  animation: slide 15s infinite alternate ease-in-out;
 }
 
-#slider li{
-    width: 100%;
-    list-style: none;
+#slider li {
+  width: 100%;
+  list-style: none;
 }
 
-#slider img{
-    width: 100%;
-    height: 72vh;
-    border: 0.3px solid black; /* Borde exteior para las imaganes */
-
+#slider img {
+  width: 100%;
+  height: 72vh;
+  border: 0.3px solid black; /* Borde exteior para las imaganes */
 }
 
-
-.tabs-restaurant-info{ /* Seccion de la derecha - Tabs e informacion de los restaurantes  */
-    width: 50%; /* Solo ocupe 50%, o sea la mitad de la página */
-    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
-
+.tabs-restaurant-info {
+  /* Seccion de la derecha - Tabs e informacion de los restaurantes  */
+  width: 50%; /* Solo ocupe 50%, o sea la mitad de la página */
+  margin-bottom: 60px; /* Separacion inferior para que no este pegado al footer */
 }
 
-#restaurant-tabs{
-    width: 100%;
+#restaurant-tabs {
+  width: 100%;
 }
 
-.label-menu{
-    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
-    background-color: #000; /* Color de fondo de los titulos de los tabs */    
-    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
-    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
+.label-menu {
+  width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+  background-color: #000; /* Color de fondo de los titulos de los tabs */
+  list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+  display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu li a{
-    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
-    font-size: 16px;
-    font-weight:400;
-    color: white;
-    text-align: center;
+.label-menu li a {
+  text-decoration: none; /* Quitar estilos por defecto a los enlaces */
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
 
-    display: block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+  display: block;
+  padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
 
-    cursor: pointer;
-    transition: all 400ms ease;
+  cursor: pointer;
+  transition: all 400ms ease;
 }
 
-.active{
-    background:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
-    transition: 0.2s ease;
+.active {
+  background: #a52a2a; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+  transition: 0.2s ease;
 }
 
-.label-menu :hover{
-    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
-    transition: 0.2s ease;
+.label-menu :hover {
+  background-color: #a52a2a; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+  transition: 0.2s ease;
 }
 
-.content article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
-    transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    background-color: white;
-    padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
-    border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
+.content article {
+  /* Estos estilos se aplicaran al contenido interno de todos los tabs */
+  width: 100%; /* El contenido interno de los tabs ocupe el 100% del ancho disponible */
+  transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
+  background-color: white;
+  padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
+  border: 0.3px solid black; /* Borde exteior para los tabs */
+  padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
 
 /* TAB DESCRIPCION pagina restaurant_info  */
 .content .tab1 {
-    padding-left: 3%;/* Le agregaremos un poco mas de espaciado izquierdo, pero solo al tab 1, para que la descripcion del restaurante no este tan pegada al borde izquierdo */
+  padding-left: 3%; /* Le agregaremos un poco mas de espaciado izquierdo, pero solo al tab 1, para que la descripcion del restaurante no este tan pegada al borde izquierdo */
 }
 
-.content .tab1 fieldset{
-    border: none; /* Quitar borde predeterminado del fieldset */
+.content .tab1 fieldset {
+  border: none; /* Quitar borde predeterminado del fieldset */
 }
 
-.content .tab1 h3{
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10%;/* Espaciado inferior para que tenga separacion y no este pegado */
-    text-decoration: underline;/* H3 subrayados */
+.content .tab1 h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10%; /* Espaciado inferior para que tenga separacion y no este pegado */
+  text-decoration: underline; /* H3 subrayados */
 }
 
-.content .tab1 h4{
-    font-size: 17px;
-    font-weight: 600;
+.content .tab1 h4 {
+  font-size: 17px;
+  font-weight: 600;
 }
 
-.content .tab1 p{
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 3%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+.content .tab1 p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 3%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
 }
 
-.content .tab1 p:hover{
-    text-decoration: underline;
-    transition: 0.2s ease;
-    color: #A52A2A;
+.content .tab1 p:hover {
+  text-decoration: underline;
+  transition: 0.2s ease;
+  color: #a52a2a;
 }
 
-.content .tab1 a{
-    color: black;
-    text-decoration: underline;
+.content .tab1 a {
+  color: black;
+  text-decoration: underline;
 }
 
-.content .tab1 a:hover{
-    color:#A52A2A;
-    transition: 0.2s ease;
+.content .tab1 a:hover {
+  color: #a52a2a;
+  transition: 0.2s ease;
 }
 
-.fontawesome-restaurant-info{
-    /* Estilos para los fontawesome de los tabs */
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 18px;
+.fontawesome-restaurant-info {
+  /* Estilos para los fontawesome de los tabs */
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 18px;
 }
-
 
 /* TAB MENU pagina restaurant_info  */
 
-.row-restaurant-menu{
-    margin-top: 3%; /* Espaciado superior para que no quede pegado al titutlo */
-    display: flex;
-    flex-wrap: wrap; /* Permite que las cartas se coloquen en otra fila */
-    justify-content: space-between;/* Las cartas ocupen todo el espacio horizontalmente */
+.row-restaurant-menu {
+  margin-top: 3%; /* Espaciado superior para que no quede pegado al titutlo */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se coloquen en otra fila */
+  justify-content: space-between; /* Las cartas ocupen todo el espacio horizontalmente */
 }
 
-.restaurant-menu-col{
-    flex-basis: 49%;
-    background: #F5F5F5; /* Color de fondo de las cartas */
-    border-radius: 3px;/* Borde redondeado de las cartas */
-    margin-bottom: 4%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
-    padding: 10px 10px; /* Espaciado interno para las cartas */
-    transition: 1s;
-    color: black;
-    border: 1px solid #DDDDDD;
+.restaurant-menu-col {
+  flex-basis: 49%;
+  background: #f5f5f5; /* Color de fondo de las cartas */
+  border-radius: 3px; /* Borde redondeado de las cartas */
+  margin-bottom: 4%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
+  padding: 10px 10px; /* Espaciado interno para las cartas */
+  transition: 1s;
+  color: black;
+  border: 1px solid #dddddd;
 }
 
-.restaurant-menu-col img{ 
-    width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
-    border-radius: 3px;/* Borde redondeado de las imagenes */
-    height: 33vh;/* Tamaño de la imagen del plato */
+.restaurant-menu-col img {
+  width: 100%; /* Que la imagen ocupe el 100% del ancho disponible de la carta */
+  border-radius: 3px; /* Borde redondeado de las imagenes */
+  height: 33vh; /* Tamaño de la imagen del plato */
 }
 
-.restaurant-menu-col figcaption{ 
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
-    font-weight: bold;
+.restaurant-menu-col figcaption {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+  font-weight: bold;
 }
 
-.restaurant-menu-col details{ 
-    font-size: 18px;
-    font-weight: 500;
-    margin: 10px; /* Que el texto no este pegado al borde izquierdo */
+.restaurant-menu-col details {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px; /* Que el texto no este pegado al borde izquierdo */
 }
 
-.restaurant-menu-col p{ 
-    font-size: 16px;
-    font-weight: 300;
+.restaurant-menu-col p {
+  font-size: 16px;
+  font-weight: 300;
 }
 
-.restaurant-menu-col:hover{ 
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #000000;
-    transition: 0.1s ease;
+.restaurant-menu-col:hover {
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #000000;
+  transition: 0.1s ease;
 }
 
-#boton-descargar-menu{
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    margin-bottom: 5.2%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
+#boton-descargar-menu {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  margin-bottom: 5.2%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
 }
 
 #boton-descargar-menu a {
-    display: inline-block; /* Convertimos el enlace en un elemento en línea con un bloque de contenido */
-    background-color: #A52A2A;
-    color: #fafafa;
-    font-size: 18px;
-    padding: 10px 20px; /* Relleno interior del botón */
-    border-radius: 8px;
-    font-weight: bold; /* Negrita */
-    text-decoration: none;
+  display: inline-block; /* Convertimos el enlace en un elemento en línea con un bloque de contenido */
+  background-color: #a52a2a;
+  color: #fafafa;
+  font-size: 18px;
+  padding: 10px 20px; /* Relleno interior del botón */
+  border-radius: 8px;
+  font-weight: bold; /* Negrita */
+  text-decoration: none;
 }
 
 #boton-descargar-menu a:hover {
-    background-color: #fafafa;
-    color: #A52A2A;
-    transition: 0.2s ease-in; 
-    border: 2px solid #DDDDDD; /* Borde el boton sobre cuando te paras sobre el */
-    cursor: pointer;/* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
+  background-color: #fafafa;
+  color: #a52a2a;
+  transition: 0.2s ease-in;
+  border: 2px solid #dddddd; /* Borde el boton sobre cuando te paras sobre el */
+  cursor: pointer; /* Cambia el cursor cuando te paras sobre el boton "Ver todos los banners" */
 }
-
-
 
 /* TAB RESERVAR pagina restaurant_info  */
 
-#reservar-form button, #reservar-form input, #reservar-form textarea{
-    width: 100%; /* Que los elementos ocupen todo el ancho disponible */
+#reservar-form button,
+#reservar-form input,
+#reservar-form textarea {
+  width: 100%; /* Que los elementos ocupen todo el ancho disponible */
 }
 
-#reservar-form{
-    /* Permite colocar que los elementos se coloquen uno al lado del otro */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
+#reservar-form {
+  /* Permite colocar que los elementos se coloquen uno al lado del otro */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
 }
 
-#reservar-form .block-grid{
-    /* Todos los elmentos que tengan la clase 'block-grid' que son textarea y el boton lo agruparemos solo en 1 fraccion. */
-    grid-column: 1/3;
+#reservar-form .block-grid {
+  /* Todos los elmentos que tengan la clase 'block-grid' que son textarea y el boton lo agruparemos solo en 1 fraccion. */
+  grid-column: 1/3;
 }
 
-#reservar-form label{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+#reservar-form label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-#reservar-form input, #reservar-form textarea{
-    background-color: #F5F5F5;
-    outline: none;
-    border: 1.4px solid black;
-    padding: 7px;/* Espaciado interior de los input */
-    font-size: 16px;/* Tamaño del texto dentro de los input */
-    font-weight: 500;
-    margin-top: 1%; /* Que los input tengan separacion superior con los label*/
-
+#reservar-form input,
+#reservar-form textarea {
+  background-color: #f5f5f5;
+  outline: none;
+  border: 1.4px solid black;
+  padding: 7px; /* Espaciado interior de los input */
+  font-size: 16px; /* Tamaño del texto dentro de los input */
+  font-weight: 500;
+  margin-top: 1%; /* Que los input tengan separacion superior con los label*/
 }
 
-#reservar-form input:hover,  #reservar-form textarea:hover{
-    background-color: #FFFFFF; /* Cuando nos paramos sobre los input que cambien el fondo del color */
-    transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
+#reservar-form input:hover,
+#reservar-form textarea:hover {
+  background-color: #ffffff; /* Cuando nos paramos sobre los input que cambien el fondo del color */
+  transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
 }
 
-#reservar-form input:-webkit-autofill, #reservar-form input:-webkit-autofill:focus {
-    /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
-    -webkit-text-fill-color: #000; /* Cambia el color del texto */
-    -webkit-box-shadow: 0 0 0px 1000px #F5F5F5 inset; /* Cambia el fondo del campo de entrada */
+#reservar-form input:-webkit-autofill,
+#reservar-form input:-webkit-autofill:focus {
+  /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
+  -webkit-text-fill-color: #000; /* Cambia el color del texto */
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset; /* Cambia el fondo del campo de entrada */
 }
 
-#reservar-form button{
-    color: white;
-    background-color:black;
-    font-weight: 600;
-    padding: 14px; /* Espaciado interno al boton */
-    border: none;
+#reservar-form button {
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 14px; /* Espaciado interno al boton */
+  border: none;
 }
 
-#reservar-form button:hover{
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
+#reservar-form button:hover {
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
 }
-
-
 
 @keyframes slide {
-    0% {margin-left: 0;}
-    33.33% {margin-left: 0;}
+  0% {
+    margin-left: 0;
+  }
+  33.33% {
+    margin-left: 0;
+  }
 
-    35% {margin-left: -100%;}
-    68.66% {margin-left: -100%;}
-    
-    70% {margin-left: -200%;}
-    100% {margin-left: -200%;}
+  35% {
+    margin-left: -100%;
+  }
+  68.66% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -200%;
+  }
 }
 
-@media(max-width: 855px){
-    /* TAB RESERVAR pagina restaurant_info  */
-    #reservar-form{
-        /* Estos atributos se aplicaran al formulario reservar restaurante */
-        display: flex;
-        flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
-    }
+@media (max-width: 855px) {
+  /* TAB RESERVAR pagina restaurant_info  */
+  #reservar-form {
+    /* Estos atributos se aplicaran al formulario reservar restaurante */
+    display: flex;
+    flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
+  }
 }
 
-@media(max-width: 800px){
-     
-    #restaurant-info{
-        display: flex;
-        flex-direction: column;/* Que los article dentro de la pagina se agrupen una abajo de la otra. Las imagenes arriba y los tabs abajo */
-        width: 85%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
-        margin: auto;/* Que este centrado */
-    }
+@media (max-width: 800px) {
+  #restaurant-info {
+    display: flex;
+    flex-direction: column; /* Que los article dentro de la pagina se agrupen una abajo de la otra. Las imagenes arriba y los tabs abajo */
+    width: 85%; /* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
+    margin: auto; /* Que este centrado */
+  }
 
-    .slider-restaurant-info{
-        /* Estos atributos se aplicaran al carrusel de imagenes  */
-        width: 100%;/* Que la seccion carrusel de imagenes ocupe un 100% de ancho disponible */
-        margin-bottom: 15%; /* Espaciado inferior, para que no este pegado a la seccion de tabs  */
-    }
-    
-    #slider img{
-        width: 100%;
-        height: 50vh;
-    }
+  .slider-restaurant-info {
+    /* Estos atributos se aplicaran al carrusel de imagenes  */
+    width: 100%; /* Que la seccion carrusel de imagenes ocupe un 100% de ancho disponible */
+    margin-bottom: 15%; /* Espaciado inferior, para que no este pegado a la seccion de tabs  */
+  }
 
-    .tabs-restaurant-info{
-        /* Este atributo se aplicara a los tabs */
-        width: 100%;/* Que la seccion de tabs ocupe un 100% de ancho disponible */
-    }
+  #slider img {
+    width: 100%;
+    height: 50vh;
+  }
 
-    #restaurant-tabs .tab1 fieldset{
-        margin-left: 1.5%; /* Esto sirve para que toda la informacion del TAB DESCRIPCION tengan seperacion en la izquierda, y no esten pegados al borde izquierdo */
-    }
+  .tabs-restaurant-info {
+    /* Este atributo se aplicara a los tabs */
+    width: 100%; /* Que la seccion de tabs ocupe un 100% de ancho disponible */
+  }
 
-    #restaurant-tabs .tab1 p{
-        margin-bottom: 4%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
-    }
+  #restaurant-tabs .tab1 fieldset {
+    margin-left: 1.5%; /* Esto sirve para que toda la informacion del TAB DESCRIPCION tengan seperacion en la izquierda, y no esten pegados al borde izquierdo */
+  }
 
+  #restaurant-tabs .tab1 p {
+    margin-bottom: 4%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+  }
 
+  /* TAB MENU pagina restaurant_info  */
+  .row-restaurant-menu {
+    margin-top: 6%; /* Espaciado superior para que no quede pegado al titutlo */
+  }
 
-    /* TAB MENU pagina restaurant_info  */
-    .row-restaurant-menu{
-        margin-top: 6%; /* Espaciado superior para que no quede pegado al titutlo */
-    }
+  .restaurant-menu-col {
+    margin-bottom: 8%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
+  }
 
-    .restaurant-menu-col{
-        margin-bottom: 8%; /* Espaciado inferior para separar las cartas del menu. Para que cada menu tenga separacion inferior una con la otra*/
-    }
+  #boton-descargar-menu {
+    margin-bottom: 8%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
+  }
 
-    #boton-descargar-menu{
-        margin-bottom: 8%; /* Espaciado inferior del boton, para que no este pegado al borde inferior */
-
-    }
-
-    /* TAB RESERVAR pagina restaurant_info  */
-    #reservar-form{
-        /* Estos atributos se aplicaran al formulario reservar restaurante */
-        display: flex;
-        flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
-    }
-
+  /* TAB RESERVAR pagina restaurant_info  */
+  #reservar-form {
+    /* Estos atributos se aplicaran al formulario reservar restaurante */
+    display: flex;
+    flex-direction: column; /* Esto nos permitira que el formulario se presente en forma de columna. O sea que cada input este uno abajo del otro */
+  }
 }
 
-@media(max-width: 590px){
-    /* TAB MENU pagina restaurant_info  */
-    .row-restaurant-menu{
-        display: flex; 
-        flex-direction: column; /* Permite que el menu se coloque uno debajo del otro en pantallas pequeñas */
-    }
+@media (max-width: 590px) {
+  /* TAB MENU pagina restaurant_info  */
+  .row-restaurant-menu {
+    display: flex;
+    flex-direction: column; /* Permite que el menu se coloque uno debajo del otro en pantallas pequeñas */
+  }
 
-    #restaurant-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
-        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
-        flex-basis: 0;
-        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
-    }
+  #restaurant-tabs li {
+    /* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+    width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+    flex-basis: 0;
+    flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
+  }
 }
 
-@media(max-width: 470px){
-    #restaurant-tabs .tab1 p{
-        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
-    }
+@media (max-width: 470px) {
+  #restaurant-tabs .tab1 p {
+    margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+  }
 }
 
-@media(max-width: 395px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu li a{
-        font-size: 15px;
-        padding: 15px 12px; /* Espaciado interno a los titulos de los tabs */
-    }
-   
+@media (max-width: 395px) {
+  /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu li a {
+    font-size: 15px;
+    padding: 15px 12px; /* Espaciado interno a los titulos de los tabs */
+  }
 }
 
-@media(max-width: 320px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu li a{
-        font-size: 14px;
-        padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
-    }
-   
+@media (max-width: 320px) {
+  /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu li a {
+    font-size: 14px;
+    padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
+  }
 }
 
-@media(max-width: 295px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu li a{
-        font-size: 14px;
-        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
-    }
+@media (max-width: 295px) {
+  /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu li a {
+    font-size: 14px;
+    padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
+  }
 
-    #restaurant-tabs .tab1 p{
-        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
-    }
+  #restaurant-tabs .tab1 p {
+    margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+  }
 }
 
-@media(max-width: 286px){
-    /* En pantallas muy pequeñas, que el boton "Descargar Menu" no se ponga en 2 lineas (se deforme), para ello lo solucionamos poniendole una letra mas pequeña, y reduciendo su paddin en izquierda y derecha*/
-    #boton-descargar-menu a {        
-        font-size: 16px;
-        padding: 10px 16px; /* Relleno interior del botón */
-        text-align: center;
-    }
-   
+@media (max-width: 286px) {
+  /* En pantallas muy pequeñas, que el boton "Descargar Menu" no se ponga en 2 lineas (se deforme), para ello lo solucionamos poniendole una letra mas pequeña, y reduciendo su paddin en izquierda y derecha*/
+  #boton-descargar-menu a {
+    font-size: 16px;
+    padding: 10px 16px; /* Relleno interior del botón */
+    text-align: center;
+  }
 }
 
-@media(max-width: 275px){
-    /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu li a{
-        font-size: 13px;
-        padding: 15px 6px; /* Espaciado interno a los titulos de los tabs */
-    }
-    #restaurant-tabs .tab1 p{
-        margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
-    }
+@media (max-width: 275px) {
+  /* En pantallas muy pequeñas, los label de los tabs (Descripcion, Menu y Reservar) al disminuir el ancho de pantalla, esto perdian su estilo y el label reservar se ponia abajo. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu li a {
+    font-size: 13px;
+    padding: 15px 6px; /* Espaciado interno a los titulos de los tabs */
+  }
+  #restaurant-tabs .tab1 p {
+    margin-bottom: 6%; /* Esto sirve para que cada informacion (-Direccion, -Provincia, -Telefono, etc) tengan una separacion inferior y no esten pegados unos con otros*/
+  }
 }
-
-
-
-
-
 
 /* CONSULTAR RESERVAS - pagina reservation_info */
-#reservation-info{
-    width: 80%;
-    margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
-    padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
+#reservation-info {
+  width: 80%;
+  margin: auto; /* Al poner un margin auto, se ajustara automaticamente al ancho que le hemos colocado */
+  padding-top: 80px; /* Espaciado superior para que no quede pegado al la seccion superior */
 }
 
-#reservation-info h2{
-    font-size: 36px;
-    font-weight: 600;
+#reservation-info h2 {
+  font-size: 36px;
+  font-weight: 600;
 }
-
 
 /* TAB RESERVAS PROXIMAMENTE pagina reservation_info  */
 
-#reservation-tabs{
-    width: 100%;
-    margin-bottom: 60px;/* Separacion inferior para que no este pegado al footer */
-    padding-top: 50px; /* Espaciado superior para que no quede pegado al titulo "Reservas registradas" */
-
+#reservation-tabs {
+  width: 100%;
+  margin-bottom: 60px; /* Separacion inferior para que no este pegado al footer */
+  padding-top: 50px; /* Espaciado superior para que no quede pegado al titulo "Reservas registradas" */
 }
 
-.label-menu-reservation{
-    width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
-    background-color: #000; /* Color de fondo de los titulos de los tabs */    
-    list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
-    display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
+.label-menu-reservation {
+  width: 100%; /* Que los tabs ocupen del 100 del ancho disponible */
+  background-color: #000; /* Color de fondo de los titulos de los tabs */
+  list-style: none; /* Sirve para quitar las viñetas que vienen por defecto */
+  display: flex; /* Para que los enlaces del tab se coloquen uno al lado del otro */
 }
 
-.label-menu-reservation li a{
-    text-decoration: none; /* Quitar estilos por defecto a los enlaces */
-    font-size: 16px;
-    font-weight:400;
-    color: white;
-    text-align: center;
+.label-menu-reservation li a {
+  text-decoration: none; /* Quitar estilos por defecto a los enlaces */
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
 
-    display: block;
-    padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
+  display: block;
+  padding: 15px 20px; /* Espaciado interno a los titulos de los tabs */
 
-    cursor: pointer;
-    transition: all 400ms ease;
+  cursor: pointer;
+  transition: all 400ms ease;
 }
 
-.label-menu-reservation :hover{
-    background-color:#A52A2A; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
-    transition: 0.2s ease;
-
+.label-menu-reservation :hover {
+  background-color: #a52a2a; /* Color de fondo de los titulos de los tabs al estar sobre ellos*/
+  transition: 0.2s ease;
 }
 
-.content-reservation article{ /* Estos estilos se aplicaran al contenido interno de todos los tabs */
-    width: 100%;/* El contenido interno de los tabs ocupe el 100% del ancho disponible */
-    transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
-    background-color: white;
-    padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
-    border: 0.3px solid black; /* Borde exteior para los tabs */
-    padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
+.content-reservation article {
+  /* Estos estilos se aplicaran al contenido interno de todos los tabs */
+  width: 100%; /* El contenido interno de los tabs ocupe el 100% del ancho disponible */
+  transition: all 600ms ease; /* Permite una animacion del contenido mas suave */
+  background-color: white;
+  padding-bottom: 10px; /* Espaciado inferior al final del tab interno */
+  border: 0.3px solid black; /* Borde exteior para los tabs */
+  padding: 1.5% 1.5% 0% 1.5%; /* Espaciado para que la informacion interna de los tabs no este pegado a los bordes arriba -  derecha - abajo - izquierda*/
 }
-
-
 
 /* TAB PROXIMAMENTE pagina reservation_info  */
 
-#reservation-info-form{
-    width: 80%;/* Que el tab interno de las reservas proximamente solo ocupe un 80% del 100% posible */
-    margin: auto; /* Que se ajuste al centro */
-    border: 0.3px solid black; /* Borde exteior para los tabs */
-    background: #fafafa; /* Color de fondo para el form */
-    padding: 6px; /* Espaciado interno para toda la informacion que este dentro de los tabs para que no se vea pegado a los bordes */
-    margin-top: 2%; /* Espaciado superior para que los formularios tengan espaciado supeior */
-    margin-bottom: 5%; /* Espaciado superior para que los formularios tengan espaciado inferior */
+#reservation-info-form {
+  width: 80%; /* Que el tab interno de las reservas proximamente solo ocupe un 80% del 100% posible */
+  margin: auto; /* Que se ajuste al centro */
+  border: 0.3px solid black; /* Borde exteior para los tabs */
+  background: #fafafa; /* Color de fondo para el form */
+  padding: 6px; /* Espaciado interno para toda la informacion que este dentro de los tabs para que no se vea pegado a los bordes */
+  margin-top: 2%; /* Espaciado superior para que los formularios tengan espaciado supeior */
+  margin-bottom: 5%; /* Espaciado superior para que los formularios tengan espaciado inferior */
 }
 
-#reservation-info-form:hover{
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
-    transition: 0.1s ease;
+#reservation-info-form:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease;
 }
 
-#reservation-info-form h3{
-    font-size: 19px;
-    font-weight: 700;
+#reservation-info-form h3 {
+  font-size: 19px;
+  font-weight: 700;
 }
 
-#reservation-info-form button, #reservation-info-form input, #reservation-info-form textarea{
-    width: 100%; /* Que los elementos ocupen todo el ancho disponible */
+#reservation-info-form a,
+#reservation-info-form input,
+#reservation-info-form textarea {
+  width: 100%; /* Que los elementos ocupen todo el ancho disponible */
 }
 
-#reservation-info-form{
-    /* Permite colocar que los elementos se coloquen uno al lado del otro */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
+#reservation-info-form {
+  /* Permite colocar que los elementos se coloquen uno al lado del otro */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* El contenido se divide en 2 partes */
 }
 
-#reservation-info-form .block-grid-reservation{
-    /* Todos los elmentos que tengan la clase 'block-grid' lo agruparemos solo en 1 fraccion. */
-    grid-column: 1/3;
+#reservation-info-form .block-grid-reservation {
+  /* Todos los elmentos que tengan la clase 'block-grid' lo agruparemos solo en 1 fraccion. */
+  grid-column: 1/3;
 }
 
-
-#reservation-info-form label{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+#reservation-info-form label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-#reservation-info-form input, #reservation-info-form textarea{
-    background-color: #F5F5F5;
-    outline: none;
-    border: 1.4px solid black;
-    padding: 7px;/* Espaciado interior de los input */
-    font-size: 16px;/* Tamaño del texto dentro de los input */
-    font-weight: 500;
-    margin-top: 1%; /* Que los input tengan separacion superior con los label*/
-
+#reservation-info-form input,
+#reservation-info-form textarea {
+  background-color: #f5f5f5;
+  outline: none;
+  border: 1.4px solid black;
+  padding: 7px; /* Espaciado interior de los input */
+  font-size: 16px; /* Tamaño del texto dentro de los input */
+  font-weight: 500;
+  margin-top: 1%; /* Que los input tengan separacion superior con los label*/
 }
 
-#reservation-info-form input:hover,  #reservation-info-form textarea:hover{
-    background-color: #FFFFFF; /* Cuando nos paramos sobre los input que cambien el fondo del color */
-    transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
+#reservation-info-form input:hover,
+#reservation-info-form textarea:hover {
+  background-color: #ffffff; /* Cuando nos paramos sobre los input que cambien el fondo del color */
+  transition: 0.3s ease-in; /* Cuando nos paramos sobre los input que tengan esta configuracion en la transicion */
 }
 
-#reservation-info-form input:-webkit-autofill, #reservation-info-form input:-webkit-autofill:focus {
-    /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
-    -webkit-text-fill-color: #000; /* Cambia el color del texto */
-    -webkit-box-shadow: 0 0 0px 1000px #F5F5F5 inset; /* Cambia el fondo del campo de entrada */
+#reservation-info-form input:-webkit-autofill,
+#reservation-info-form input:-webkit-autofill:focus {
+  /* Para evitar que los campos de formulario cambien de color o estilo cuando se autocompletan, con estos atributos anulamos los estilos de autocompletado específicos de WebKit (motor detrás de navegadores como Google Chrome).*/
+  -webkit-text-fill-color: #000; /* Cambia el color del texto */
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset; /* Cambia el fondo del campo de entrada */
 }
 
-#reservation-info-form button{
-    color: white;
-    background-color:black;
-    font-weight: 600;
-    padding: 14px; /* Espaciado interno al boton */
-    border: none;
+#reservation-info-form a{
+  text-decoration: none;
+  font-size: 16px;
 }
 
-#reservation-info-form button:hover{
-    background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
-    transition: 0.2s ease;
+#reservation-info-form a, #reservation-info-form button {
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 14px; /* Espaciado interno al boton */
+  border: none;
 }
 
-@media(max-width: 800px){
-     
-    #reservation-info{
-        display: flex;
-        flex-direction: column;/* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
-        width: 85%;/* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
-        margin: auto;/* Que este centrado */
-    }
-
-    #reservation-info-form{
-        display: flex; /* Hacer el formulario flexible */
-        flex-direction: column; /* Esta configuracion  */
-        margin-bottom: 10%;
-        width: 85%;/* Que el tab interno de las reservas proximamente solo ocupe un 85% del 100% posible */
-
-    }
+#reservation-info-form a:hover, #reservation-info-form button:hover {
+  background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
+  cursor:pointer;
 }
 
+@media (max-width: 800px) {
+  #reservation-info {
+    display: flex;
+    flex-direction: column; /* Que las secciones dentro de la pagina busqueda se agrgupen una abajo de la otra */
+    width: 85%; /* Que toda la pagina tenga un 85% de ancho en dispositivos pequeños */
+    margin: auto; /* Que este centrado */
+  }
 
-@media(max-width: 500px){
-    #reservation-info-form{
-        width: 90%;/* Que el tab interno de las reservas proximamente solo ocupe un 90% del 100% posible */
-        margin: auto; /* Que  ajuste al centro */
-        border: 1.5px solid #DDDDDD;
-        margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
-        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
-    }
-
-    #reservation-tabs li{/* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
-        width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
-        flex-basis: 0;
-        flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
-    }
-
+  #reservation-info-form {
+    display: flex; /* Hacer el formulario flexible */
+    flex-direction: column; /* Esta configuracion  */
+    margin-bottom: 10%;
+    width: 85%; /* Que el tab interno de las reservas proximamente solo ocupe un 85% del 100% posible */
+  }
 }
 
-@media(max-width: 355px){
-    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation li a{
-        font-size: 15px;
-        padding: 15px 13px; /* Espaciado interno a los titulos de los tabs */
-  
-    }
+@media (max-width: 500px) {
+  #reservation-info-form {
+    width: 90%; /* Que el tab interno de las reservas proximamente solo ocupe un 90% del 100% posible */
+    margin: auto; /* Que  ajuste al centro */
+    border: 1.5px solid #dddddd;
+    margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+    margin-bottom: 15%; /* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+  }
+
+  #reservation-tabs li {
+    /* Que en pantallas pequeñas, los titulos de los tabs se agrupen al medio */
+    width: none; /* Nos permite separar cada li de manera horizontal, para que no este pegado uno con otro */
+    flex-basis: 0;
+    flex-grow: 1; /* Todos los enlaces ocupen el mismo ancho restante */
+  }
 }
 
-@media(max-width: 305px){
-    #reservation-info-form{
-        width: 93%;/* Que el tab interno de las reservas proximamente solo ocupe un 93% del 100% posible */
-        margin: auto; /* Que  ajuste al centro */
-        margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
-        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
-    }
-
-    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation li a{
-        font-size: 14px;
-        padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
-  
-    }
-
+@media (max-width: 355px) {
+  /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu-reservation li a {
+    font-size: 15px;
+    padding: 15px 13px; /* Espaciado interno a los titulos de los tabs */
+  }
 }
 
-@media(max-width: 275px){
-    #reservation-info-form{
-        width: 95%;/* Que el tab interno de las reservas proximamente solo ocupe un 95% del 100% posible */
-        margin: auto; /* Que  ajuste al centro */
-        margin-top: 10%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
-        margin-bottom: 15%;/* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
-    }
+@media (max-width: 305px) {
+  #reservation-info-form {
+    width: 93%; /* Que el tab interno de las reservas proximamente solo ocupe un 93% del 100% posible */
+    margin: auto; /* Que  ajuste al centro */
+    margin-top: 8%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+    margin-bottom: 15%; /* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+  }
 
-    /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
-    .label-menu-reservation li a{
-        font-size: 13px;
-        padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
-  
-    }
+  /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu-reservation li a {
+    font-size: 14px;
+    padding: 15px 10px; /* Espaciado interno a los titulos de los tabs */
+  }
 }
 
+@media (max-width: 275px) {
+  #reservation-info-form {
+    width: 95%; /* Que el tab interno de las reservas proximamente solo ocupe un 95% del 100% posible */
+    margin: auto; /* Que  ajuste al centro */
+    margin-top: 10%; /* Esto sirve para que los formularios  tengan espaciado superior, para que los formularios no esten pegados unos con otros*/
+    margin-bottom: 15%; /* Esto sirve para que los formularios tanto de PROXIMAMENTE y COMPLETADO, tengan espaciado inferior, para que los formularios no esten pegados unos con otros*/
+  }
 
-
+  /* En pantallas muy pequeñas, los label de los tabs (Proximamente y Completado) al disminuir el ancho de pantalla, esto perdian su estilo y los label se ponian uno abajo del otro. Aqui lo solucionamos poniendo una letra mas pequeña y reduciendole el padding de izquierda y derecha*/
+  .label-menu-reservation li a {
+    font-size: 13px;
+    padding: 15px 7px; /* Espaciado interno a los titulos de los tabs */
+  }
+}
 
 /* MODIFY RESERVATION pagina */
-#titulo-modify-reservation{
-    padding-bottom: 30px; /* Espaciado inferior del titulo de la pagina "modify-reservation", para que no este pegado a los formularios de abajo */
-
+#titulo-modify-reservation {
+  padding-bottom: 30px; /* Espaciado inferior del titulo de la pagina "modify-reservation", para que no este pegado a los formularios de abajo */
 }

@@ -1,3 +1,10 @@
+<?php
+  // Incluye el archivo que contiene la conexión a la base de datos
+  include "../src/php/conexion_bd.php";
+  // Incluye el archivo que contiene el modelo de la base de datos
+  include "../src/php/modelo_bd.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -18,13 +25,20 @@
       href="./assets/imgs/icon.png"
       type="image/x-icon"
     />
+
+    <!-- Uso de SweetAlert2 para las alertas y link del css para las ediciones -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../style/alerta.css" />
   </head>
   <body>
+    <?php
+      // Llama a la función cambiarContrasennia()
+      cambiarContrasennia();
+    ?>
     <!-- Contenedor del reestablecimiento de contraseña -->
     <div id="forgot-password-container">
-      
       <!-- Formulario de reestablecimiento de contraseña  -->
-      <form id="forgot-password-form">
+      <form id="forgot-password-form" action="./forgot_password.php" method="post">
         <!-- Campos para reestablecer la contraseña -->
         <fieldset>
           <legend><h1>¿Olvidó su contraseña?</h1></legend>
@@ -67,7 +81,7 @@
         
 
         <div id="boton-forgot-password">
-          <button onclick="window.location.href = 'login.html';">
+          <button>
             CAMBIAR CONTRASEÑA
           </button>
         </div>

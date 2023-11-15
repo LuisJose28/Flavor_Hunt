@@ -1,3 +1,11 @@
+<?php
+  // Incluye el archivo que contiene la conexión a la base de datos
+  include "../src/php/conexion_bd.php";
+  // Incluye el archivo que contiene el modelo de la base de datos
+  include "../src/php/modelo_bd.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -21,15 +29,23 @@
       href="./assets/imgs/icon.png"
       type="image/x-icon"
     />
+    <!-- Uso de SweetAlert2 para las alertas y link del css para las ediciones -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../style/alerta.css" />
   </head>
 
   <body>
+    <?php
+      // Llama a la función crearUsuario()
+      crearUsuario();
+    ?>
+    
     <!-- Contenedor del registro de usuario -->
     <div id="signup-container">
       <h1>¡Crea tu cuenta!</h1>
 
       <!-- Formulario de registro -->
-      <form action="https://httpbin.org/post" method="post" id="signup-form">
+      <form action="./signup.php" method="post" id="signup-form">
         <!-- Campos para registrar los detalles de la cuenta -->
         <fieldset id="account-details">
           <legend><h2>Detalles de la cuenta</h2></legend>
@@ -121,13 +137,11 @@
             />
           </p>
         </fieldset>
+
+        <p id="boton-signup">
+          <button>CREAR CUENTA</button>
+        </p>
       </form>
-
-      <p id="boton-signup">
-        <button>CREAR CUENTA</button>
-      </p>
-
-
     </div>
   </body>
 </html>

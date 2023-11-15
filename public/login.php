@@ -1,3 +1,10 @@
+<?php
+  // Incluye el archivo que contiene la conexión a la base de datos
+  include "../src/php/conexion_bd.php";
+  // Incluye el archivo que contiene el modelo de la base de datos
+  include "../src/php/modelo_bd.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -18,9 +25,18 @@
       href="./assets/imgs/icon.png"
       type="image/x-icon"
     />
+
+    <!-- Uso de SweetAlert2 para las alertas y link del css para las ediciones -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../style/alerta.css" />
   </head>
 
   <body>
+    <?php
+      // Llama a la función iniciarSesion()      
+      iniciarSesion();
+    ?>
+    
     <!-- Contenedor del inicio de sesión -->
     <div id="login-container">
       
@@ -54,15 +70,14 @@
           </p>
         </fieldset>
 
-        <p><a href="./forgot_password.html">¿Olvidó su contraseña?</a></p>
+        <p><a href="./forgot_password.php">¿Olvidó su contraseña?</a></p>
 
         <div id="boton-login">
-
-          <button onclick="window.location.href = 'signup.html';">
+          <button onclick="window.location.href = 'signup.php';">
             CREAR CUENTA
           </button>
           
-          <button onclick="window.location.href = 'home.html';">
+          <button name="btnToAccess" formaction="login.php" formmethod="post">
             ACCEDER
           </button>
         </div>

@@ -1,0 +1,7 @@
+.custom-swal-button{
+    background: black!important;
+}
+.custom-swal-button:hover{
+    background: #a52a2a !important;
+    transition: 0.35s ease !important;
+}
