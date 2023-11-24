@@ -1,4 +1,7 @@
 <?php
+  // Inicia la sesión
+  session_start();
+
   // Incluye el archivo que contiene la conexión a la base de datos
   include "../src/php/conexion_bd.php";
   // Incluye el archivo que contiene el modelo de la base de datos

@@ -59,6 +59,7 @@
               autocomplete="off"
               required
               autofocus
+              value="<?php if($_POST){echo $_POST['txtName'];} ?>"
             />
           </p>
 
@@ -70,20 +71,23 @@
               id="last-name"
               autocomplete="off"
               required
+              value="<?php if($_POST){echo $_POST['txtLastName'];} ?>"
             />
           </p>
 
           <p>
             <label for="birth-date">Fecha de nacimiento</label>
-            <input type="date" name="txtBirthDate" id="birth-date" required />
+            <input type="date" name="txtBirthDate" id="birth-date" required 
+              value="<?php if($_POST){echo $_POST['txtBirthDate'];} ?>"
+            />
           </p>
 
           <p>
             <label for="gender">Género</label>
             <select name="txtGender" id="gender" required>
               <option value="" disabled selected>Elige una opción</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
+              <option value="Masculino" <?php if($_POST){if($_POST['txtGender']==='Masculino'){?> selected <?php }} ?>>Masculino</option>
+              <option value="Femenino" <?php if($_POST){if($_POST['txtGender']==='Femenino'){?> selected <?php }} ?>>Femenino</option>
             </select>
           </p>
         </fieldset>
@@ -100,6 +104,7 @@
               id="email"
               autocomplete="off"
               required
+              value="<?php if($_POST){echo $_POST['txtEmail'];} ?>"
             />
           </p>
 
@@ -109,9 +114,10 @@
               type="tel"
               name="txtPhone"
               id="phone"
-              placeholder="5555-5555"
-              pattern="[0-9]{4}-[0-9]{4}"
+              placeholder="55555555"
+              pattern="[0-9]{8}"
               required
+              value="<?php if($_POST){echo $_POST['txtPhone'];} ?>"
             />
           </p>
 
@@ -123,6 +129,7 @@
               id="password"
               autocomplete="off"
               required
+              value="<?php if($_POST){echo $_POST['txtPassword'];} ?>"
             />
           </p>
 
@@ -134,6 +141,7 @@
               id="confirm-password"
               autocomplete="off"
               required
+              value="<?php if($_POST){echo $_POST['txtConfirmPassword'];} ?>"
             />
           </p>
         </fieldset>

@@ -220,8 +220,7 @@
                     // Las credenciales son correctas, se ha iniciado sesión
                     $row = mysqli_fetch_assoc($result);
 
-                    // Iniciar sesión y almacenar el ID del usuario en la variable de sesión
-                    session_start();
+                    // Almacenar el ID del usuario en la variable de sesión
                     $_SESSION["id_usuario"]=$row['id'];
 
                     // Mostrar alerta de éxito y redirigir después de un tiempo
