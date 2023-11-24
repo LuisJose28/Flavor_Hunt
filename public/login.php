@@ -58,6 +58,7 @@
               autocomplete="off"
               required
               autofocus
+              value="<?php if($_POST){echo $_POST['txtEmail'];} ?>"
             />
           </p>
 
@@ -69,6 +70,7 @@
               id="password"
               autocomplete="off"
               required
+              value="<?php if($_POST){echo $_POST['txtPassword'];} ?>"
             />
           </p>
         </fieldset>
