@@ -1644,6 +1644,7 @@ input[type="checkbox"]:checked + label {
   font-size: 16px; /* Tamaño del texto dentro de los input */
   font-weight: 500;
   margin-top: 1%; /* Que los input tengan separacion superior con los label*/
+  color:#000;
 }
 
 #reservation-info-form input:hover,
@@ -1664,7 +1665,7 @@ input[type="checkbox"]:checked + label {
   font-size: 16px;
 }
 
-#reservation-info-form a, #reservation-info-form button {
+#reservation-info-form button {
   color: white;
   background-color: black;
   font-weight: 600;
@@ -1672,10 +1673,27 @@ input[type="checkbox"]:checked + label {
   border: none;
 }
 
-#reservation-info-form a:hover, #reservation-info-form button:hover {
+#reservation-info-form button:hover, #reservation-info-form button:hover {
   background-color: #a52a2a; /* Cambiar de boton cuando se colocan sobre el boton */
   transition: 0.2s ease;
   cursor:pointer;
+}
+
+#reservation-info-form a{
+  text-decoration: none; /* Como son enlaces, le quitamos los efectos que vienen por defecto */
+  display: block; /* Convertimos el elemento en bloque para que ocupe todo el ancho disponible  */
+  color: white;
+  background-color:black;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 14px; /* Espaciado interno al boton */
+  border: none;
+  text-align: center;
+}
+
+#reservation-info-form a:hover{
+  background-color: #A52A2A; /* Cambiar de boton cuando se colocan sobre el boton */
+  transition: 0.2s ease;
 }
 
 @media (max-width: 800px) {
