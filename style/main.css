@@ -1010,23 +1010,23 @@ input[type="checkbox"]:checked + label {
   margin-bottom: 1%;
 }
 
-.row-search {
-  margin-top: 2%; /* Espaciado superior para que no quede pegado al titutlo */
-  display: flex;
+.row-search{
+  margin-top: 3%; /* Espaciado superior para que no quede pegado al titutlo */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Las cartas con los restaurantes se divide en 3 partes. O sea que por fila solo puedan haber 3 cartas. Si hay mas de 3, se coloquen en la siguiente fila */
+  gap: 2%; /* Separacion para que las cards no esten pegadas unas con otras */
   flex-wrap: wrap; /* Permite que las cartas se coloquen en otra fila */
-  justify-content: space-between; /* Las cartas ocupen todo el espacio horizontalmente */
 }
 
-.restaurantes-search-col {
-  flex-basis: 32%;
-  background: #f5f5f5; /* Color de fondo de las cartas */
-  border-radius: 3px; /* Borde redondeado de las cartas */
-  margin-bottom: 4%; /* Espaciado inferior para separar las cartas */
+.restaurantes-search-col{
+  background: #F5F5F5; /* Color de fondo de las cartas */
+  border-radius: 3px;/* Borde redondeado de las cartas */
+  margin-bottom: 25px; /* Espaciado inferior para separar las cartas */
   padding: 10px 10px; /* Espaciado interno para las cartas */
   transition: 1s;
   text-decoration: none; /* Quitarle los estilos por defecto ya que es una atiqueta 'a' */
   color: black;
-  border: 1px solid #dddddd;
+  border: 1px solid #DDDDDD;
 }
 
 .restaurantes-search-col img {
@@ -1073,13 +1073,17 @@ input[type="checkbox"]:checked + label {
   .restaurantes-buscados {
     width: 100%; /* Que la seccion de filtros ocupe un 100% de ancho disponible */
   }
+
+  .row-search{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Las cartas con los restaurantes se divide en 3 partes. O sea que por fila solo puedan haber 3 cartas. Si hay mas de 3, se coloquen en la siguiente fila */
+  }
 }
 
-@media (max-width: 400px) {
-  .row-search {
+@media(max-width: 530px){
+  .row-search{
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
 
