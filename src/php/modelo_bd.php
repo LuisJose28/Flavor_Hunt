@@ -1162,20 +1162,33 @@
                 }else if(mysqli_num_rows($result) > 0){
                     // Recorrer las filas de resultado
                     while ($row=mysqli_fetch_assoc($result)) {
-                        // Obtener datos de la reserva
-                        $fecha=$row['fecha'];
-                        $hora=$row['hora'];
-                        $personas=$row['numero_personas'];
-                        $sillas_ninnios=$row['sillas_ninnios'];
-                        $comentario=$row['comentario'];
                         $sucursal_id=$row['id_sucursal'];
+
+                        if($_POST){
+                            $fecha = mysqli_real_escape_string($conexion, $_POST["txtReservationDate"]);
+                            $hora = mysqli_real_escape_string($conexion, $_POST["txtReservationHour"]);
+                            $personas = mysqli_real_escape_string($conexion, $_POST["txtReservationPeoples"]);
+                            $comentario = mysqli_real_escape_string($conexion, $_POST["txtReservationComment"]);
+                            $sillas_ninnios=(isset($_POST['txtReservationChildrenChair']))?mysqli_real_escape_string($conexion,$_POST['txtReservationChildrenChair']):NULL;
+
+                            if(empty($comentario) || trim($comentario) === ""){
+                                $comentario=NULL;
+                            }    
+                        }else{
+                            // Obtener datos de la reserva
+                            $fecha=$row['fecha'];
+                            $hora=$row['hora'];
+                            $personas=$row['numero_personas'];
+                            $sillas_ninnios=$row['sillas_ninnios'];
+                            $comentario=$row['comentario'];
+                        }
     
                         // Obtener la fecha mínima permitida (hoy)
                         $zonaHoraria = new DateTimeZone('America/Panama');
                         $fechaMinima = (new DateTime('now', $zonaHoraria))->format('Y-m-d');
                         
                         // Consultar información de la sucursal asociada a la reserva
-                        $querySucursal="SELECT restaurantes.nombre, restaurantes.tipo_restaurante, sucursales.provincia, sucursales.direccion, sucursales.hora_apertura, sucursales.hora_cierre FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
+                        $querySucursal="SELECT restaurantes.nombre, sucursales.provincia, sucursales.direccion, sucursales.hora_apertura, sucursales.hora_cierre FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
                         $resultSucursal=mysqli_query($conexion,$querySucursal);
     
                         // Verificar si hay errores en la consulta de la sucursal
@@ -1183,10 +1196,9 @@
                             die("Error en la consulta: " . mysqli_error($conexion));  
                         }else{
                                 $rowSucursal=mysqli_fetch_assoc($resultSucursal);
-    
+
                                 // Obtener datos de la sucursal
                                 $nombre=$rowSucursal['nombre'];
-                                $tipo_restaurante=$rowSucursal['tipo_restaurante'];
                                 $provincia=$rowSucursal['provincia'];
                                 $direccion=$rowSucursal['direccion'];
                                 $hora_apertura=$rowSucursal['hora_apertura'];
@@ -1322,7 +1334,7 @@
                                 icon: 'success',
                                 title: '¡La reserva se modificó exitosamente!',
                                 showConfirmButton: false,
-                                timer: 1000
+                                timer: 3000
                             }).then(() => {
                                     window.location.href = 'reservation_info.php';
                             });
@@ -1341,34 +1353,41 @@
     }
 
     function imprimirFiltros(){
-        // Verifica si hay datos en la variable $_POST
-        if($_POST){
-            // Verifica si el campo txtFoodType no está vacío en $_POST
-            if(!empty($_POST['txtFoodType'])){
-                // Obtiene y muestra el tipo de comida seleccionado
-                $tipo_comida=$_POST['txtFoodType'];
-                echo "<li>$tipo_comida</li>";
-            }
-            // Verifica si el campo txtProvince no está vacío en $_POST
-            if(!empty($_POST['txtProvince'])){
-                // Obtiene y muestra la provincia seleccionada
-                $provincia=$_POST['txtProvince'];
-                echo "<li>$provincia</li>";
-            }
-            // Verifica si el campo txtCost no está vacío en $_POST
-            if(!empty($_POST['txtCost'])){
-                // Obtiene y muestra el costo seleccionado
-                $costo=$_POST['txtCost'];
-                echo "<li>$costo</li>";
-            }
-            // Verifica si el campo txtFacilities está definido, es un array y no está vacío en $_POST
-            if (isset($_POST['txtFacilities']) && is_array($_POST['txtFacilities']) && !empty($_POST['txtFacilities'])) {
-                // Obtiene y muestra cada facilidad seleccionada
-                $facilidades=$_POST['txtFacilities'];
+        if($_GET){
+            global $conexion;
+            $tipo_restaurante = mysqli_real_escape_string($conexion, $_GET["tipo_restaurante"]);
 
-                foreach($facilidades as $facilidad){
-                    echo "<li>$facilidad</li>";
-                };
+            // Verifica si hay datos en la variable $_POST
+            if($_POST){
+                // Verifica si el campo txtFoodType no está vacío en $_POST
+                if(!empty($_POST['txtFoodType'])){
+                    // Obtiene y muestra el tipo de comida seleccionado
+                    $tipo_comida=$_POST['txtFoodType'];
+                    echo "<li>$tipo_comida</li>";
+                }
+                // Verifica si el campo txtProvince no está vacío en $_POST
+                if(!empty($_POST['txtProvince'])){
+                    // Obtiene y muestra la provincia seleccionada
+                    $provincia=$_POST['txtProvince'];
+                    echo "<li>$provincia</li>";
+                }
+                // Verifica si el campo txtCost no está vacío en $_POST
+                if(!empty($_POST['txtCost'])){
+                    // Obtiene y muestra el costo seleccionado
+                    $costo=$_POST['txtCost'];
+                    echo "<li>$costo</li>";
+                }
+                // Verifica si el campo txtFacilities está definido, es un array y no está vacío en $_POST
+                if (isset($_POST['txtFacilities']) && is_array($_POST['txtFacilities']) && !empty($_POST['txtFacilities'])) {
+                    // Obtiene y muestra cada facilidad seleccionada
+                    $facilidades=$_POST['txtFacilities'];
+
+                    foreach($facilidades as $facilidad){
+                        echo "<li>$facilidad</li>";
+                    };
+                }
+
+                echo "<p><a href='search_restaurants.php?tipo_restaurante=$tipo_restaurante'>Limpiar todo</a></p>";
             }
         }
     }
