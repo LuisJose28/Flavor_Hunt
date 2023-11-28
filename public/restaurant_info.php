@@ -215,6 +215,7 @@
                             // Llama e imprime el resultado de la función obtenerFechaMinima()
                             echo obtenerFechaMinima(); 
                           ?>"
+                          value="<?php if($_POST){echo $_POST['txtReservationDate'];} ?>"
                           autofocus
                           required
                         />
@@ -231,6 +232,7 @@
                             // Llama a la función restringirHorasReserva()
                             restringirHorasReserva();
                           ?>
+                          value="<?php if($_POST){echo $_POST['txtReservationHour'];} ?>"
                           required
                         />
                       </p>
@@ -246,12 +248,31 @@
                           min="1"
                           max="10"
                           required
+                          value="<?php if($_POST){echo $_POST['txtReservationPeoples'];} ?>"
                         />
                       </p>
 
                       <?php
-                        // Llama a la función validarMenuNinnios()
-                        validarMenuNinnios();
+                        // Verifica si se ha enviado una solicitud GET
+                        if($_GET){
+                          // Verifica si el valor de 'tipo_restaurante' no es igual a "Fonda"
+                        if($_GET['tipo_restaurante']!=="Bar"){
+                      ?>
+                        <p>
+                          <label for='reservation-children-chair'>Sillas para niños:</label>
+                          <input
+                          type='number'
+                          name='txtReservationChildrenChair'
+                          id='reservation-children-chair'
+                          min='0'
+                          max='10'
+                          value="<?php if($_POST){echo $_POST['txtReservationChildrenChair'];} ?>"
+                          required
+                          />
+                        </p>
+                      <?php
+                          }
+                        }
                       ?>
 
                       <p class="block-grid">
@@ -262,8 +283,7 @@
                           id="comment"
                           cols="35"
                           rows="4"
-                          required
-                        ></textarea>
+                        ><?php if($_POST){if(!empty($_POST['txtReservationComment']) || trim($_POST['txtReservationComment'])!==""){echo $_POST['txtReservationComment'];}else{echo '';}} ?></textarea>
                       </p>
 
                       <p class="block-grid">

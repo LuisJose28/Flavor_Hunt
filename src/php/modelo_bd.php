@@ -672,6 +672,166 @@
         }
     }
 
+    function imprimirUrlInfoRestaurante(){
+        // Verificar si hay parámetros en la URL ($_GET)
+        if($_GET){
+            global $conexion;
+        
+            // Obtener los parámetros de la URL
+            $restaurante_id = intval($_GET["restaurante_id"]);
+            $sucursal_id = intval($_GET["sucursal_id"]);
+            $tipo_restaurante = mysqli_real_escape_string($conexion, $_GET["tipo_restaurante"]);
+    
+            // Construir la URL con los parámetros
+            echo "restaurant_info.php?restaurante_id=$restaurante_id&sucursal_id=$sucursal_id&tipo_restaurante=$tipo_restaurante";
+        }
+    }
+
+    function crearReserva(){
+        // Verificar si hay parámetros en la URL ($_GET)
+        if ($_GET) {
+            global $conexion;
+    
+            // Obtener los parámetros de la URL
+            $sucursal_id = intval($_GET["sucursal_id"]);
+            $restaurante_id = intval($_GET["restaurante_id"]);
+            $tipo_restaurante = mysqli_real_escape_string($conexion, $_GET["tipo_restaurante"]);
+    
+            // Verificar si hay datos en el formulario ($_POST)
+            if ($_POST) {
+                // Verificar si el usuario ha iniciado sesión
+                if (isset($_SESSION["id_usuario"])) {
+                    // Obtener datos del formulario
+                    $fecha = mysqli_real_escape_string($conexion, $_POST["txtReservationDate"]);
+                    $hora = mysqli_real_escape_string($conexion, $_POST["txtReservationHour"]);
+                    $personas = mysqli_real_escape_string($conexion, $_POST["txtReservationPeoples"]);
+                    $comentario = mysqli_real_escape_string($conexion, $_POST["txtReservationComment"]);
+                    $usuario_id = $_SESSION["id_usuario"];
+    
+                    $query = "SELECT reservas_por_hora FROM sucursales WHERE id='$sucursal_id'";
+                    $result = mysqli_query($conexion, $query);
+    
+                    if (!$result) {
+                        die("Error en la consulta: " . mysqli_error($conexion));
+                    } else {
+                        $row = mysqli_fetch_assoc($result);
+                        $reservas_por_hora = $row['reservas_por_hora'];
+    
+                        $query = "SELECT COUNT(*) AS numero_reservas FROM reservas WHERE id_sucursal='$sucursal_id' AND hora='$hora' AND fecha='$fecha'";
+                        $result = mysqli_query($conexion, $query);
+    
+                        if (!$result) {
+                            die("Error en la consulta: " . mysqli_error($conexion));
+                        } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $numero_reservas = $row['numero_reservas'];
+    
+                            if ($numero_reservas == $reservas_por_hora) {
+                                echo "<script>
+                                    // Mostrar alerta de error
+                                    Swal.fire({
+                                        title: 'Oops...',
+                                        text: '¡Ya no hay reservas disponibles. Cambie de hora o fecha!',
+                                        icon: 'error',
+                                        confirmButtonText: 'Aceptar',
+                                        customClass: {
+                                            confirmButton: 'custom-swal-button'
+                                        }
+                                    });
+                                </script>";
+                            } else if ($numero_reservas < $reservas_por_hora) {
+                                $query = "SELECT COUNT(*) AS numero_reservas FROM reservas WHERE id_usuario='$usuario_id' AND fecha='$fecha'";
+                                $result = mysqli_query($conexion, $query);
+    
+                                if (!$result) {
+                                    die("Error en la consulta: " . mysqli_error($conexion));
+                                } else {
+                                    $row = mysqli_fetch_assoc($result);
+                                    $numero_reservas = $row['numero_reservas'];
+    
+                                    if ($numero_reservas == 3) {
+                                        echo "<script>
+                                            // Mostrar alerta de error
+                                            Swal.fire({
+                                                title: 'Oops...',
+                                                text: '¡Ya has superado el límite de reservas (3). Cambia de fecha!',
+                                                icon: 'error',
+                                                confirmButtonText: 'Aceptar',
+                                                customClass: {
+                                                    confirmButton: 'custom-swal-button'
+                                                }
+                                            });
+                                        </script>";
+                                    } else if ($numero_reservas < 3) {
+                                        $query = "SELECT COUNT(*) AS numero_reservas FROM reservas WHERE id_usuario='$usuario_id' AND id_sucursal='$sucursal_id' AND fecha='$fecha' AND hora='$hora'";
+                                        $result = mysqli_query($conexion, $query);
+    
+                                        if (!$result) {
+                                            die("Error en la consulta: " . mysqli_error($conexion));
+                                        } else {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $numero_reservas = $row['numero_reservas'];
+    
+                                            if ($numero_reservas > 0) {
+                                                echo "<script>
+                                                    // Mostrar alerta de error
+                                                    Swal.fire({
+                                                        title: 'Oops...',
+                                                        text: '¡Ya has registrado una reserva en ésta sucursal para esa hora. Cambia de fecha!',
+                                                        icon: 'error',
+                                                        confirmButtonText: 'Aceptar',
+                                                        customClass: {
+                                                            confirmButton: 'custom-swal-button'
+                                                        }
+                                                    });
+                                                </script>";
+                                            } else {
+                                                if ($tipo_restaurante === 'Bar') {
+                                                    if (empty($comentario) || trim($comentario) === "") {
+                                                        $query = "INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$usuario_id','$sucursal_id')";
+                                                    } else {
+                                                        $query = "INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`comentario`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$comentario','$usuario_id','$sucursal_id')";
+                                                    }
+                                                } else {
+                                                    $sillas_ninnios = mysqli_real_escape_string($conexion, $_POST["txtReservationChildrenChair"]);
+    
+                                                    if (empty($comentario) || trim($comentario) === "") {
+                                                        $query = "INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`sillas_ninnios`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$sillas_ninnios','$usuario_id','$sucursal_id')";
+                                                    } else {
+                                                        $query = "INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`sillas_ninnios`,`comentario`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$sillas_ninnios','$comentario','$usuario_id','$sucursal_id')";
+                                                    }
+                                                }
+    
+                                                $result = mysqli_query($conexion, $query);
+    
+                                                if ($result) {
+                                                    // Mostrar alerta de éxito y redirigir después de un tiempo
+                                                    echo '<script>
+                                                        Swal.fire({
+                                                            position: "center",
+                                                            icon: "success",
+                                                            title: "¡La reserva se ha registrado correctamente!",
+                                                            showConfirmButton: false,
+                                                            timer: 3000
+                                                        }).then(() => {
+                                                            window.location.href = "reservation_info.php";
+                                                        });
+                                                    </script>';
+                                                } else {
+                                                    die('La inserción de los datos ha fallado!' . mysqli_error($conexion));
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     function restringirHorasReserva(){
         // Verificar si hay parámetros en la URL ($_GET)
         if($_GET){
@@ -698,135 +858,6 @@
     
                     // Imprimir atributos HTML para restringir las horas de reserva
                     echo "min='$hora_apertura' max='$hora_cierre'";
-                }
-            }
-        }
-    }
-
-    function imprimirUrlInfoRestaurante(){
-        // Verificar si hay parámetros en la URL ($_GET)
-        if($_GET){
-            global $conexion;
-        
-            // Obtener los parámetros de la URL
-            $restaurante_id = intval($_GET["restaurante_id"]);
-            $sucursal_id = intval($_GET["sucursal_id"]);
-            $tipo_restaurante = mysqli_real_escape_string($conexion, $_GET["tipo_restaurante"]);
-    
-            // Construir la URL con los parámetros
-            echo "restaurant_info.php?restaurante_id=$restaurante_id&sucursal_id=$sucursal_id&tipo_restaurante=$tipo_restaurante";
-        }
-    }
-
-    function crearReserva(){
-        // Verificar si hay parámetros en la URL ($_GET)
-        if($_GET){
-            global $conexion;
-
-            // Obtener los parámetros de la URL
-            $sucursal_id=intval($_GET["sucursal_id"]);
-            $restaurante_id=intval($_GET["restaurante_id"]);
-
-            // Verificar si hay datos en el formulario ($_POST)
-            if($_POST){
-                // Verificar si el usuario ha iniciado sesión
-                if(isset($_SESSION["id_usuario"])){
-                    // Obtener datos del formulario
-                    $fecha=mysqli_real_escape_string($conexion,$_POST["txtReservationDate"]);
-                    $hora=mysqli_real_escape_string($conexion,$_POST["txtReservationHour"]);
-                    $personas=mysqli_real_escape_string($conexion,$_POST["txtReservationPeoples"]);
-                    $comentario=trim(mysqli_real_escape_string($conexion,$_POST["txtReservationComment"]));
-                    $usuario_id=$_SESSION["id_usuario"];
-
-                    // Validar que el campo de comentario no esté vacío
-                    if($comentario===""){
-                        echo "<script>
-                            // Mostrar alerta de error
-                            Swal.fire({
-                                title: 'Oops...',
-                                text: '¡No se admiten campos vacíos!',
-                                icon: 'error',
-                                confirmButtonText: 'Aceptar',
-                                customClass: {
-                                    confirmButton: 'custom-swal-button'
-                                }
-                            });
-                        </script>";
-                    }else{
-                        // Verificar si el restaurante tiene menú para niños
-                        $query = "SELECT restaurantes.tiene_menu_ninnios FROM restaurantes WHERE restaurantes.id=$restaurante_id";
-                        $result=mysqli_query($conexion,$query);
-        
-                        if (!$result) {
-                          die("Error en la consulta: " . mysqli_error($conexion));
-                        }else{
-                            $row = mysqli_fetch_assoc($result);
-                        
-                            // Verificar si el restaurante tiene menú para niños
-                            if($row && $row['tiene_menu_ninnios'] === 'si'){
-                                $sillas_ninnios=mysqli_real_escape_string($conexion,$_POST["txtReservationChildrenChair"]);
-                                $query="INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`sillas_ninnios`,`comentario`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$sillas_ninnios','$comentario','$usuario_id','$sucursal_id')";
-                            }else{
-                                $query="INSERT INTO `reservas`(`fecha`,`hora`,`numero_personas`,`comentario`,`id_usuario`,`id_sucursal`) VALUES ('$fecha','$hora','$personas','$comentario','$usuario_id','$sucursal_id')";
-                            }
-    
-                            $result=mysqli_query($conexion,$query);
-    
-                            if ($result) {            
-                                // Mostrar alerta de éxito y redirigir después de un tiempo
-                                echo '<script>
-                                    Swal.fire({
-                                        position: "center",
-                                        icon: "success",
-                                        title: "¡La reserva se ha registrado correctamente!",
-                                        showConfirmButton: false,
-                                        timer: 3000
-                                    }).then(() => {
-                                        window.location.href = "home.php";
-                                    });
-                                </script>';
-                            }else{
-                                die('La inserción de los datos ha fallado!'. mysqli_error($conexion));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    function validarMenuNinnios(){
-        // Verificar si hay parámetros en la URL ($_GET)
-        if($_GET){
-            global $conexion;
-
-            // Obtener el parámetro de la URL
-            $restaurante_id=intval($_GET["restaurante_id"]);
-
-            // Consultar si el restaurante tiene menú para niños
-            $query = "SELECT restaurantes.tiene_menu_ninnios FROM restaurantes WHERE restaurantes.id=$restaurante_id";
-            $result=mysqli_query($conexion,$query);
-
-            // Verificar si hay errores en la consulta
-            if (!$result) {
-              die("Error en la consulta: " . mysqli_error($conexion));
-            }else{
-                $row=mysqli_fetch_assoc($result);
-
-                // Verificar si el restaurante tiene menú para niños
-                if($row && $row['tiene_menu_ninnios'] === 'si'){
-                    // Mostrar el campo de entrada para las sillas de niños
-                    echo "<p>
-                        <label for='reservation-children-chair'>Sillas para niños:</label>
-                        <input
-                        type='number'
-                        name='txtReservationChildrenChair'
-                        id='reservation-children-chair'
-                        min='0'
-                        max='10'
-                        required
-                        />
-                    </p>";
                 }
             }
 
@@ -872,7 +903,7 @@
                     // Verificar si la fecha y hora de la reserva son futuras
                     if($objFechaHora >= $fechaHoraHoy){
                         // Consultar información de la sucursal asociada a la reserva
-                        $querySucursal="SELECT restaurantes.nombre, sucursales.provincia, sucursales.direccion FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
+                        $querySucursal="SELECT restaurantes.tipo_restaurante, restaurantes.nombre, sucursales.provincia, sucursales.direccion FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
                         $resultSucursal=mysqli_query($conexion,$querySucursal);
 
                         // Verificar si hay errores en la consulta de la sucursal
@@ -883,6 +914,7 @@
 
                             // Obtener datos de la sucursal
                             $nombre=$rowSucursal['nombre'];
+                            $tipo_restaurante=$rowSucursal['tipo_restaurante'];
                             $provincia=$rowSucursal['provincia'];
                             $direccion=$rowSucursal['direccion'];
 
@@ -1143,7 +1175,7 @@
                         $fechaMinima = (new DateTime('now', $zonaHoraria))->format('Y-m-d');
                         
                         // Consultar información de la sucursal asociada a la reserva
-                        $querySucursal="SELECT restaurantes.nombre, sucursales.provincia, sucursales.direccion, sucursales.hora_apertura, sucursales.hora_cierre FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
+                        $querySucursal="SELECT restaurantes.nombre, restaurantes.tipo_restaurante, sucursales.provincia, sucursales.direccion, sucursales.hora_apertura, sucursales.hora_cierre FROM sucursales JOIN restaurantes ON sucursales.id_restaurante=restaurantes.id WHERE sucursales.id=$sucursal_id";
                         $resultSucursal=mysqli_query($conexion,$querySucursal);
     
                         // Verificar si hay errores en la consulta de la sucursal
@@ -1154,6 +1186,7 @@
     
                                 // Obtener datos de la sucursal
                                 $nombre=$rowSucursal['nombre'];
+                                $tipo_restaurante=$rowSucursal['tipo_restaurante'];
                                 $provincia=$rowSucursal['provincia'];
                                 $direccion=$rowSucursal['direccion'];
                                 $hora_apertura=$rowSucursal['hora_apertura'];
@@ -1221,7 +1254,7 @@
                                         id='comment'
                                         cols='10'
                                         rows='3'
-                                        required>$comentario</textarea>
+                                        >$comentario</textarea>
                                     </p>
                                     <p class='block-grid-reservation'>
                                         <button>
@@ -1242,68 +1275,63 @@
     function modificarReserva(){
         // Verificar si se ha enviado una solicitud GET
         if($_GET){
+            // Establecer la conexión a la base de datos
+            global $conexion;
+
             // Obtener el ID de la reserva de la solicitud GET
             $reserva_id=intval($_GET["reserva_id"]);
 
             // Verificar si se ha enviado una solicitud POST
             if($_POST){
-                // Establecer la conexión a la base de datos
-                global $conexion;
-    
                 // Verificar si hay una sesión de usuario iniciada
                 if(isset($_SESSION["id_usuario"])){
                     // Obtener datos del formulario
                     $fecha=mysqli_real_escape_string($conexion,$_POST["txtReservationDate"]);
                     $hora=mysqli_real_escape_string($conexion,$_POST["txtReservationHour"]);
                     $personas=mysqli_real_escape_string($conexion,$_POST["txtReservationPeoples"]);
-                    $comentario=trim(mysqli_real_escape_string($conexion,$_POST["txtReservationComment"]));
+                    $comentario=mysqli_real_escape_string($conexion,$_POST["txtReservationComment"]);
+                    $sillas_ninnios=(isset($_POST['txtReservationChildrenChair']))?mysqli_real_escape_string($conexion,$_POST['txtReservationChildrenChair']):null;
                     $usuario_id=$_SESSION["id_usuario"];
     
                     // Validar que el campo de comentario no esté vacío
-                    if($comentario===""){
-                        echo "<script>
-                            // Mostrar alerta de error
-                            Swal.fire({
-                                title: 'Oops...',
-                                text: '¡No se admiten campos vacíos!',
-                                icon: 'error',
-                                confirmButtonText: 'Aceptar',
-                                customClass:{
-                                    confirmButton: 'custom-swal-button'
-                                }
-                            });
-                        </script>";
-                    }else{
-                        // Verificar si se ha enviado un valor para el input de sillas para niños
-                        if(isset($_POST['txtReservationChildrenChair'])){
-                            $sillas_ninnios=mysqli_real_escape_string($conexion,$_POST['txtReservationChildrenChair']);
-                            $query="UPDATE reservas SET fecha='$fecha',hora='$hora',numero_personas='$personas',sillas_ninnios='$sillas_ninnios',comentario='$comentario' WHERE id_usuario='$usuario_id' AND id='$reserva_id'";
+                    if(is_null($sillas_ninnios)){
+                        if(empty($comentario) || trim($comentario)===""){
+                            $query="UPDATE reservas SET fecha='$fecha',hora='$hora',numero_personas='$personas',comentario=NULL WHERE id_usuario='$usuario_id' AND id='$reserva_id'";
                         }else{
                             $query="UPDATE reservas SET fecha='$fecha',hora='$hora',numero_personas='$personas',comentario='$comentario' WHERE id_usuario='$usuario_id' AND id='$reserva_id'";
                         }
-                       
-                        // Ejecutar la consulta de actualización
-                        $result=mysqli_query($conexion,$query);
+                    }else{
+                        $sillas_ninnios=mysqli_real_escape_string($conexion,$_POST['txtReservationChildrenChair']);
 
-                        // Verificar si la actualización fue exitosa
-                        if ($result) {
-                            // Mostrar alerta de éxito y redirigir después de un tiempo
-                            echo "<script>
-                                Swal.fire({
-                                    position: 'center',
-                                    icon: 'success',
-                                    title: '¡La reserva se modificó exitosamente!',
-                                    showConfirmButton: false,
-                                    timer: 3000
-                                }).then(() => {
-                                    window.location.href = 'reservation_info.php';
-                                });
-                            </script>";
+                        if(empty($comentario) || trim($comentario)===""){
+                            $query="UPDATE reservas SET fecha='$fecha',hora='$hora',numero_personas='$personas',sillas_ninnios='$sillas_ninnios',comentario=NULL WHERE id_usuario='$usuario_id' AND id='$reserva_id'";
                         }else{
-                            // Mostrar mensaje de error si la actualización falla
-                            die("La inserción de los datos ha fallado!". mysqli_error($conexion));
+                            $query="UPDATE reservas SET fecha='$fecha',hora='$hora',numero_personas='$personas',sillas_ninnios='$sillas_ninnios',comentario='$comentario' WHERE id_usuario='$usuario_id' AND id='$reserva_id'";
                         }
                     }
+                    
+                    // Ejecutar la consulta de actualización
+                    $result=mysqli_query($conexion,$query);
+
+                    // Verificar si la actualización fue exitosa
+                    if ($result) {
+                        // Mostrar alerta de éxito y redirigir después de un tiempo
+                        echo "<script>
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: '¡La reserva se modificó exitosamente!',
+                                showConfirmButton: false,
+                                timer: 1000
+                            }).then(() => {
+                                    window.location.href = 'reservation_info.php';
+                            });
+                        </script>";
+                    }else{
+                        // Mostrar mensaje de error si la actualización falla
+                        die("La inserción de los datos ha fallado!". mysqli_error($conexion));
+                    }
+                    
                 }
 
                 // Cerrar la conexión a la base de datos al final de la función
