@@ -1,5 +1,5 @@
 <?php
-    $conexion=mysqli_connect("localhost:3307","root","UG[dh]Zq.RyDa6dh","flavor-hunt");
+    $conexion=mysqli_connect("localhost","id21441015_risaza01","#5A1JK4YHA7rg","id21441015_fhdb");
 
     if($conexion){
         // echo "Conexion a la base de datos exitosa!";
